@@ -55,7 +55,7 @@
                                     utility classes. By using utility classes, the style of the card component can be
                                     easily modified with no need for any custom CSS!
                                     
-                                    AMIRUL FAIZ BIN AHMAD PUAD
+                                    Lorem ipsum tambah something letak la apa apa lagi
                                 </div>
                         </div>
                     </div>

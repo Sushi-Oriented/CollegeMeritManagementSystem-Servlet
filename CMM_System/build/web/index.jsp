@@ -55,8 +55,8 @@
                                     utility classes. By using utility classes, the style of the card component can be
                                     easily modified with no need for any custom CSS!okokok jeeeokkkkooo ye ye jeee ls;s;s
                                     
-                                    
-                                   Iklil Mochipandan siniii!!!!!
+                                    Wakari aku stuck ke?
+                                    Iklil Mochipandan siniii!!!!!
                                 </div>
                         </div>
                     </div>

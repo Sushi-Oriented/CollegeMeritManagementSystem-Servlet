@@ -51,11 +51,15 @@
                                     <h6 class="m-0 font-weight-bold text-maroon-primary">Basic Card Example</h6>
                                 </div>
                                 <div class="card-body">
+<<<<<<< Updated upstream
                                     The styling for this basic card example is created by using default Bootstrap
                                     utility classes. By using utility classes, the style of the card component can be
                                     easily modified with no need for any custom CSS!
                                     Contoh ayat menipu:
                                     AMIRUL FAIZ HANDSOME JEEEE
+=======
+                                    Bertaubatlah
+>>>>>>> Stashed changes
                                 </div>
                         </div>
                     </div>

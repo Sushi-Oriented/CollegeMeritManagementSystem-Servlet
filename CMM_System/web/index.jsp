@@ -1,7 +1,7 @@
 <%-- 
     Document   : index
     Created on : Dec 31, 2020, 6:22:14 PM
-    Author     : User
+    Author     : Alifah Ilyana
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>

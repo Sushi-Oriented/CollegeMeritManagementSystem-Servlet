@@ -10,6 +10,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     </head>
+    
     <body>
         <!-- Topbar -->
         <nav class="navbar navbar-expand navbar-light bg-gradient-sidebar-custom topbar mb-4 static-top shadow">

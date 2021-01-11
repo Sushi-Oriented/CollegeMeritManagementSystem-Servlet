@@ -23,40 +23,56 @@
             rel="stylesheet">
 
         <!-- Custom styles for this template-->
-        <link href="css/sb-admin-2.min.css" rel="stylesheet">
+        <link href="css/sb-admin-2.css" rel="stylesheet">
+        <link href="css/loginTab.css" rel="stylesheet" type="text/css"/>
     </head>
-    <body style="background-color: maroon;">
+    <body>
+        <%@include file="asset/topbar.jsp"%>
         <div class="container">
-
             <!-- Outer Row -->
-            <div class="row justify-content-center">
-
+            <div id="loginCard" class="row justify-content-center">
                 <div class="col-xl-10 col-lg-12 col-md-9">
+                    <!--Nav pills-->
+                    <ul class="nav nav-pills-custom" role="tablist">
+                        <li><a class="nav-link active" data-toggle="pill" href="#student">Student</a></li>
+                        <li><a class="nav-link" data-toggle="pill" href="#staff">Staff</a></li>
+                    </ul>
 
-                    <div class="card o-hidden border-0 shadow-lg my-5">
-                        <div class="card-body p-0">
-                            <!-- Nested Row within Card Body -->
-                            <div class="row">
-                                <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
-                                <div class="col-lg-6">
-                                    <div class="p-5">
-                                        <div class="text-center">
-                                            <h1 class="h4 text-gray-900 mb-4">College Merit Management</h1>
-                                        </div><br>
-                                        <form method="post" action="LoginServlet">
-                                            <div class="form-group">
-                                                <input type="email" name="firstemail" id="firstemail" class="form-control form-control-user" placeholder="Email address">
-                                            </div>
-                                            <div class="form-group">
-                                                <input type="password" name="password" id="password" class="form-control form-control-user" placeholder="Password">
-                                            </div>
-                                            <div class="form-group">
-                                            </div><br>
-                                            <input type="submit" class="btn btn-primary btn-user btn-block" value="Login" />
-                                        </form>
-                                    </div>
+                    <!--Tab panes-->
+                    <div class="tab-content">
+                        <!--Student-->
+                        <div id="student" class="container tab-pane active">
+                            <center><img class="imageStud" src="pictures/ktdi.png" alt=""/></center><br>
+                            <form method="post" action="LoginServletStudent">
+                                <label>Student e-mail</label>
+                                <div class="form-group">
+                                    <input type="email" name="firstemail" id="firstemail" class="form-control form-control-user" placeholder="Email address">
                                 </div>
-                            </div>
+                                <label>Password</label>
+                                <div class="form-group">
+                                    <input type="password" name="password" id="password" class="form-control form-control-user" placeholder="Password">
+                                </div>
+                                <div class="form-group">
+                                </div><br>
+                                <input type="submit" class="btn btn-primary btn-user btn-block" value="Login" />
+                            </form>
+                        </div>
+                        <!--Staff-->
+                        <div id="staff" class="container tab-pane">
+                            <center><img class="imageStaff" src="pictures/utmlogo.png" alt=""/></center><br>
+                            <form method="post" action="LoginServletStaff">
+                                <label>Staff e-mail</label>
+                                <div class="form-group">
+                                    <input type="email" name="firstemail" id="firstemail" class="form-control form-control-user" placeholder="Email address">
+                                </div>
+                                <label>Password</label>
+                                <div class="form-group">
+                                    <input type="password" name="password" id="password" class="form-control form-control-user" placeholder="Password">
+                                </div>
+                                <div class="form-group">
+                                </div><br>
+                                <input type="submit" class="btn btn-primary btn-user btn-block" value="Login" />
+                            </form>
                         </div>
                     </div>
                 </div>

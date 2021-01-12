@@ -13,7 +13,7 @@
     
     <body>
         <!-- Topbar -->
-        <nav class="navbar navbar-expand navbar-light bg-gradient-sidebar-custom topbar mb-4 static-top shadow">
+        <nav class="navbar navbar-expand bg-gradient-sidebar-custom topbar mb-4 static-top shadow">
 
             <!-- Sidebar Toggle (Topbar) -->
             <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">

@@ -46,11 +46,11 @@
                             <form method="post" action="LoginServletStudent">
                                 <label>Student e-mail</label>
                                 <div class="form-group">
-                                    <input type="email" name="firstemail" id="firstemail" class="form-control form-control-user" placeholder="Email address">
+                                    <input type="email" name="firstemail" id="firstemail" class="form-control form-control-user" placeholder="Email address" required>
                                 </div>
                                 <label>Password</label>
                                 <div class="form-group">
-                                    <input type="password" name="password" id="password" class="form-control form-control-user" placeholder="Password">
+                                    <input type="password" name="password" id="password" class="form-control form-control-user" placeholder="Password" required>
                                 </div>
                                 <div class="form-group">
                                 </div><br>
@@ -63,11 +63,11 @@
                             <form method="post" action="LoginServletStaff">
                                 <label>Staff e-mail</label>
                                 <div class="form-group">
-                                    <input type="email" name="firstemail" id="firstemail" class="form-control form-control-user" placeholder="Email address">
+                                    <input type="email" name="firstemail" id="firstemail" class="form-control form-control-user" placeholder="Email address" required>
                                 </div>
                                 <label>Password</label>
                                 <div class="form-group">
-                                    <input type="password" name="password" id="password" class="form-control form-control-user" placeholder="Password">
+                                    <input type="password" name="password" id="password" class="form-control form-control-user" placeholder="Password" required>
                                 </div>
                                 <div class="form-group">
                                 </div><br>

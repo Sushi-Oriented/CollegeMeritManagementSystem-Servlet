@@ -24,6 +24,21 @@
 
         <!-- Custom styles for this template-->
         <link href="css/sb-admin-2.css" rel="stylesheet" type="text/css"/>
+        
+        <!-- Google Font -->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700&display=swap" rel="stylesheet">
+        
+        <style>
+            #textpg{
+                font-family: 'Noto Sans JP', sans-serif;
+                text-transform: uppercase;
+            }
+            .subtextpg{
+                margin-top: -10px;
+            }
+        </style>
+        
     </head>
     <body>
         <!-- Page Wrapper -->
@@ -41,14 +56,47 @@
 
                     <!-- Begin Page Content -->
                     <div class="container-fluid">
-
+                        
                         <!-- Page Heading -->
                         <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                            <h1 class="h3 mb-0 text-gray-800">This is the history page. Alifah Ilyana</h1>
+                            <h1 class="h3 mb-0 text-gray-800" id="textpg">
+                                Program History &nbsp;
+                                <i class="fas fa-history"></i>
+                            </h1>
+                            <a class="btn btn-primary" href="stud_index.jsp" role="button">
+                                <i class="fas fa-chevron-left"></i>
+                                Back
+                            </a>                            
+                        </div>
+                        
+                        <div class="subtextpg">
+                            <p style="font-style: italic; margin-bottom: -8px;">
+                                Program History
+                            </p>
+                            <hr style="border: 2px solid;">
                         </div>
                         
                     </div>
                     <!-- /.container-fluid -->
+                    
+                    <!-- Content-array-program -->
+                    <div class="container-fluid text-center">    
+                        <div class="row content">
+                            <div class="col-lg-12 text-left">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h3 style="text-decoration: underline;"><b>Program Details</b></h3>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                                        <hr>
+                                        <p style="font-style: italic;">
+                                            Registered On: <br>
+                                            11:01 AM, 12-01-21 Monday
+                                        </p>
+                                    </div>
+                                </div>    
+                            </div>
+                        </div>
+                    </div>
 
                 </div>
                 <!-- End of Main Content -->

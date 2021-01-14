@@ -44,8 +44,73 @@
 
                         <!-- Page Heading -->
                         <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                            <h1 class="h3 mb-0 text-gray-800">This is the merit page</h1>
-                        </div>
+                            
+                            </div>
+                            
+                            <div class="container-fluid">
+                                <h1 class="h3 mb-0 text-gray-800">Mapek '20(Nama program)</h1><br>
+                                <p class="mb-2 text-gray-800">Program > MAPEK'21 > <b>Program Name ></b></p>
+                                <hr class="sidebar-divider my-0"><br>
+                                <div class="card shadow mb-4">
+<!--                                    <div class="card-header py-3 center">
+                                        <h2 class="m-0 font-weight-bold text-primary text-center">Program details</h2>
+                                    </div>-->
+                                    <div class="card-body">
+                                        
+                                        <h4 class="mb-2 text-gray-800"><b>Program Details</b></h4>
+                                        <p class="mb-2 text-gray-800"><b>Program Name:</b> Apa nama ?</p>
+                                        <p class="mb-2 text-gray-800">Location: Kat mana ?</p>
+                                        <p class="mb-2 text-gray-800">Time: Bile ?</p>
+                                        <p class="mb-2 text-gray-800">Start Date: Bila start ?</p>
+                                        <p class="mb-2 text-gray-800">Organizer: Sape buat ?</p>
+                                        <p class="mb-2 text-gray-800">Category: Jenis ape ?</p>
+                                        <p class="mb-2 text-gray-800">Description: Ce citer ce citer ?</p>
+                                        
+                                    </div>
+
+
+                                </div>
+                                
+                                <div class="card shadow mb-4">
+<!--                                    <div class="card-header py-3 center">
+-->                                        <h2 class="m-3 font-weight-bold text-primary text-center">Add list of program's member</h2><!--
+                                    </div>-->
+
+                                    <div class="card-body">
+                                        <center>
+                                        <form class="row g-3 text-center ">
+                                                  <div class="col-3">
+                                                    <input type="password" class="form-control" id="inputPassword2" placeholder="Password">
+                                                  </div>
+                                                  <div class="col-1">
+                                                    <input type="password" class="form-control" id="inputPassword2" placeholder="Password">
+                                                  </div>
+                                                <div class="col-1">
+                                                    <input type="password" class="form-control" id="inputPassword2" placeholder="Password">
+                                                  </div>
+                                                  <div class="col-1">
+                                                    <input type="password" class="form-control" id="inputPassword2" placeholder="Password">
+                                                  </div>
+                                                <div class="col-1">
+                                                    <input type="password" class="form-control" id="inputPassword2" placeholder="Password">
+                                                  </div>
+                                                  <div class="col-auto">
+                                                    <button type="submit" class="btn btn-primary mb-3">Confirm identity</button>
+                                                  </div>
+                                            </form></center>
+                                        
+                                        <hr class="sidebar-divider my-0"><br>
+                                        
+                                        
+                                    </div>
+
+
+                                </div>
+                                
+                            </div>
+                            
+                            
+                        
                         
                     </div>
                     <!-- /.container-fluid -->

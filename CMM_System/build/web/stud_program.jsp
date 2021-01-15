@@ -24,7 +24,24 @@
 
         <!-- Custom styles for this template-->
         <link href="css/sb-admin-2.css" rel="stylesheet" type="text/css"/>
+        <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+        <style>
+            table, th, td {padding: 10px;}
+            input[type=text]{width:100%;}
+            .btnBack {
+                background-color: #AF334E;
+                padding: 10px 25px;
+                color: white;
+            } /* main color */ 
+            .btn-success {
+                padding: 12px 35px;
+            } /* Green */
+            .btn-danger {
+                padding: 12px 35px;
+            } /* Red */ 
+        </style>
     </head>
+    
     <body>
         <!-- Page Wrapper -->
         <div id="wrapper">
@@ -44,7 +61,61 @@
 
                         <!-- Page Heading -->
                         <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                            <h1 class="h3 mb-0 text-gray-800">This is the program page</h1>
+                            <h1 class="h3 mb-0 text-gray-800">Program Registration</h1>
+                            <a class="btn btnBack" href="stud_index.jsp" role="button"><i class='fas fa-arrow-left'></i>  Back</a>
+                            
+                        </div>
+                        <p>Program > Program Registration </p>
+                        
+                        <!-- Page Details -->
+                        <div class="container-fluid">
+                            <div class="card shadow mb-4">
+                                 <div class="card-body">
+                                     <form method="post" action="stud_programServlet">
+                                        <table>
+                                             <tr>
+                                                 <td>Program Name</td>
+                                                 <td>:</td>
+                                                 <td><input type="text" name="progName" id="progName" required></td>
+                                             </tr>
+                                             <tr>
+                                                 <td>Location</td>
+                                                 <td>:</td>
+                                                 <td><input type="text" name="progLocation" id="progLocation" required></td>
+                                             </tr>
+                                             <tr>
+                                                 <td>Start Date</td>
+                                                 <td>:</td>
+                                                 <td><input type="date" name="progStartDate" id="progStartDate" required></td>
+                                             </tr>
+                                             <tr>
+                                                 <td>End Date</td>
+                                                 <td>:</td>
+                                                 <td><input type="date" name="progEndDate" id="progEndDate" required></td>
+                                             </tr>
+                                             <tr>
+                                                 <td>Organizer</td>
+                                                 <td>:</td>
+                                                 <td><input type="text" name="progOrganizer" id="progOrganizer" required></td>
+                                             </tr>
+                                             <tr>
+                                                 <td>Category</td>
+                                                 <td>:</td>
+                                                 <td><input type="text" name="progCategory" id="progCategory" required></td>
+                                             </tr>
+                                             <tr>
+                                                 <td>Description</td>
+                                                 <td>:</td>
+                                                 <td><textarea name="progDescription" id="progDescription" rows="5" cols="50" required></textarea></td>
+                                             </tr>
+                                        </table>
+                                        <div class="text-center" >
+                                            <input class="btn btn-success" type="submit" value="Submit" />
+                                            <a class="btn btn-danger" href="stud_program.jsp" role="button">Reset</a>
+                                        </div>
+                                    </form>
+                                 </div>
+                            </div>
                         </div>
                         
                     </div>

@@ -20,6 +20,14 @@
         <servlet-name>LoginServletStaff</servlet-name>
         <servlet-class>loginStaff.LoginServletStaff</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>stud_programServlet</servlet-name>
+        <servlet-class>programStudent.stud_programServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>staff_programServlet</servlet-name>
+        <servlet-class>programStaff.staff_programServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginServletStudent</servlet-name>
         <url-pattern>/LoginServletStudent</url-pattern>
@@ -39,6 +47,14 @@
     <servlet-mapping>
         <servlet-name>LoginServletStaff</servlet-name>
         <url-pattern>/LoginServletStaff</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>stud_programServlet</servlet-name>
+        <url-pattern>/stud_programServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>staff_programServlet</servlet-name>
+        <url-pattern>/staff_programServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

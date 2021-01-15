@@ -1,28 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
     <servlet>
-        <servlet-name>LoginServlet</servlet-name>
-        <servlet-class>login.LoginServlet</servlet-class>
+        <servlet-name>LoginServletStudent</servlet-name>
+        <servlet-class>loginStudent.LoginServletStudent</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>LoginDao</servlet-name>
-        <servlet-class>login.LoginDao</servlet-class>
+        <servlet-name>LoginDaoStudent</servlet-name>
+        <servlet-class>loginStudent.LoginDaoStudent</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>LogoutServlet</servlet-name>
-        <servlet-class>login.LogoutServlet</servlet-class>
+        <servlet-class>main.LogoutServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>LoginDaoStaff</servlet-name>
+        <servlet-class>loginStaff.LoginDaoStaff</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>LoginServletStaff</servlet-name>
+        <servlet-class>loginStaff.LoginServletStaff</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>LoginServlet</servlet-name>
-        <url-pattern>/LoginServlet</url-pattern>
+        <servlet-name>LoginServletStudent</servlet-name>
+        <url-pattern>/LoginServletStudent</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>LoginDao</servlet-name>
-        <url-pattern>/LoginDao</url-pattern>
+        <servlet-name>LoginDaoStudent</servlet-name>
+        <url-pattern>/LoginDaoStudent</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>LogoutServlet</servlet-name>
         <url-pattern>/LogoutServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LoginDaoStaff</servlet-name>
+        <url-pattern>/LoginDaoStaff</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LoginServletStaff</servlet-name>
+        <url-pattern>/LoginServletStaff</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -55,7 +55,17 @@
                                     The styling for this basic card example is created by using default Bootstrap
                                     utility classes. By using utility classes, the style of the card component can be
                                     easily modified with no need for any custom CSS!
+<<<<<<< Updated upstream:CMM_System/web/staff_index.jsp
 
+=======
+<<<<<<< HEAD
+                                    
+                                    HAPPY NEW YEARRRRRRR
+=======
+                                    Contoh ayat menipu:
+                                    AMIRUL FAIZ HANDSOME JEEEE
+>>>>>>> d557f4d8ae447104cfcad282a4a81f3a74c78b1e
+>>>>>>> Stashed changes:CMM_System/build/web/index.jsp
                                 </div>
                         </div>
                     </div>

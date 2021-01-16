@@ -1,10 +1,10 @@
 <%-- 
-    Document   : stud_profile
-    Created on : Dec 31, 2020, 8:11:24 PM
-    Author     : User
+    Document   : staff_editprofile
+    Created on : Jan 16, 2021, 2:19:39 PM
+    Author     : Alifah Ilyana binti Soharto B19EC0003
 --%>
 
-<%@page import="bean.User"%>
+<%@page import="bean.Staff"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -15,7 +15,7 @@
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <title>CMMS - Profile</title>
+        <title>CMMS - Edit Profile</title>
 
         <!-- Custom fonts for this template-->
         <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -27,11 +27,11 @@
         <link href="css/sb-admin-2.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
-        <% User student = (User)session.getAttribute("student"); %>
+        <% Staff staff = (Staff)session.getAttribute("staff"); %>
         <!-- Page Wrapper -->
         <div id="wrapper">
             
-            <%@include file="asset/stud_sidebar.jsp"%>
+            <%@include file="asset/staff_sidebar.jsp"%>
 
             <!-- Content Wrapper -->
             <div id="content-wrapper" class="d-flex flex-column">
@@ -48,13 +48,16 @@
                         <div class="d-sm-flex align-items-center justify-content-between mb-4">
                             <h1 class="h3 mb-0 text-gray-800">This is the profile page stud</h1>
                         </div>
-                        Full name: <%= student.getFullname() %><br>
-                        Nickname: <%= student.getNickname() %><br>
-                        First email: <%= student.getFirstemail() %><br>
-                        Second email: <%= student.getSecondemail() %><br>
-                        Student ID: <%= student.getStudentID() %><br>
-                        Student Phone No: <%= student.getStudphoneno() %><br>
-                        <form action="stud_editprofile.jsp"><button type="submit" >Edit</button></form>
+                        <form method="post" action="EditProfileStaff">
+                            Full name: <input type="text" name="fullname" value="<%= staff.getFullname() %>" disabled><br>
+                            Nickname: <input type="text" name="nickname" value="<%= staff.getNickname() %>"><br>
+                            First email: <input type="text" name="firstemail" value="<%= staff.getFirstemail() %>" disabled><br>
+                            Second email: <input type="text" name="secondemail" value="<%= staff.getSecondemail() %>"><br>
+                            Student ID: <input type="text" name="staffID" value="<%= staff.getStaffID() %>" disabled><br>
+                            Student Phone No: <input type="text" name="staffphoneno" value="<%= staff.getStaffphoneno() %>"><br>
+                            <button type="submit">Save</button>
+                            <button type="reset">Reset</button>
+                        </form>
                     </div>
                     <!-- /.container-fluid -->
 
@@ -62,7 +65,6 @@
                 <!-- End of Main Content -->
 
                 <%@include file="asset/footer.jsp" %>
-
             </div>
             <!-- End of Content Wrapper -->
 

@@ -31,7 +31,7 @@
                 </a>
                 <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="stud_profile.jsp">Edit Profile</a>
+                        <a class="collapse-item" href="ProfileStudent">Edit Profile</a>
                         <a class="collapse-item" href="LogoutServlet">Logout</a>
                     </div>
                 </div>

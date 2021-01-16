@@ -4,6 +4,7 @@
     Author     : User
 --%>
 
+<%@page import="bean.User"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -26,6 +27,7 @@
         <link href="css/sb-admin-2.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
+        <% User student = (User)session.getAttribute("student"); %>
         <!-- Page Wrapper -->
         <div id="wrapper">
             
@@ -46,7 +48,13 @@
                         <div class="d-sm-flex align-items-center justify-content-between mb-4">
                             <h1 class="h3 mb-0 text-gray-800">This is the profile page stud</h1>
                         </div>
-                        
+                        Full name: <%= student.getFullname() %><br>
+                        Nickname: <%= student.getNickname() %><br>
+                        First email: <%= student.getFirstemail() %><br>
+                        Second email: <%= student.getSecondemail() %><br>
+                        Student ID: <%= student.getStudentID() %><br>
+                        Student Phone No: <%= student.getStudphoneno() %><br>
+                        <form action="stud_editprofile.jsp"><button type="submit" >Edit</button></form>
                     </div>
                     <!-- /.container-fluid -->
 

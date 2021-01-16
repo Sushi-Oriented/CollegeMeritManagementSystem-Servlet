@@ -28,6 +28,22 @@
         <servlet-name>staff_programServlet</servlet-name>
         <servlet-class>programStaff.staff_programServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ProfileStaff</servlet-name>
+        <servlet-class>profile.ProfileStaff</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ProfileStudent</servlet-name>
+        <servlet-class>profile.ProfileStudent</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>EditProfileStudent</servlet-name>
+        <servlet-class>profile.EditProfileStudent</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>EditProfileStaff</servlet-name>
+        <servlet-class>profile.EditProfileStaff</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginServletStudent</servlet-name>
         <url-pattern>/LoginServletStudent</url-pattern>
@@ -55,6 +71,22 @@
     <servlet-mapping>
         <servlet-name>staff_programServlet</servlet-name>
         <url-pattern>/staff_programServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ProfileStaff</servlet-name>
+        <url-pattern>/ProfileStaff</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ProfileStudent</servlet-name>
+        <url-pattern>/ProfileStudent</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EditProfileStudent</servlet-name>
+        <url-pattern>/EditProfileStudent</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EditProfileStaff</servlet-name>
+        <url-pattern>/EditProfileStaff</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

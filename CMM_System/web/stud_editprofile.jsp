@@ -1,7 +1,7 @@
 <%-- 
-    Document   : stud_profile
-    Created on : Dec 31, 2020, 8:11:24 PM
-    Author     : User
+    Document   : stud_editprofile
+    Created on : Jan 16, 2021, 2:19:10 PM
+    Author     : Alifah Ilyana binti Soharto B19EC0003
 --%>
 
 <%@page import="bean.User"%>
@@ -15,7 +15,7 @@
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <title>CMMS - Profile</title>
+        <title>CMMS - Edit Profile</title>
 
         <!-- Custom fonts for this template-->
         <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -48,13 +48,16 @@
                         <div class="d-sm-flex align-items-center justify-content-between mb-4">
                             <h1 class="h3 mb-0 text-gray-800">This is the profile page stud</h1>
                         </div>
-                        Full name: <%= student.getFullname() %><br>
-                        Nickname: <%= student.getNickname() %><br>
-                        First email: <%= student.getFirstemail() %><br>
-                        Second email: <%= student.getSecondemail() %><br>
-                        Student ID: <%= student.getStudentID() %><br>
-                        Student Phone No: <%= student.getStudphoneno() %><br>
-                        <form action="stud_editprofile.jsp"><button type="submit" >Edit</button></form>
+                        <form method="post" action="EditProfileStudent">
+                            Full name: <input type="text" name="fullname" value="<%= student.getFullname() %>" disabled><br>
+                            Nickname: <input type="text" name="nickname" value="<%= student.getNickname() %>"><br>
+                            First email: <input type="text" name="firstemail" value="<%= student.getFirstemail() %>" disabled><br>
+                            Second email: <input type="text" name="secondemail" value="<%= student.getSecondemail() %>"><br>
+                            Student ID: <input type="text" name="studentID" value="<%= student.getStudentID() %>" disabled><br>
+                            Student Phone No: <input type="text" name="studphoneno" value="<%= student.getStudphoneno() %>"><br>
+                            <button type="submit">Save</button>
+                            <button type="reset">Reset</button>
+                        </form>
                     </div>
                     <!-- /.container-fluid -->
 
@@ -62,7 +65,6 @@
                 <!-- End of Main Content -->
 
                 <%@include file="asset/footer.jsp" %>
-
             </div>
             <!-- End of Content Wrapper -->
 

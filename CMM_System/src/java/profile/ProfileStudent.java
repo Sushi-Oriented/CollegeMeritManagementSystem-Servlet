@@ -3,11 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package main;
+package profile;
 
+import bean.User;
 import java.io.IOException;
 import java.io.PrintWriter;
-import javax.servlet.RequestDispatcher;
+import java.sql.*;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -18,23 +19,44 @@ import javax.servlet.http.HttpSession;
  *
  * @author Alifah Ilyana binti Soharto B19EC0003
  */
-public class LogoutServlet extends HttpServlet {
-
+public class ProfileStudent extends HttpServlet {
+    
+    String driver = "com.mysql.jdbc.Driver";
+    String dbName = "cmmsdb";
+    String url = "jdbc:mysql://localhost/" + dbName + "?";
+    String username = "root";
+    String password = "";
+    
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
+        response.setContentType("text/html;charset=UTF-8");
+        
         try {
-            HttpSession session = request.getSession(false);
-            if (session != null) {
-                session.removeAttribute("firstemail");
-                out.println("<script type=\"text/javascript\">");
-                out.println("alert('Successfully logged out!');");
-                out.println("location='login.jsp';");
-                out.println("</script>");
+            HttpSession session = request.getSession();
+            String firstemail = (String)session.getAttribute("firstemail");
+            
+            Class.forName(driver);
+            Connection con = DriverManager.getConnection(url, username, password);
+            String selectQry = "select * from user where firstemail = ?";
+            PreparedStatement ps = con.prepareStatement(selectQry);
+            ps.setString(1, firstemail);
+            ResultSet rs = ps.executeQuery();
+            User student = new User();
+            
+            while(rs.next()){                
+                student.setFullname(rs.getString(1));
+                student.setNickname(rs.getString(2));
+                student.setFirstemail(rs.getString(3));
+                student.setSecondemail(rs.getString(4));
+                student.setStudentID(rs.getString(5));
+                student.setStudphoneno(rs.getString(6));
             }
+            
+            session.setAttribute("student", student);
+            response.sendRedirect("stud_profile.jsp");
         }
-        catch (Exception e){
+        catch(ClassNotFoundException | SQLException e){
             out.println(e);
         }
     }

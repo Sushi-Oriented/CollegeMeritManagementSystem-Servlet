@@ -4,6 +4,8 @@
     Author     : User
 --%>
 
+<%@page import="bean.Staff"%>
+<%@page import="java.sql.*"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -26,6 +28,7 @@
         <link href="css/sb-admin-2.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
+        <% Staff staff = (Staff)session.getAttribute("staff"); %>
         <!-- Page Wrapper -->
         <div id="wrapper">
             
@@ -46,7 +49,13 @@
                         <div class="d-sm-flex align-items-center justify-content-between mb-4">
                             <h1 class="h3 mb-0 text-gray-800">This is the profile page staff</h1>
                         </div>
-                        
+                        Full name: <%= staff.getFullname() %><br>
+                        Nickname: <%= staff.getNickname() %><br>
+                        First email: <%= staff.getFirstemail() %><br>
+                        Second email: <%= staff.getSecondemail() %><br>
+                        Student ID: <%= staff.getStaffID()%><br>
+                        Student Phone No: <%= staff.getStaffphoneno()%>
+                        <form action="staff_editprofile.jsp"><button type="submit" >Edit</button></form>
                     </div>
                     <!-- /.container-fluid -->
 

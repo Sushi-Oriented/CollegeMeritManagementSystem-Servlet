@@ -65,7 +65,7 @@
                         </div>
                         
                         <p style="font-style: italic; margin-bottom: -8px;">
-                                PProgram > Program Registration
+                                Program > Program Registration
                         </p><hr>
                         
                         <!-- Page Details -->

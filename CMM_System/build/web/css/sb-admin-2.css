@@ -12,7 +12,7 @@
  */
 :root {
   --blue: #4e73df;
-  --indigo: #6610f2;
+  --indigo: #6610f2;<a class="btn btnBack" href="stud_index.jsp" role="button"><i class='fas fa-arrow-left'></i>  Back</a>
   --purple: #6f42c1;
   --pink: #e83e8c;
   --red: #e74a3b;
@@ -2346,6 +2346,17 @@ fieldset:disabled a.btn {
   pointer-events: none;
 }
 
+.btn-maroon {
+  color: #fff;
+  background-color: maroon;
+}
+
+.btn-maroon:hover {
+  color: maroon;
+  border-color: maroon;
+  background-color: lightcoral;
+}
+
 .btn-primary {
   color: #fff;
   background-color: #4e73df;
@@ -2651,6 +2662,17 @@ fieldset:disabled a.btn {
   color: #fff;
   background-color: #4e73df;
   border-color: #4e73df;
+}
+
+.btn-outline-maroon {
+  color: maroon;
+  border-color: maroon;
+}
+
+.btn-outline-maroon:hover {
+  color: #fff;
+  background-color: lightcoral;
+  border-color: maroon;
 }
 
 .btn-outline-primary:focus, .btn-outline-primary.focus {

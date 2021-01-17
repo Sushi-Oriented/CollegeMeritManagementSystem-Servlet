@@ -25,6 +25,12 @@
 
         <!-- Custom styles for this template-->
         <link href="css/sb-admin-2.css" rel="stylesheet" type="text/css"/>
+        <style>
+            td{
+                padding-left: 20px;
+                padding-right: 40px;
+            }
+        </style>
     </head>
     <body>
         <% User student = (User)session.getAttribute("student"); %>
@@ -43,18 +49,80 @@
 
                     <!-- Begin Page Content -->
                     <div class="container-fluid">
-
+                        
                         <!-- Page Heading -->
                         <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                            <h1 class="h3 mb-0 text-gray-800">This is the profile page stud</h1>
+                            <h1 class="h3 mb-0 text-gray-800">Profile</h1>
+                            <a class="btn btn-maroon" href="stud_index.jsp" role="button"><i class='fas fa-arrow-left'></i>Back</a>
                         </div>
-                        Full name: <%= student.getFullname() %><br>
-                        Nickname: <%= student.getNickname() %><br>
-                        First email: <%= student.getFirstemail() %><br>
-                        Second email: <%= student.getSecondemail() %><br>
-                        Student ID: <%= student.getStudentID() %><br>
-                        Student Phone No: <%= student.getStudphoneno() %><br>
-                        <form action="stud_editprofile.jsp"><button type="submit" >Edit</button></form>
+                        <p>Account > Profile</p><hr><br>
+                        <div class="card shadow mb-4">
+                            <div class="card-body">
+                                <!-- Start table for dividing profile and picture -->
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <div class="text-center">
+                                                <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;" 
+                                                     src="pictures/loginpic.svg" alt="">
+                                            </div>
+                                        </td>
+                                        <td></td>
+                                        <td>
+                                            <center>
+                                                <!-- Start form -->
+                                                <form action="stud_editprofile.jsp">
+                                                    <!-- Start table -->
+                                                    <table>
+                                                        <tr>
+                                                            <td>Full name</td>
+                                                            <td>:</td>
+                                                            <td><input class="form-control" type="text" value="<%= student.getFullname() %>" disabled></td>
+                                                        </tr>
+                                                        <tr><td colspan="3"><br></td></tr>
+                                                        <tr>
+                                                            <td>Nickname</td>
+                                                            <td>:</td>
+                                                            <td><input class="form-control" type="text" value="<%= student.getNickname() %>" disabled></td>
+                                                        </tr>
+                                                        <tr><td colspan="3"><br></td></tr>
+                                                        <tr>
+                                                            <td>First email</td>
+                                                            <td>:</td>
+                                                            <td><input class="form-control" type="text" value="<%= student.getFirstemail()%>" disabled></td>
+                                                        </tr>
+                                                        <tr><td colspan="3"><br></td></tr>
+                                                        <tr>
+                                                            <td>Second email</td>
+                                                            <td>:</td>
+                                                            <td><input class="form-control" type="text" value="<%= student.getSecondemail()%>" disabled></td>
+                                                        </tr>
+                                                        <tr><td colspan="3"><br></td></tr>
+                                                        <tr>
+                                                            <td>Student ID</td>
+                                                            <td>:</td>
+                                                            <td><input class="form-control" type="text" value="<%= student.getStudentID()%>" disabled></td>
+                                                        </tr>
+                                                        <tr><td colspan="3"><br></td></tr>
+                                                        <tr>
+                                                            <td>Phone Number</td>
+                                                            <td>:</td>
+                                                            <td><input class="form-control" type="text" value="<%= student.getStudphoneno()%>" disabled></td>
+                                                        </tr>
+                                                    </table><br><br>
+                                                    <!-- End table -->
+                                                    <center>
+                                                        <button class="btn btn-success" type="submit">Edit Profile</button>
+                                                    </center>
+                                                </form>
+                                                <!-- End form -->
+                                            </center>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <!-- End table for dividing profile and picture -->
+                            </div>
+                        </div>
                     </div>
                     <!-- /.container-fluid -->
 

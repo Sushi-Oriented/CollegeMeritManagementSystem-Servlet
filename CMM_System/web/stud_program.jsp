@@ -77,27 +77,27 @@
                                              <tr>
                                                  <td>Program Name</td>
                                                  <td>:</td>
-                                                 <td><input type="text" name="progName" id="progName" required></td>
+                                                 <td><input class="form-control" type="text" name="progName" id="progName" required></td>
                                              </tr>
                                              <tr>
                                                  <td>Location</td>
                                                  <td>:</td>
-                                                 <td><input type="text" name="progLocation" id="progLocation" required></td>
+                                                 <td><input class="form-control" type="text" name="progLocation" id="progLocation" required></td>
                                              </tr>
                                              <tr>
                                                  <td>Start Date</td>
                                                  <td>:</td>
-                                                 <td><input type="date" name="progStartDate" id="progStartDate" required></td>
+                                                 <td><input class="form-control" type="date" name="progStartDate" id="progStartDate" required></td>
                                              </tr>
                                              <tr>
                                                  <td>End Date</td>
                                                  <td>:</td>
-                                                 <td><input type="date" name="progEndDate" id="progEndDate" required></td>
+                                                 <td><input class="form-control" type="date" name="progEndDate" id="progEndDate" required></td>
                                              </tr>
                                              <tr>
                                                  <td>Organizer</td>
                                                  <td>:</td>
-                                                 <td><input type="text" name="progOrganizer" id="progOrganizer" required></td>
+                                                 <td><input class="form-control" type="text" name="progOrganizer" id="progOrganizer" required></td>
                                              </tr>
                                              <tr>
                                                  <td>Category</td>

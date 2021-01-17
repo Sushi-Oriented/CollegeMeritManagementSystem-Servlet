@@ -27,7 +27,7 @@
         <style>
             table, th, td {padding: 10px;}
             input[type=text]{width:100%;}
-            .btnBack {
+            .btn-maroon {
                 background-color: #AF334E;
                 padding: 10px 25px;
                 color: white;
@@ -61,9 +61,12 @@
                         <!-- Page Heading -->
                         <div class="d-sm-flex align-items-center justify-content-between mb-4">
                             <h1 class="h3 mb-0 text-gray-800">Program Registration</h1>
-                            <a class="btn btnBack" href="stud_index.jsp" role="button"><i class='fas fa-arrow-left'></i>  Back</a>
+                            <a class="btn btn-maroon" href="stud_index.jsp" role="button"><i class='fas fa-arrow-left'></i>  Back</a>
                         </div>
-                        <p>Program > Program Registration </p>
+                        
+                        <p style="font-style: italic; margin-bottom: -8px;">
+                                PProgram > Program Registration
+                        </p><hr>
                         
                         <!-- Page Details -->
                         <div class="container-fluid">

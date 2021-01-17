@@ -24,7 +24,6 @@
 
         <!-- Custom styles for this template-->
         <link href="css/sb-admin-2.css" rel="stylesheet" type="text/css"/>
-        <script src='https://kit.fontawesome.com/a076d05399.js'></script>
         <style>
             table, th, td {padding: 10px;}
             input[type=text]{width:100%;}
@@ -63,7 +62,6 @@
                         <div class="d-sm-flex align-items-center justify-content-between mb-4">
                             <h1 class="h3 mb-0 text-gray-800">Program Registration</h1>
                             <a class="btn btnBack" href="stud_index.jsp" role="button"><i class='fas fa-arrow-left'></i>  Back</a>
-                            
                         </div>
                         <p>Program > Program Registration </p>
                         
@@ -101,7 +99,14 @@
                                              <tr>
                                                  <td>Category</td>
                                                  <td>:</td>
-                                                 <td><input type="text" name="progCategory" id="progCategory" required></td>
+<!--                                                 <td><input type="text" name="progCategory" id="progCategory" required></td>-->
+                                                <td>
+                                                    <select name="progCategory">
+                                                        <option value="Festival">Festival</option>
+                                                        <option value="Workshops">Workshops</option>
+                                                        <option value="Conferences">Conferences</option>
+                                                    </select>
+                                                </td>
                                              </tr>
                                              <tr>
                                                  <td>Description</td>

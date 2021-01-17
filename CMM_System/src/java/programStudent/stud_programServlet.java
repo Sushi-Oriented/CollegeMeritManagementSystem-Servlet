@@ -28,13 +28,7 @@ public class stud_programServlet extends HttpServlet {
 
     public void init() throws ServletException
     {
-        String driver = "com.mysql.jdbc.Driver";
-        String dbName = "cmmsdb";
-        String url = "jdbc:mysql://localhost/" + dbName + "?";
-        String userName = "root";
-        String password = "";
-
-        jdbcUtility = new JDBCUtility(driver, url, userName, password);
+        jdbcUtility = new JDBCUtility();
         jdbcUtility.jdbcConnect();
         con = jdbcUtility.jdbcGetConnection();
     }
@@ -51,9 +45,10 @@ public class stud_programServlet extends HttpServlet {
         String progOrganizer = request.getParameter("progOrganizer");
         String progCategory = request.getParameter("progCategory");
         String progDescription = request.getParameter("progDescription");
+        String progStatus = "Pending";
         
         try {
-            String sqlInsert = "INSERT INTO program(firstemail, progName, progLocation, progStartDate, progEndDate, progOrganizer, progCategory, progDescription) VALUES (?,?,?,?,?,?,?,?)";
+            String sqlInsert = "INSERT INTO program(firstemail, progName, progLocation, progStartDate, progEndDate, progOrganizer, progCategory, progDescription, progStatus) VALUES (?,?,?,?,?,?,?,?,?)";
             PreparedStatement ps = con.prepareStatement(sqlInsert);
             ps.setString (1, firstemail);
             ps.setString (2, progName);
@@ -63,13 +58,19 @@ public class stud_programServlet extends HttpServlet {
             ps.setString (6, progOrganizer);
             ps.setString (7, progCategory);
             ps.setString (8, progDescription);
+            ps.setString (9, progStatus);
             ps.executeUpdate();
+            
+            PrintWriter out = response.getWriter();
+            out.println("<script type=\"text/javascript\">");
+            out.println("alert('Your program is submitted successfully!');");
+            out.println("location='stud_index.jsp';");
+            out.println("</script>");
         }
         
         catch(SQLException ex){
         }
         
-        response.sendRedirect (request.getContextPath() + "/stud_index.jsp");
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

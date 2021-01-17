@@ -17,10 +17,16 @@ public class JDBCUtility
     String url;
     String userName;
     String password;
+    String dbName;
 
     //use this constructor if using ConnectionPool
     public JDBCUtility()
     {
+        driver = "com.mysql.jdbc.Driver";
+        dbName = "cmmsdb";
+        url = "jdbc:mysql://localhost/" + dbName + "?";
+        userName = "root";
+        password = "";
     }
 
     //use this constructor if not using ConnectionPool

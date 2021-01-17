@@ -56,7 +56,9 @@
                             <h1 class="h3 mb-0 text-gray-800">Profile</h1>
                             <a class="btn btn-maroon" href="staff_index.jsp" role="button"><i class='fas fa-arrow-left'></i>Back</a>
                         </div>
-                        <p>Account > Profile</p><hr><br>
+                        <p style="font-style: italic; margin-bottom: -8px;">
+                                Account > Profile
+                        </p><hr><br>
                         <div class="card shadow mb-4">
                             <div class="card-body">
                                 <!-- Start table for dividing profile and picture -->

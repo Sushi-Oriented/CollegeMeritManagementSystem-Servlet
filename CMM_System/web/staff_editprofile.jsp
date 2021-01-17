@@ -54,7 +54,9 @@
                         <div class="d-sm-flex align-items-center justify-content-between mb-4">
                             <h1 class="h3 mb-0 text-gray-800">Edit Profile</h1>
                         </div>
-                        <p>Account > Profile > Edit Profile</p><hr><br>
+                        <p style="font-style: italic; margin-bottom: -8px;">
+                                Account > Profile > Edit Profile
+                        </p><hr><br>
                         <div class="card shadow mb-4">
                             <div class="card-body">
                                 <!-- Start table for dividing profile and picture -->

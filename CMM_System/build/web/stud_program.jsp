@@ -99,7 +99,7 @@
                                                  <td>:</td>
 <!--                                                 <td><input type="text" name="progCategory" id="progCategory" required></td>-->
                                                 <td>
-                                                    <select name="progCategory">
+                                                    <select class="form-control" name="progCategory">
                                                         <option value="Festival">Festival</option>
                                                         <option value="Workshops">Workshops</option>
                                                         <option value="Conferences">Conferences</option>
@@ -109,9 +109,9 @@
                                              <tr>
                                                  <td>Description</td>
                                                  <td>:</td>
-                                                 <td><textarea name="progDescription" id="progDescription" rows="5" cols="50" required></textarea></td>
+                                                 <td><textarea class="form-control" name="progDescription" id="progDescription" rows="5" cols="50" required></textarea></td>
                                              </tr>
-                                        </table>
+                                        </table><br>
                                         <div class="text-center" >
                                             <input class="btn btn-success" type="submit" value="Submit" />
                                             <a class="btn btn-danger" href="stud_program.jsp" role="button">Reset</a>

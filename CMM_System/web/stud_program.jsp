@@ -27,11 +27,6 @@
         <style>
             table, th, td {padding: 10px;}
             input[type=text]{width:100%;}
-            .btn-maroon {
-                background-color: #AF334E;
-                padding: 10px 25px;
-                color: white;
-            } /* main color */ 
             .btn-success {
                 padding: 12px 35px;
             } /* Green */

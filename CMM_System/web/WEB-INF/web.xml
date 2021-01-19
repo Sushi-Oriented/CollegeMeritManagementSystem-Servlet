@@ -44,6 +44,18 @@
         <servlet-name>EditProfileStaff</servlet-name>
         <servlet-class>profile.EditProfileStaff</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>details_programServlet</servlet-name>
+        <servlet-class>programStaff.details_programServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DeclineServlet</servlet-name>
+        <servlet-class>programStaff.DeclineServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ApproveServlet</servlet-name>
+        <servlet-class>programStaff.ApproveServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginServletStudent</servlet-name>
         <url-pattern>/LoginServletStudent</url-pattern>
@@ -87,6 +99,18 @@
     <servlet-mapping>
         <servlet-name>EditProfileStaff</servlet-name>
         <url-pattern>/EditProfileStaff</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>details_programServlet</servlet-name>
+        <url-pattern>/details_programServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DeclineServlet</servlet-name>
+        <url-pattern>/DeclineServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ApproveServlet</servlet-name>
+        <url-pattern>/ApproveServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

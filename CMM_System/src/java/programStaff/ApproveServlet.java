@@ -1,24 +1,17 @@
 
 package programStaff;
 
-import bean.Program;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.Vector;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 import jdbc.JDBCUtility;
 
-public class staff_programServlet extends HttpServlet {
+public class ApproveServlet extends HttpServlet {
 
     private JDBCUtility jdbcUtility;
     private Connection con;
@@ -35,34 +28,19 @@ public class staff_programServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         try {
-            HttpSession session = request.getSession();
+            String progID = request.getParameter("progID");
+            String updateQry = "update program set progStatus = ? where progID = ?";
+            PreparedStatement ps = con.prepareStatement(updateQry);
+            ps.setString(1, "Approved");
+            ps.setString(2, progID);
+            ps.executeUpdate();
             
-            String sql = "select * from program";
-            PreparedStatement ps = con.prepareStatement(sql);
-            ResultSet rs = ps.executeQuery();
-            
-            Vector progList = new Vector();
-            
-            while (rs.next()) 
-            {   
-                Program program = new Program();
-                program.setProgID(rs.getInt("progID"));
-                program.setProgName(rs.getString("progName"));
-                program.setProgLocation(rs.getString("progLocation"));
-                program.setProgStartDate(rs.getDate("progStartDate"));
-                program.setProgEndDate(rs.getDate("progEndDate"));
-                program.setProgOrganizer(rs.getString("progOrganizer"));
-                program.setProgCategory(rs.getString("progCategory"));
-                program.setProgDescription(rs.getString("progDescription"));
-                program.setProgStatus(rs.getString("progStatus"));
-
-                progList.addElement(program);
-            }
-            
-            session.setAttribute("progList", progList);
-            response.sendRedirect("staff_program.jsp");
+            out.println("<script type=\"text/javascript\">");
+            out.println("alert('Program with ID: " + progID + " was approved successfully');");
+            out.println("location='staff_programServlet';");
+            out.println("</script>");
         }
-        catch (SQLException | IOException e){
+        catch (Exception e){
             out.println(e);
         }
     }

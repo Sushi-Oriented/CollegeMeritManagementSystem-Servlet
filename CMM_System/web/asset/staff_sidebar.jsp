@@ -49,7 +49,7 @@
 
                 <!-- Nav Item - Dashboard -->
                 <li class="nav-item">
-                    <a class="nav-link" href="staff_program.jsp">
+                    <a class="nav-link" href="staff_programServlet">
                         <i class="far fa-file"></i>
                         <span>Program</span></a>
                 </li>

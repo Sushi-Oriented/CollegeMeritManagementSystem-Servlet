@@ -2,15 +2,14 @@
 package programStaff;
 
 import bean.Program;
+import bean.Staff;
 import java.io.IOException;
 import java.io.PrintWriter;
+import static java.lang.System.out;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.Vector;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -18,7 +17,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import jdbc.JDBCUtility;
 
-public class staff_programServlet extends HttpServlet {
+
+public class details_programServlet extends HttpServlet {
 
     private JDBCUtility jdbcUtility;
     private Connection con;
@@ -34,35 +34,31 @@ public class staff_programServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
-        try {
-            HttpSession session = request.getSession();
-            
-            String sql = "select * from program";
-            PreparedStatement ps = con.prepareStatement(sql);
+        Program programView = new Program();
+        try 
+        {
+            String progID = request.getParameter("progID");
+            String selectQry = "select * from program where progID = ?";
+            PreparedStatement ps = con.prepareStatement(selectQry);
+            ps.setString(1, progID);
             ResultSet rs = ps.executeQuery();
             
-            Vector progList = new Vector();
-            
-            while (rs.next()) 
-            {   
-                Program program = new Program();
-                program.setProgID(rs.getInt("progID"));
-                program.setProgName(rs.getString("progName"));
-                program.setProgLocation(rs.getString("progLocation"));
-                program.setProgStartDate(rs.getDate("progStartDate"));
-                program.setProgEndDate(rs.getDate("progEndDate"));
-                program.setProgOrganizer(rs.getString("progOrganizer"));
-                program.setProgCategory(rs.getString("progCategory"));
-                program.setProgDescription(rs.getString("progDescription"));
-                program.setProgStatus(rs.getString("progStatus"));
-
-                progList.addElement(program);
+            while(rs.next()){
+                programView.setProgID(rs.getInt("progID"));
+                programView.setProgName(rs.getString("progName"));
+                programView.setProgLocation(rs.getString("progLocation"));
+                programView.setProgStartDate(rs.getDate("progStartDate"));
+                programView.setProgEndDate(rs.getDate("progEndDate"));
+                programView.setProgOrganizer(rs.getString("progOrganizer"));
+                programView.setProgCategory(rs.getString("progCategory"));
+                programView.setProgDescription(rs.getString("progDescription"));
+                programView.setProgStatus(rs.getString("progStatus"));
             }
-            
-            session.setAttribute("progList", progList);
-            response.sendRedirect("staff_program.jsp");
+            HttpSession session = request.getSession();
+            session.setAttribute("programView", programView);
+            response.sendRedirect("staff_programView.jsp");
         }
-        catch (SQLException | IOException e){
+        catch(SQLException e){
             out.println(e);
         }
     }

@@ -1,9 +1,5 @@
-<%-- 
-    Document   : staff_program
-    Created on : Dec 31, 2020, 8:08:05 PM
-    Author     : User
---%>
-
+<%@page import="bean.Program"%>
+<%@page import="java.util.Vector"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -24,6 +20,22 @@
 
         <!-- Custom styles for this template-->
         <link href="css/sb-admin-2.css" rel="stylesheet" type="text/css"/>
+        <style>
+        table, td, th {
+          border: 1px solid black;
+          padding: 10px;
+        }
+        
+        th{
+            background-color: #AF3550;
+            color: white;
+        }
+
+        table {
+          border-collapse: collapse;
+          width: 100%;
+        }
+        </style>
     </head>
     <body>
         <!-- Page Wrapper -->
@@ -44,9 +56,60 @@
 
                         <!-- Page Heading -->
                         <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                            <h1 class="h3 mb-0 text-gray-800">This is the program page staff</h1>
+                            <h1 class="h3 mb-0 text-gray-800">Program Approval</h1>
+                            <a class="btn btn-maroon" href="stud_index.jsp" role="button"><i class='fas fa-arrow-left'></i>  Back</a>
                         </div>
                         
+                        <p style="font-style: italic; margin-bottom: -8px;">
+                                Program > Program Verification
+                        </p><hr>
+                        
+                        <!-- Page Details -->
+                        <div class="container-fluid">
+                            <div class="card shadow mb-4">
+                                 <div class="card-body">
+                                    <%
+                                        Vector progList = (Vector) session.getAttribute("progList");
+                                        if (progList != null && (progList.size() > 0)){
+                                    %>
+                                    <center>
+                                    <table>
+                                        <tr>
+                                            <th>No.</th>
+                                            <th>ID</th>
+                                            <th>Name</th>
+                                            <th>Location</th>
+                                            <th>Start</th>
+                                            <th>End</th>
+                                            <th>Organizer</th>
+                                            <th>Category</th>
+                                            <th>Description</th>
+                                            <th>Status</th>
+                                            <th colspan="2">Action</th>
+                                        </tr>
+                                        <%
+                                            for (int index=0; index < progList.size();index++){
+                                                Program stude_prog = (Program) progList.elementAt(index);
+                                        %>
+                                        <tr>
+                                            <td><%= index + 1 %></td>
+                                            <td><%= stude_prog.getProgID() %></td>
+                                            <td><%= stude_prog.getProgName() %></td>
+                                            <td><%= stude_prog.getProgLocation() %></td>
+                                            <td><%= stude_prog.getProgStartDate() %></td>
+                                            <td><%= stude_prog.getProgEndDate() %></td>
+                                            <td><%= stude_prog.getProgOrganizer()%></td>
+                                            <td><%= stude_prog.getProgCategory()%></td>
+                                            <td><%= stude_prog.getProgDescription()%></td>
+                                            <td><%= stude_prog.getProgStatus()%></td>
+                                            <td><form action="details_programServlet"><input type="text" name ="progID" value="<%= stude_prog.getProgID() %>" hidden><button type="submit">View</button></form></td>
+                                        </tr>
+                                <% }} %>
+                                    </table>
+                                    </center>
+                                 </div>
+                            </div>
+                        </div>
                     </div>
                     <!-- /.container-fluid -->
 

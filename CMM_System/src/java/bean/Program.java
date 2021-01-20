@@ -7,12 +7,20 @@ import java.util.Date;
 public class Program implements Serializable {
 
     int progID;
-    String progName, progLocation, progOrganizer, progCategory, progDescription, progStatus;
+    String progName, progLocation, progOrganizer, progCategory, progDescription, progStatus, firstEmail;
     Date progStartDate, progEndDate;
     
     public Program() {
     }
+    
+    public int getFirstEmail() {
+        return progID;
+    }
 
+    public void setFirstEmail(String firstEmail) {
+        this.firstEmail = firstEmail;
+    }
+    
     public int getProgID() {
         return progID;
     }
@@ -84,7 +92,4 @@ public class Program implements Serializable {
     public void setProgEndDate(Date progEndDate) {
         this.progEndDate = progEndDate;
     }
-
-    
-    
 }

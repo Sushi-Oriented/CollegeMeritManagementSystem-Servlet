@@ -56,6 +56,14 @@
         <servlet-name>ApproveServlet</servlet-name>
         <servlet-class>programStaff.ApproveServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>stud_programHistoryServlet</servlet-name>
+        <servlet-class>programStudent.stud_programHistoryServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>stud_programDetail</servlet-name>
+        <servlet-class>programStudent.stud_programDetail</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginServletStudent</servlet-name>
         <url-pattern>/LoginServletStudent</url-pattern>
@@ -111,6 +119,14 @@
     <servlet-mapping>
         <servlet-name>ApproveServlet</servlet-name>
         <url-pattern>/ApproveServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>stud_programHistoryServlet</servlet-name>
+        <url-pattern>/stud_programHistoryServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>stud_programDetail</servlet-name>
+        <url-pattern>/stud_programDetail</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
-    <servlet>
+        <servlet>
         <servlet-name>LoginServletStudent</servlet-name>
         <servlet-class>loginStudent.LoginServletStudent</servlet-class>
     </servlet>
@@ -128,6 +128,26 @@
         <servlet-name>stud_programDetail</servlet-name>
         <url-pattern>/stud_programDetail</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>stud_merit_SELECTapprovalProgram</servlet-name>
+        <servlet-class>programStudent.stud_merit_SELECTapprovalProgram</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>stud_merit_INSERTsendMerit</servlet-name>
+        <servlet-class>programStudent.stud_merit_INSERTsendMerit</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>stud_merit_SELECTapprovalProgram</servlet-name>
+        <url-pattern>/stud_merit_SELECTapprovalProgram</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>stud_merit_INSERTsendMerit</servlet-name>
+        <url-pattern>/stud_merit_INSERTsendMerit</url-pattern>
+    </servlet-mapping>
+    
+            
+    
+
     <session-config>
         <session-timeout>
             30

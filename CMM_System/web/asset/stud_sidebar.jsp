@@ -56,7 +56,7 @@
 
                 <!-- Nav Item - Dashboard -->
                 <li class="nav-item">
-                    <a class="nav-link" href="stud_merit.jsp">
+                    <a class="nav-link" href="stud_merit_SELECTapprovalProgram">
                         <i class="fas fa-certificate"></i>
                         <span>Merit</span></a>
                 </li>

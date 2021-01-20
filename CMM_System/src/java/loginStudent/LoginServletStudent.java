@@ -30,6 +30,7 @@ public class LoginServletStudent extends HttpServlet {
 
         String firstemail = request.getParameter("firstemail");
         String password = request.getParameter("password");
+        PrintWriter out = response.getWriter();
         LoginBeanStudent loginBean = new LoginBeanStudent();
         loginBean.setFirstemail(firstemail);
         loginBean.setPassword(password);
@@ -37,15 +38,15 @@ public class LoginServletStudent extends HttpServlet {
         HttpSession session = request.getSession(true);
         
         session.setAttribute("firstemail", firstemail);
-           
+  
         try {
+            
             if (loginDao.validate(loginBean)) {
-                PrintWriter out = response.getWriter();
+        
                 response.sendRedirect("stud_index.jsp");
             } 
             
             else {
-                PrintWriter out = response.getWriter();
                 out.println("<script type=\"text/javascript\">");
                 out.println("alert('Wrong email or password');");
                 out.println("location='login.jsp';");
@@ -54,6 +55,7 @@ public class LoginServletStudent extends HttpServlet {
         } 
         
         catch (ClassNotFoundException e) {
+            out.println(e);
             e.printStackTrace();
         }
     }

@@ -73,7 +73,7 @@
                         
                         <div class="subtextpg">
                             <p style="font-style: italic; margin-bottom: -8px;">
-                                View the program that you have uploaded
+                                View the previous program that you have uploaded
                             </p>
                             <hr>
                         </div>

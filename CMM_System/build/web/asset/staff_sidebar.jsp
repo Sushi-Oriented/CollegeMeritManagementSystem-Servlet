@@ -63,7 +63,7 @@
 
                 <!-- Nav Item - Dashboard -->
                 <li class="nav-item">
-                    <a class="nav-link" href="staff_history.jsp">
+                    <a class="nav-link" href="staff_programHistory">
                         <i class="fa fa-history"></i>
                         <span>History</span></a>
                 </li>

@@ -40,7 +40,7 @@
             .subtextpg{
                 margin-top: -10px;
             }
-            table{
+            #dataTable{
                 text-align: center;
             }
         </style>
@@ -88,7 +88,7 @@
                                 <div class="card">
                                     <div class="card-body">
                                         <h3 style="text-decoration: underline;"><b>Program Details</b></h3>
-                                        <table class="table table-bordered table-hover" id="tableProgram" style="width: 100%" cellspacing="0">
+                                        <table class="table table-bordered table-hover" id="dataTable" style="width: 100%" cellspacing="0">
                                             <thead style="background-color: #7a133c; color: white;">
                                                 <tr>
                                                     <th>No.</th>

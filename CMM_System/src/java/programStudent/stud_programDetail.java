@@ -1,6 +1,7 @@
 
 package programStudent;
 
+import bean.Merit;
 import bean.Program;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -42,6 +43,7 @@ public class stud_programDetail extends HttpServlet {
             HttpSession session = request.getSession();
             String progID = request.getParameter("progID");
             
+            /*To get details of program*/
             String seql = "select * from program where progID = ?";
             PreparedStatement ps = con.prepareStatement(seql);
             ps.setString(1, progID);
@@ -61,6 +63,26 @@ public class stud_programDetail extends HttpServlet {
                 pro.setProgStatus(rs.getString(10));
             }
             
+            /*To get merit on the program*/
+            Merit mer = new Merit();
+            Vector merList = new Vector();
+            String merSql = "select * from merit";
+            PreparedStatement ps2 = con.prepareStatement(merSql);
+            ResultSet rs2 = ps2.executeQuery();
+            
+            while (rs2.next()) {
+                mer.setName(rs2.getString("name"));
+                mer.setRole(rs2.getString("role"));
+                mer.setMatricNum(rs2.getString("matricNum"));
+                mer.setIcNum(rs2.getInt("IcNum"));
+                mer.setMerit(rs2.getInt("merit"));
+                mer.setStatus(rs2.getString("status"));
+                
+                merList.addElement(mer);
+            }
+            
+            /* Pass both attribute; merit & program */            
+            session.setAttribute("merList", merList);  
             session.setAttribute("pro", pro);
             response.sendRedirect("stud_history_details.jsp");
         }

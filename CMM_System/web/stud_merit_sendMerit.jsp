@@ -4,6 +4,10 @@
     Author     : User
 --%>
 
+<%@page import="bean.Merit"%>
+<%@page import="java.util.Vector"%>
+<%@page import="bean.Program"%>
+<%@page import="bean.User"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -24,8 +28,12 @@
 
         <!-- Custom styles for this template-->
         <link href="css/sb-admin-2.css" rel="stylesheet" type="text/css"/>
+    
     </head>
     <body>
+        
+        <% Program detailsprogram = (Program)session.getAttribute("detailsprogram"); %>
+        <% Merit dispmerit = (Merit)session.getAttribute("dispmerit"); %>
         <!-- Page Wrapper -->
         <div id="wrapper">
             
@@ -49,7 +57,7 @@
                             
                             <div class="container-fluid">
                                 <h1 class="h3 mb-0 text-gray-800">Mapek '20(Nama program)</h1><br>
-                                <p class="mb-2 text-gray-800">Program > MAPEK'21 > <b>Program Name ></b></p>
+                                <p class="mb-2 text-gray-800">Merit > Approval Program > <b> <%= detailsprogram.getProgName()%></b></p>
                                 <hr class="sidebar-divider my-0"><br>
                                 <div class="card shadow mb-4">
 <!--                                    <div class="card-header py-3 center">
@@ -58,13 +66,14 @@
                                     <div class="card-body">
                                         
                                         <h4 class="mb-2 text-gray-800"><b>Program Details</b></h4>
-                                        <p class="mb-2 text-gray-800"><b>Program Name:</b> Apa nama ?</p>
-                                        <p class="mb-2 text-gray-800">Location: Kat mana ?</p>
-                                        <p class="mb-2 text-gray-800">Time: Bile ?</p>
-                                        <p class="mb-2 text-gray-800">Start Date: Bila start ?</p>
-                                        <p class="mb-2 text-gray-800">Organizer: Sape buat ?</p>
-                                        <p class="mb-2 text-gray-800">Category: Jenis ape ?</p>
-                                        <p class="mb-2 text-gray-800">Description: Ce citer ce citer ?</p>
+                                   
+                                        <p class="mb-2 text-gray-800"><b>Program Name:</b> <%= detailsprogram.getProgName()%></p>
+                                        <p class="mb-2 text-gray-800"><b>Location:</b> <%= detailsprogram.getProgLocation()%></p>
+                                        <p class="mb-2 text-gray-800"><b>Time:</b> ?</p>
+                                        <p class="mb-2 text-gray-800"><b>Start Date:</b> <%= detailsprogram.getProgStartDate()%></p>
+                                        <p class="mb-2 text-gray-800"><b>Organizer:</b> <%= detailsprogram.getProgOrganizer()%></p>
+                                        <p class="mb-2 text-gray-800"><b>Category:</b> <%= detailsprogram.getProgCategory()%></p>
+                                        <p class="mb-2 text-gray-800"><b>Description:</b> <%= detailsprogram.getProgDescription()%></p>
                                         
                                     </div>
 
@@ -73,36 +82,107 @@
                                 
                                 <div class="card shadow mb-4">
 <!--                                    <div class="card-header py-3 center">
--->                                        <h2 class="m-3 font-weight-bold text-primary text-center">Add list of program's member</h2><!--
+-->                                        <h2 class="m-3 font-weight-bold text text-center">Add list of program's member</h2><!--
                                     </div>-->
 
                                     <div class="card-body">
-                                        <center>
-                                        <form class="row g-3 text-center ">
-                                                  <div class="col-3">
-                                                    <input type="password" class="form-control" id="inputPassword2" placeholder="Password">
+                                      
+                                        <form class="needs-validation" action="stud_merit_INSERTsendMerit" method="post">
+                                              <div class="form-row">
+                                                <div class="col-md-4 mb-3">
+                                                  <label for="validationTooltipUsername">Username</label>
+                                                  <div class="input-group">
+                                                    <div class="input-group-prepend">
+                                                      <span class="input-group-text" id="validationTooltipUsernamePrepend">Name</span>
+                                                    </div>
+                                                    <input type="text" class="form-control" id="validationTooltipUsername" placeholder="eg: ALI BIN ABU" aria-describedby="validationTooltipUsernamePrepend" name="name" required>
+                                                    <div class="invalid-tooltip">
+                                                      Please choose a unique and valid username.
+                                                    </div>
                                                   </div>
-                                                  <div class="col-1">
-                                                    <input type="password" class="form-control" id="inputPassword2" placeholder="Password">
+                                                </div>
+                                                  
+                                                <div class="col-md-2 mb-3">
+                                                  <label for="validationTooltipUsername">Position/Role</label>
+                                                  <div class="dropdown mb-4" >
+                                                                <select class="form-control" id="1" onclick="cc()">
+                                                                    <option id="Secretariat" value="Secretariat">Secretariat</option>
+                                                                    <option  value="Head Of Department">Head Of Department</option>
+                                                                    <option  value="Treasurer">Treasurer</option>
+                                                                    <option value="Secretary">Secretary</option>
+                                                                    <option value="Deputy Director">Deputy Director</option>
+                                                                    <option value="Director">Director</option>
+                                                                  </select>
+                                                            </div>
+                                                </div>
+                                                  
+                                                                                   <script>
+                                                                                       function drawStuff(menu) {
+                                                                                  if (menu.value == '1') {
+                                                                                    //do something
+                                                                                    alert(1)
+                                                                                  } else if (menu.value == '2') {
+                                                                                    //do something
+                                                                                    alert(2)
+                                                                                  } else if (menu.value == '3') {
+                                                                                    //do something
+                                                                                    alert(3)
+                                                                                  }
+                                                                                }
+
+                                    function cc() {
+                                        var x =3;
+                                        document.getElementById("merit").value = "x";
+                            //            document.getElementById("demo").href.replace("read_page","sapatu");
+//                                         $('a').each(function(){
+//                                        this.href = this.href.replace ('readpage', x);
+                                         });
+                                    }
+                                </script>
+                                                  
+                                                <div class="col-md-3 mb-3">
+                                                  <label for="validationTooltipUsername">Matric No</label>
+                                                  <div class="input-group">
+                                                    <div class="input-group-prepend">
+                                                      <span class="input-group-text" id="validationTooltipUsernamePrepend">Matric No</span>
+                                                    </div>
+                                                    <input type="text" class="form-control" id="validationTooltipUsername" placeholder="eg: B19AC0000" aria-describedby="validationTooltipUsernamePrepend" name="matricNum" required>
+                                                    <div class="invalid-tooltip">
+                                                      Please choose a unique and valid username.
+                                                    </div>
                                                   </div>
-                                                <div class="col-1">
-                                                    <input type="password" class="form-control" id="inputPassword2" placeholder="Password">
+                                                </div>
+                                                <div class="col-md-2 mb-3">
+                                                  <label for="validationTooltipUsername">IC Number</label>
+                                                  <div class="input-group">
+                                                    <div class="input-group-prepend">
+                                                      <span class="input-group-text" id="validationTooltipUsernamePrepend">IC</span>
+                                                    </div>
+                                                    <input type="int" class="form-control"  placeholder="eg: 98071456XXXX" name="icNum" required>
+                                                    <div class="invalid-tooltip">
+                                                      Please choose a unique and valid username.
+                                                    </div>
                                                   </div>
-                                                  <div class="col-1">
-                                                    <input type="password" class="form-control" id="inputPassword2" placeholder="Password">
+                                                </div>
+                                                <div class="col-md-1 mb-3">
+                                                  <label for="validationTooltip03">Merit</label>
+                                                  <input type="text" class="form-control"  placeholder="Merit" name="merit" id="merit" required>
+                                                  <div class="invalid-tooltip">
+                                                    Please provide a valid city.
                                                   </div>
-                                                <div class="col-1">
-                                                    <input type="password" class="form-control" id="inputPassword2" placeholder="Password">
-                                                  </div>
-                                                  <div class="col-auto">
-                                                    <button type="submit" class="btn btn-primary mb-3">Confirm identity</button>
-                                                  </div>
-                                            </form></center>
-                                        
-                                        <hr class="sidebar-divider my-0"><br>
+                                                </div>
+                                              </div>
+                                            
+                                                <input type="int" name="progid" value="<%= detailsprogram.getProgID()%>" hidden>
+                                                <center><input class="btn btn-circle2 " style="background-color: #8A2BE2; color: white; font-size: 13px"  type="submit" value="ADD MEMBER"></input></center>
+                                            </form>
+                                     
+                                         
+                               
                                         
                                                     <!-- Begin Page Content -->
-                <div class="container-fluid">
+             <hr class="sidebar-divider my-3"><br>
+                
 
                     <!-- Page Heading -->
                     <p class="mb-2 text-gray-800"><b>Participant List</b></p>
@@ -110,483 +190,45 @@
                         <div class="card-body">
                             <div class="table-responsive">
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                    <thead>
+                                    <thead style="background-color: #7a133c; color: white;">
                                         <tr>
                                             <th>Name</th>
                                             <th>Position</th>
-                                            <th>Office</th>
-                                            <th>Age</th>
-                                            <th>Start date</th>
-                                            <th>Salary</th>
+                                            <th>Matric No</th>
+                                            <th>Ic Number</th>
+                                            <th>Merit</th>
+                                         
                                         </tr>
                                     </thead>
-                                    <tfoot>
+<!--                                    <tfoot>
                                         <tr>
                                             <th>Name</th>
                                             <th>Position</th>
-                                            <th>Office</th>
-                                            <th>Age</th>
-                                            <th>Start date</th>
-                                            <th>Salary</th>
+                                            <th>Matric No</th>
+                                            <th>Ic Number</th>
+                                            <th>Merit</th>
                                         </tr>
-                                    </tfoot>
+                                    </tfoot>-->
                                     <tbody>
+                                        
+        <%
+            Vector dm = (Vector) session.getAttribute("dm");
+            if (dm != null && (dm.size() > 0)){
+                for (int index=0; index < dm.size();index++){
+                    Merit p = (Merit) dm.elementAt(index);
+            
+        %>                                          
+                                        
                                         <tr>
-                                            <td>Tiger Nixon</td>
-                                            <td>System Architect</td>
-                                            <td>Edinburgh</td>
-                                            <td>61</td>
-                                            <td>2011/04/25</td>
-                                            <td>$320,800</td>
+                                            <td><%= p.getName()%></td>
+                                            <td><%= p.getRole()%></td>
+                                            <td><%= p.getMatricNum()%></td>
+                                            <td><%= p.getIcNum()%></td>
+                                            <td><%= p.getMerit()%></td>
                                         </tr>
-                                        <tr>
-                                            <td>Garrett Winters</td>
-                                            <td>Accountant</td>
-                                            <td>Tokyo</td>
-                                            <td>63</td>
-                                            <td>2011/07/25</td>
-                                            <td>$170,750</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Ashton Cox</td>
-                                            <td>Junior Technical Author</td>
-                                            <td>San Francisco</td>
-                                            <td>66</td>
-                                            <td>2009/01/12</td>
-                                            <td>$86,000</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Cedric Kelly</td>
-                                            <td>Senior Javascript Developer</td>
-                                            <td>Edinburgh</td>
-                                            <td>22</td>
-                                            <td>2012/03/29</td>
-                                            <td>$433,060</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Airi Satou</td>
-                                            <td>Accountant</td>
-                                            <td>Tokyo</td>
-                                            <td>33</td>
-                                            <td>2008/11/28</td>
-                                            <td>$162,700</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Brielle Williamson</td>
-                                            <td>Integration Specialist</td>
-                                            <td>New York</td>
-                                            <td>61</td>
-                                            <td>2012/12/02</td>
-                                            <td>$372,000</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Herrod Chandler</td>
-                                            <td>Sales Assistant</td>
-                                            <td>San Francisco</td>
-                                            <td>59</td>
-                                            <td>2012/08/06</td>
-                                            <td>$137,500</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Rhona Davidson</td>
-                                            <td>Integration Specialist</td>
-                                            <td>Tokyo</td>
-                                            <td>55</td>
-                                            <td>2010/10/14</td>
-                                            <td>$327,900</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Colleen Hurst</td>
-                                            <td>Javascript Developer</td>
-                                            <td>San Francisco</td>
-                                            <td>39</td>
-                                            <td>2009/09/15</td>
-                                            <td>$205,500</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Sonya Frost</td>
-                                            <td>Software Engineer</td>
-                                            <td>Edinburgh</td>
-                                            <td>23</td>
-                                            <td>2008/12/13</td>
-                                            <td>$103,600</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Jena Gaines</td>
-                                            <td>Office Manager</td>
-                                            <td>London</td>
-                                            <td>30</td>
-                                            <td>2008/12/19</td>
-                                            <td>$90,560</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Quinn Flynn</td>
-                                            <td>Support Lead</td>
-                                            <td>Edinburgh</td>
-                                            <td>22</td>
-                                            <td>2013/03/03</td>
-                                            <td>$342,000</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Charde Marshall</td>
-                                            <td>Regional Director</td>
-                                            <td>San Francisco</td>
-                                            <td>36</td>
-                                            <td>2008/10/16</td>
-                                            <td>$470,600</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Haley Kennedy</td>
-                                            <td>Senior Marketing Designer</td>
-                                            <td>London</td>
-                                            <td>43</td>
-                                            <td>2012/12/18</td>
-                                            <td>$313,500</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Tatyana Fitzpatrick</td>
-                                            <td>Regional Director</td>
-                                            <td>London</td>
-                                            <td>19</td>
-                                            <td>2010/03/17</td>
-                                            <td>$385,750</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Michael Silva</td>
-                                            <td>Marketing Designer</td>
-                                            <td>London</td>
-                                            <td>66</td>
-                                            <td>2012/11/27</td>
-                                            <td>$198,500</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Paul Byrd</td>
-                                            <td>Chief Financial Officer (CFO)</td>
-                                            <td>New York</td>
-                                            <td>64</td>
-                                            <td>2010/06/09</td>
-                                            <td>$725,000</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Gloria Little</td>
-                                            <td>Systems Administrator</td>
-                                            <td>New York</td>
-                                            <td>59</td>
-                                            <td>2009/04/10</td>
-                                            <td>$237,500</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Bradley Greer</td>
-                                            <td>Software Engineer</td>
-                                            <td>London</td>
-                                            <td>41</td>
-                                            <td>2012/10/13</td>
-                                            <td>$132,000</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Dai Rios</td>
-                                            <td>Personnel Lead</td>
-                                            <td>Edinburgh</td>
-                                            <td>35</td>
-                                            <td>2012/09/26</td>
-                                            <td>$217,500</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Jenette Caldwell</td>
-                                            <td>Development Lead</td>
-                                            <td>New York</td>
-                                            <td>30</td>
-                                            <td>2011/09/03</td>
-                                            <td>$345,000</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Yuri Berry</td>
-                                            <td>Chief Marketing Officer (CMO)</td>
-                                            <td>New York</td>
-                                            <td>40</td>
-                                            <td>2009/06/25</td>
-                                            <td>$675,000</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Caesar Vance</td>
-                                            <td>Pre-Sales Support</td>
-                                            <td>New York</td>
-                                            <td>21</td>
-                                            <td>2011/12/12</td>
-                                            <td>$106,450</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Doris Wilder</td>
-                                            <td>Sales Assistant</td>
-                                            <td>Sidney</td>
-                                            <td>23</td>
-                                            <td>2010/09/20</td>
-                                            <td>$85,600</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Angelica Ramos</td>
-                                            <td>Chief Executive Officer (CEO)</td>
-                                            <td>London</td>
-                                            <td>47</td>
-                                            <td>2009/10/09</td>
-                                            <td>$1,200,000</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Gavin Joyce</td>
-                                            <td>Developer</td>
-                                            <td>Edinburgh</td>
-                                            <td>42</td>
-                                            <td>2010/12/22</td>
-                                            <td>$92,575</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Jennifer Chang</td>
-                                            <td>Regional Director</td>
-                                            <td>Singapore</td>
-                                            <td>28</td>
-                                            <td>2010/11/14</td>
-                                            <td>$357,650</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Brenden Wagner</td>
-                                            <td>Software Engineer</td>
-                                            <td>San Francisco</td>
-                                            <td>28</td>
-                                            <td>2011/06/07</td>
-                                            <td>$206,850</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Fiona Green</td>
-                                            <td>Chief Operating Officer (COO)</td>
-                                            <td>San Francisco</td>
-                                            <td>48</td>
-                                            <td>2010/03/11</td>
-                                            <td>$850,000</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Shou Itou</td>
-                                            <td>Regional Marketing</td>
-                                            <td>Tokyo</td>
-                                            <td>20</td>
-                                            <td>2011/08/14</td>
-                                            <td>$163,000</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Michelle House</td>
-                                            <td>Integration Specialist</td>
-                                            <td>Sidney</td>
-                                            <td>37</td>
-                                            <td>2011/06/02</td>
-                                            <td>$95,400</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Suki Burks</td>
-                                            <td>Developer</td>
-                                            <td>London</td>
-                                            <td>53</td>
-                                            <td>2009/10/22</td>
-                                            <td>$114,500</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Prescott Bartlett</td>
-                                            <td>Technical Author</td>
-                                            <td>London</td>
-                                            <td>27</td>
-                                            <td>2011/05/07</td>
-                                            <td>$145,000</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Gavin Cortez</td>
-                                            <td>Team Leader</td>
-                                            <td>San Francisco</td>
-                                            <td>22</td>
-                                            <td>2008/10/26</td>
-                                            <td>$235,500</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Martena Mccray</td>
-                                            <td>Post-Sales support</td>
-                                            <td>Edinburgh</td>
-                                            <td>46</td>
-                                            <td>2011/03/09</td>
-                                            <td>$324,050</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Unity Butler</td>
-                                            <td>Marketing Designer</td>
-                                            <td>San Francisco</td>
-                                            <td>47</td>
-                                            <td>2009/12/09</td>
-                                            <td>$85,675</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Howard Hatfield</td>
-                                            <td>Office Manager</td>
-                                            <td>San Francisco</td>
-                                            <td>51</td>
-                                            <td>2008/12/16</td>
-                                            <td>$164,500</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Hope Fuentes</td>
-                                            <td>Secretary</td>
-                                            <td>San Francisco</td>
-                                            <td>41</td>
-                                            <td>2010/02/12</td>
-                                            <td>$109,850</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Vivian Harrell</td>
-                                            <td>Financial Controller</td>
-                                            <td>San Francisco</td>
-                                            <td>62</td>
-                                            <td>2009/02/14</td>
-                                            <td>$452,500</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Timothy Mooney</td>
-                                            <td>Office Manager</td>
-                                            <td>London</td>
-                                            <td>37</td>
-                                            <td>2008/12/11</td>
-                                            <td>$136,200</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Jackson Bradshaw</td>
-                                            <td>Director</td>
-                                            <td>New York</td>
-                                            <td>65</td>
-                                            <td>2008/09/26</td>
-                                            <td>$645,750</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Olivia Liang</td>
-                                            <td>Support Engineer</td>
-                                            <td>Singapore</td>
-                                            <td>64</td>
-                                            <td>2011/02/03</td>
-                                            <td>$234,500</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Bruno Nash</td>
-                                            <td>Software Engineer</td>
-                                            <td>London</td>
-                                            <td>38</td>
-                                            <td>2011/05/03</td>
-                                            <td>$163,500</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Sakura Yamamoto</td>
-                                            <td>Support Engineer</td>
-                                            <td>Tokyo</td>
-                                            <td>37</td>
-                                            <td>2009/08/19</td>
-                                            <td>$139,575</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Thor Walton</td>
-                                            <td>Developer</td>
-                                            <td>New York</td>
-                                            <td>61</td>
-                                            <td>2013/08/11</td>
-                                            <td>$98,540</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Finn Camacho</td>
-                                            <td>Support Engineer</td>
-                                            <td>San Francisco</td>
-                                            <td>47</td>
-                                            <td>2009/07/07</td>
-                                            <td>$87,500</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Serge Baldwin</td>
-                                            <td>Data Coordinator</td>
-                                            <td>Singapore</td>
-                                            <td>64</td>
-                                            <td>2012/04/09</td>
-                                            <td>$138,575</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Zenaida Frank</td>
-                                            <td>Software Engineer</td>
-                                            <td>New York</td>
-                                            <td>63</td>
-                                            <td>2010/01/04</td>
-                                            <td>$125,250</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Zorita Serrano</td>
-                                            <td>Software Engineer</td>
-                                            <td>San Francisco</td>
-                                            <td>56</td>
-                                            <td>2012/06/01</td>
-                                            <td>$115,000</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Jennifer Acosta</td>
-                                            <td>Junior Javascript Developer</td>
-                                            <td>Edinburgh</td>
-                                            <td>43</td>
-                                            <td>2013/02/01</td>
-                                            <td>$75,650</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Cara Stevens</td>
-                                            <td>Sales Assistant</td>
-                                            <td>New York</td>
-                                            <td>46</td>
-                                            <td>2011/12/06</td>
-                                            <td>$145,600</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Hermione Butler</td>
-                                            <td>Regional Director</td>
-                                            <td>London</td>
-                                            <td>47</td>
-                                            <td>2011/03/21</td>
-                                            <td>$356,250</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Lael Greer</td>
-                                            <td>Systems Administrator</td>
-                                            <td>London</td>
-                                            <td>21</td>
-                                            <td>2009/02/27</td>
-                                            <td>$103,500</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Jonas Alexander</td>
-                                            <td>Developer</td>
-                                            <td>San Francisco</td>
-                                            <td>30</td>
-                                            <td>2010/07/14</td>
-                                            <td>$86,500</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Shad Decker</td>
-                                            <td>Regional Director</td>
-                                            <td>Edinburgh</td>
-                                            <td>51</td>
-                                            <td>2008/11/13</td>
-                                            <td>$183,000</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Michael Bruce</td>
-                                            <td>Javascript Developer</td>
-                                            <td>Singapore</td>
-                                            <td>29</td>
-                                            <td>2011/06/27</td>
-                                            <td>$183,000</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Donna Snider</td>
-                                            <td>Customer Support</td>
-                                            <td>New York</td>
-                                            <td>27</td>
-                                            <td>2011/01/25</td>
-                                            <td>$112,000</td>
-                                        </tr>
+                                        
+  
+        <% } }%>  
                                     </tbody>
                                 </table>
                             </div>
@@ -637,9 +279,9 @@
     <!-- Page level custom scripts -->
     <script src="js/demo/datatables-demo.js"></script>
     
-    <script src="vendor/datatables/jquery.dataTables.min.jsp"></script>
+<!--    <script src="vendor/datatables/jquery.dataTables.min.jsp"></script>
     <script src="vendor/datatables/dataTables.bootstrap4.min.jsp"></script>
-    <script src="js/demo/datatables-demo.js"></script>
+    <script src="js/demo/datatables-demo.js"></script>-->
     
     </body>
 </html>

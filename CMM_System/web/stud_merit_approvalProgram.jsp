@@ -33,6 +33,7 @@
     </head>
     <body>
          <% Program detailsprogram = (Program)session.getAttribute("detailsprogram"); %>
+ 
 
         <!-- Page Wrapper -->
         <div id="wrapper">
@@ -78,29 +79,27 @@
                     Program p = (Program) dp.elementAt(index);
             
         %>  
+                            <form action="stud_merit_GETapprovalProgram">                        
                                 <div class="card shadow mb-4 btn btn-light btn-circle1">
 <!--                                    <div class="card-header py-3 center">
                                         <h2 class="m-0 font-weight-bold text-primary text-center">Program details</h2>
                                     </div>-->
-
-                                    <a class="btn  btn-circle1 text-left" href="stud_merit_sendMerit.jsp" role="button"">
-                                        
-                                 
+ 
+                                    <button class="btn  btn-circle1 text-left" >
+                                      
                                         <h4 class="mb-2 text-gray-800"><b>Program Details</b></h4>
                                         <p class="mb-2 text-gray-800"><b>Program Name:</b> <%= p.getProgName()%></p>
                                         <p class="mb-2 text-gray-800"><b>Location:</b> <%= p.getProgLocation()%></p>
-                                        <p class="mb-2 text-gray-800"><b>Time:</b> Bile ?</p>
+                                        <p class="mb-2 text-gray-800"><b>Time:</b> ?</p>
                                         <p class="mb-2 text-gray-800"><b>Start Date:</b> <%= p.getProgStartDate()%></p>
                                         <p class="mb-2 text-gray-800"><b>Organizer:</b> <%= p.getProgOrganizer()%></p>
                                         <p class="mb-2 text-gray-800"><b>Category:</b> <%= p.getProgCategory()%></p>
                                         <p class="mb-2 text-gray-800"><b>Description:</b> <%= p.getProgDescription()%></p>
-                                       
-                                    </a>
-                                        
+                                        <input type="int" name="progid" value="<%= p.getProgID()%>" hidden>                              
                                  
-                                        
-
+                                    </button>
                                 </div>
+                            </form>  
          <% } }%>                              
                             </div>
                             

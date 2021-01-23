@@ -72,6 +72,14 @@
         <servlet-name>staff_historyDetails</servlet-name>
         <servlet-class>programStaff.staff_historyDetails</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>stud_merit_GETapprovalProgram</servlet-name>
+        <servlet-class>programStudent.stud_merit_GETapprovalProgram</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>stud_merit_TABLEsendMerit</servlet-name>
+        <servlet-class>programStudent.stud_merit_TABLEsendMerit</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginServletStudent</servlet-name>
         <url-pattern>/LoginServletStudent</url-pattern>
@@ -159,6 +167,14 @@
     <servlet-mapping>
         <servlet-name>staff_historyDetails</servlet-name>
         <url-pattern>/staff_historyDetails</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>stud_merit_GETapprovalProgram</servlet-name>
+        <url-pattern>/stud_merit_GETapprovalProgram</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>stud_merit_TABLEsendMerit</servlet-name>
+        <url-pattern>/stud_merit_TABLEsendMerit</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -6,7 +6,6 @@
 package programStudent;
 
 import bean.Merit;
-import bean.User;
 import bean.Program;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -27,7 +26,7 @@ import jdbc.JDBCUtility;
  *
  * @author 60111
  */
-public class stud_merit_INSERTsendMerit extends HttpServlet {
+public class stud_merit_GETapprovalProgram extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -38,7 +37,7 @@ public class stud_merit_INSERTsendMerit extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-    
+ 
     private JDBCUtility jdbcUtility;
     private Connection con;
 
@@ -48,68 +47,99 @@ public class stud_merit_INSERTsendMerit extends HttpServlet {
         jdbcUtility.jdbcConnect();
         con = jdbcUtility.jdbcGetConnection();
     }
-    
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         PrintWriter out = response.getWriter();
+        response.setContentType("text/html;charset=UTF-8");
         HttpSession session = request.getSession();
-        String firstemail = (String) session.getAttribute("firstemail");
-   
-        
-        String name = request.getParameter("name");
-        int progid = Integer.parseInt(request.getParameter("progid"));
-        String role = request.getParameter("role");
-        String matricNum = request.getParameter("matricNum");
-        int icNum = Integer.parseInt(request.getParameter("icNum"));
-        int merit = Integer.parseInt(request.getParameter("merit"));
-//        String status = request.getParameter("status");
+            String firstemail = (String)session.getAttribute("firstemail");
+            int progid = Integer.parseInt(request.getParameter("progid"));
         
        try {
-            String sqlInsert = "INSERT INTO merit(name, progid, role, matricNum, icNum, merit, status) VALUES (?,?,?,?,?,?,?)";
-            PreparedStatement ps = con.prepareStatement(sqlInsert);
-            ps.setString (1, name);
-            ps.setInt (2, progid);
-            ps.setString (3, role);
-            ps.setString (4, matricNum);
-            ps.setInt (5, icNum);
-            ps.setInt(6, merit);
-            ps.setString (7, "Pending");
-            ps.executeUpdate();
             
-//            out.println("<script type=\"text/javascript\">");
-//            out.println("alert('Your program is submitted successfully!');");
-//            out.println("location='stud_index.jsp';");
-//            out.println("</script>");
-        }
-        catch(SQLException e){
-            out.println(e);
-        }
-       try{
-           String selectQry = "select * from merit where progid = ?";
-            PreparedStatement ps1 = con.prepareStatement(selectQry);
+//            int progid = (int)session.getAttribute("progid");
+            
+      
+            String selectQry = "select * from program where progid = ?";
+            PreparedStatement ps = con.prepareStatement(selectQry);
+            ps.setInt(1, progid);
+            
+            ResultSet rs = ps.executeQuery();
+           Program detailsprogram = new Program();
+            
+            while(rs.next()){                
+                
+                
+                   
+                detailsprogram.setFirstEmail(rs.getString("firstemail"));
+                detailsprogram.setProgID(rs.getInt("progid"));
+                detailsprogram.setProgCategory(rs.getString("progCategory"));
+                detailsprogram.setProgDescription(rs.getString("progDescription"));
+                detailsprogram.setProgEndDate(rs.getDate("progEndDate"));
+                detailsprogram.setProgLocation(rs.getString("progLocation"));
+                detailsprogram.setProgName(rs.getString("progName"));
+                detailsprogram.setProgOrganizer(rs.getString("ProgOrganizer"));
+                detailsprogram.setProgStartDate(rs.getDate("progStartDate"));
+                detailsprogram.setProgStatus(rs.getString("progStatus"));
+                
+            
+            }
+            
+            String selectQry1 = "select * from merit where progid = ?";
+            PreparedStatement ps1 = con.prepareStatement(selectQry1);
             ps1.setInt(1, progid);
-            ResultSet rs = ps1.executeQuery();
+            ResultSet rs1 = ps1.executeQuery();
             Vector dm = new Vector();
             
-            while(rs.next()){
+            while(rs1.next()){
                 Merit dispmerit = new Merit();
                 
-                dispmerit.setName(rs.getString("name"));
+                dispmerit.setName(rs1.getString("name"));
 //                dispmerit.setProgID(progid);
-                dispmerit.setRole(rs.getString("role"));
-                dispmerit.setMatricNum(rs.getString("matricNum"));
-                dispmerit.setIcNum(rs.getInt("icNum"));
-                dispmerit.setMerit(rs.getInt("merit"));
+                dispmerit.setRole(rs1.getString("role"));
+                dispmerit.setMatricNum(rs1.getString("matricNum"));
+                dispmerit.setIcNum(rs1.getInt("icNum"));
+                dispmerit.setMerit(rs1.getInt("merit"));
                 
                 dm.addElement(dispmerit);
             }    
             
             session.setAttribute("dm", dm);
+     
+            session.setAttribute("detailsprogram", detailsprogram);
+            
             response.sendRedirect("stud_merit_sendMerit.jsp");
-       }
-       catch(SQLException e){
+        }
+        catch(SQLException e){
             out.println(e);
         }
+       
+//        try{
+//           String selectQry = "select * from merit where progid = ?";
+//            PreparedStatement ps1 = con.prepareStatement(selectQry);
+//            ps1.setInt(1, progid);
+//            ResultSet rs = ps1.executeQuery();
+//            Vector dm = new Vector();
+//            
+//            while(rs.next()){
+//                Merit dispmerit = new Merit();
+//                
+//                dispmerit.setName(rs.getString("name"));
+////                dispmerit.setProgID(progid);
+//                dispmerit.setRole(rs.getString("role"));
+//                dispmerit.setMatricNum(rs.getString("matricNum"));
+//                dispmerit.setIcNum(rs.getInt("icNum"));
+//                dispmerit.setMerit(rs.getInt("merit"));
+//                
+//                dm.addElement(dispmerit);
+//            }    
+//            
+//            session.setAttribute("dm", dm);
+//            response.sendRedirect("stud_merit_sendMerit.jsp");
+//       }
+//       catch(SQLException e){
+//            out.println(e);
+//        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

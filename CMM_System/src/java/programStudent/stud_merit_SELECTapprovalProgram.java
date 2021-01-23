@@ -62,11 +62,13 @@ public class stud_merit_SELECTapprovalProgram extends HttpServlet {
             
             ResultSet rs = ps.executeQuery();
             Vector dp = new Vector();
+            Program id = new Program();
             while(rs.next()){                
                 
                 Program detailsprogram = new Program();
                    
                 detailsprogram.setFirstEmail(rs.getString("firstemail"));
+                detailsprogram.setProgID(rs.getInt("progid"));
                 detailsprogram.setProgCategory(rs.getString("progCategory"));
                 detailsprogram.setProgDescription(rs.getString("progDescription"));
                 detailsprogram.setProgEndDate(rs.getDate("progEndDate"));
@@ -80,6 +82,7 @@ public class stud_merit_SELECTapprovalProgram extends HttpServlet {
             }
             
             session.setAttribute("dp", dp);
+            
             response.sendRedirect("stud_merit_approvalProgram.jsp");
         }
         catch(ClassNotFoundException | SQLException e){

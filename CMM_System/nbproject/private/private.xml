@@ -3,7 +3,28 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/Dev/System/College-Merit-Management-System/CMM_System/src/java/bean/Program.java</file>
+            <file>file:/C:/xampp/htdocs/College-Merit-Management-System/CMM_System/src/java/programStudent/stud_merit_GETapprovalProgram.java</file>
+            <file>file:/C:/xampp/htdocs/College-Merit-Management-System/CMM_System/src/java/programStudent/stud_merit_TABLEsendMerit.java</file>
+            <file>file:/C:/xampp/htdocs/College-Merit-Management-System/CMM_System/web/stud_merit_sendMerit.jsp</file>
+            <file>file:/C:/xampp/htdocs/College-Merit-Management-System/CMM_System/web/stud_merit_approvalProgram.jsp</file>
+            <file>file:/C:/xampp/htdocs/College-Merit-Management-System/CMM_System/web/stud_history_details.jsp</file>
+            <file>file:/C:/xampp/htdocs/College-Merit-Management-System/CMM_System/src/java/loginStudent/LoginServletStudent.java</file>
+            <file>file:/C:/xampp/htdocs/College-Merit-Management-System/CMM_System/src/java/profile/EditProfileStaff.java</file>
+            <file>file:/C:/xampp/htdocs/College-Merit-Management-System/CMM_System/src/java/profile/EditProfileStudent.java</file>
+            <file>file:/C:/xampp/htdocs/College-Merit-Management-System/CMM_System/src/java/programStudent/stud_merit_SELECTapprovalProgram.java</file>
+            <file>file:/C:/xampp/htdocs/College-Merit-Management-System/CMM_System/src/java/programStudent/stud_programServlet.java</file>
+            <file>file:/C:/xampp/htdocs/College-Merit-Management-System/CMM_System/src/java/programStudent/stud_merit_INSERTsendMerit.java</file>
+            <file>file:/C:/xampp/htdocs/College-Merit-Management-System/CMM_System/web/stud_program.jsp</file>
+            <file>file:/C:/xampp/htdocs/College-Merit-Management-System/CMM_System/src/java/bean/Merit.java</file>
+            <file>file:/C:/xampp/htdocs/College-Merit-Management-System/CMM_System/src/java/programStudent/stud_programHistoryServlet.java</file>
+            <file>file:/C:/xampp/htdocs/College-Merit-Management-System/CMM_System/src/java/bean/Program.java</file>
+            <file>file:/C:/xampp/htdocs/College-Merit-Management-System/CMM_System/web/stud_profile.jsp</file>
+            <file>file:/C:/xampp/htdocs/College-Merit-Management-System/CMM_System/src/java/profile/ProfileStudent.java</file>
+            <file>file:/C:/xampp/htdocs/College-Merit-Management-System/CMM_System/src/java/profile/ProfileStaff.java</file>
+            <file>file:/C:/xampp/htdocs/College-Merit-Management-System/CMM_System/web/css/sb-admin-2.css</file>
+            <file>file:/C:/xampp/htdocs/College-Merit-Management-System/CMM_System/src/java/programStudent/stud_programDetail.java</file>
+            <file>file:/C:/xampp/htdocs/College-Merit-Management-System/CMM_System/nbproject/build-impl.xml</file>
+            <file>file:/C:/xampp/htdocs/College-Merit-Management-System/CMM_System/web/stud_history.jsp</file>
         </group>
     </open-files>
 </project-private>

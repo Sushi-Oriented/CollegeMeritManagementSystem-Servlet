@@ -9,7 +9,15 @@ import java.io.Serializable;
 public class Merit implements Serializable{
     
     private String name, role, matricNum, status;
-    private int icNum, merit;
+    private int progID,icNum, merit;
+
+    public int getProgID() {
+        return progID;
+    }
+
+    public void setProgID(int progID) {
+        this.progID = progID;
+    }
 
     public Merit() {
     }

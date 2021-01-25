@@ -1,8 +1,10 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package programStudent;
 
-package programStaff;
-
-import bean.Program;
-import bean.User;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
@@ -13,11 +15,13 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 import jdbc.JDBCUtility;
 
-
-public class details_programServlet extends HttpServlet {
+/**
+ *
+ * @author User
+ */
+public class checkAvailable extends HttpServlet {
 
     private JDBCUtility jdbcUtility;
     private Connection con;
@@ -28,39 +32,33 @@ public class details_programServlet extends HttpServlet {
         jdbcUtility.jdbcConnect();
         con = jdbcUtility.jdbcGetConnection();
     }
-    
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
-        Program programView = new Program();
-        User user_progView = new User();
-        try 
-        {
-            String progID = request.getParameter("progID");
-            String selectQry = "select * from program where progID = ?";
-            PreparedStatement ps = con.prepareStatement(selectQry);
-            ps.setString(1, progID);
+        String a = "Enable";
+        try{
+            String sql = "select * from progavailable";
+            PreparedStatement ps = con.prepareStatement(sql);
             ResultSet rs = ps.executeQuery();
             
-            while(rs.next()){
-                user_progView.setFirstemail(rs.getString("firstemail"));
-                programView.setProgID(rs.getInt("progID"));
-                programView.setProgName(rs.getString("progName"));
-                programView.setProgLocation(rs.getString("progLocation"));
-                programView.setProgStartDate(rs.getDate("progStartDate"));
-                programView.setProgEndDate(rs.getDate("progEndDate"));
-                programView.setProgOrganizer(rs.getString("progOrganizer"));
-                programView.setProgCategory(rs.getString("progCategory"));
-                programView.setProgDescription(rs.getString("progDescription"));
-                programView.setProgStatus(rs.getString("progStatus"));
+            while (rs.next()){
+                String status = rs.getString("status");
+                if(status.equals(a)){
+                    response.sendRedirect("stud_program.jsp");
+                }
+
+                else{
+                    response.sendRedirect("stud_programDisable.jsp");
+//                    out.println("<script type=\"text/javascript\">");
+//                    out.println("alert('Program application is disabled. Try again later');");
+//                    out.println("location='stud_index.jsp';");
+//                    out.println("</script>");
+                }
             }
-            HttpSession session = request.getSession();
-            session.setAttribute("programView", programView);
-            session.setAttribute("user_progView", user_progView);
-            response.sendRedirect("staff_programView.jsp");
+            
         }
-        catch(SQLException e){
+        catch (SQLException e){
             out.println(e);
         }
     }

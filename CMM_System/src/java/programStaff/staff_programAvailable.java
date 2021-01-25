@@ -1,23 +1,25 @@
-
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package programStaff;
 
-import bean.Program;
-import bean.User;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 import jdbc.JDBCUtility;
 
-
-public class details_programServlet extends HttpServlet {
+/**
+ *
+ * @author User
+ */
+public class staff_programAvailable extends HttpServlet {
 
     private JDBCUtility jdbcUtility;
     private Connection con;
@@ -33,34 +35,19 @@ public class details_programServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
-        Program programView = new Program();
-        User user_progView = new User();
-        try 
-        {
-            String progID = request.getParameter("progID");
-            String selectQry = "select * from program where progID = ?";
-            PreparedStatement ps = con.prepareStatement(selectQry);
-            ps.setString(1, progID);
-            ResultSet rs = ps.executeQuery();
+        try{
+            String progAvailabe = request.getParameter("progAvailability");
+            String updateQry = "update progavailable set status = ?";
+            PreparedStatement ps = con.prepareStatement(updateQry);
+            ps.setString(1, progAvailabe);
+            ps.executeUpdate();
             
-            while(rs.next()){
-                user_progView.setFirstemail(rs.getString("firstemail"));
-                programView.setProgID(rs.getInt("progID"));
-                programView.setProgName(rs.getString("progName"));
-                programView.setProgLocation(rs.getString("progLocation"));
-                programView.setProgStartDate(rs.getDate("progStartDate"));
-                programView.setProgEndDate(rs.getDate("progEndDate"));
-                programView.setProgOrganizer(rs.getString("progOrganizer"));
-                programView.setProgCategory(rs.getString("progCategory"));
-                programView.setProgDescription(rs.getString("progDescription"));
-                programView.setProgStatus(rs.getString("progStatus"));
-            }
-            HttpSession session = request.getSession();
-            session.setAttribute("programView", programView);
-            session.setAttribute("user_progView", user_progView);
-            response.sendRedirect("staff_programView.jsp");
+            out.println("<script type=\"text/javascript\">");
+            out.println("alert('Status of the availability of the program application now is " + progAvailabe + "');");
+            out.println("location='staff_programServlet';");
+            out.println("</script>");
         }
-        catch(SQLException e){
+        catch (Exception e){
             out.println(e);
         }
     }

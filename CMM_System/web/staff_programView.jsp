@@ -1,3 +1,4 @@
+<%@page import="bean.User"%>
 <%@page import="bean.Program"%>
 <%@page import="java.util.Vector"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -21,8 +22,10 @@
         <!-- Custom styles for this template-->
         <link href="css/sb-admin-2.css" rel="stylesheet" type="text/css"/>
         <style>
-        table, th, td {padding: 10px;}
-        input[type=text]{width:100%;}
+        table, td, th {
+          padding: 10px;
+        }
+        
         th{
             background-color: #AF3550;
             color: white;
@@ -31,16 +34,13 @@
         table {
           border-collapse: collapse;
         }
-        .btn-success {
-                padding: 12px 35px;
-            } /* Green */
-            .btn-danger {
-                padding: 12px 35px;
-            } /* Red */ 
         </style>
     </head>
     <body>
-        <% Program programView = (Program)session.getAttribute("programView");%>
+        <% 
+            Program programView = (Program)session.getAttribute("programView");
+            User user_progView = (User)session.getAttribute("user_progView");
+        %>
         <!-- Page Wrapper -->
         <div id="wrapper">
             
@@ -60,7 +60,7 @@
                         <!-- Page Heading -->
                         <div class="d-sm-flex align-items-center justify-content-between mb-4">
                             <h1 class="h3 mb-0 text-gray-800">Program Approval</h1>
-                            <a class="btn btn-maroon" href="stud_index.jsp" role="button"><i class='fas fa-arrow-left'></i>  Back</a>
+                            <a class="btn btn-maroon" href="staff_program.jsp" role="button"><i class='fas fa-arrow-left'></i>  Back</a>
                         </div>
                         
                         <p style="font-style: italic; margin-bottom: -8px;">
@@ -72,6 +72,11 @@
                             <div class="card shadow mb-4">
                                  <div class="card-body">
                                     <table>
+                                        <tr>
+                                            <td>Student Email</td>
+                                            <td>:</td>
+                                            <td><%= user_progView.getFirstemail() %></td>
+                                        </tr>
                                         <tr>
                                             <td>Program Name</td>
                                             <td>:</td>
@@ -113,7 +118,7 @@
                                             <td><%= programView.getProgStatus() %></td>
                                         </tr>
                                         <tr>
-                                            <td><form action="ApproveServlet"><input name="progID" type="text" value="<%= programView.getProgID() %>" hidden><button class="btn btn-success" type="submit">Approve</button></form></td>
+                                            <td colspan="2"><form action="ApproveServlet"><input name="progID" type="text" value="<%= programView.getProgID() %>" hidden><button class="btn btn-success" type="submit">Approve</button></form></td>
                                             <td><form action="DeclineServlet"><input name="progID" type="text" value="<%= programView.getProgID() %>" hidden><button class="btn btn-danger" type="submit">Decline</button></form></td>
                                         </tr>
                                     </table><br>

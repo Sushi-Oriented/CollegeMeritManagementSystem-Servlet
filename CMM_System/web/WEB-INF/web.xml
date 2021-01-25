@@ -80,6 +80,14 @@
         <servlet-name>stud_merit_TABLEsendMerit</servlet-name>
         <servlet-class>programStudent.stud_merit_TABLEsendMerit</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>staff_programAvailable</servlet-name>
+        <servlet-class>programStaff.staff_programAvailable</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>checkAvailable</servlet-name>
+        <servlet-class>programStudent.checkAvailable</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginServletStudent</servlet-name>
         <url-pattern>/LoginServletStudent</url-pattern>
@@ -175,6 +183,14 @@
     <servlet-mapping>
         <servlet-name>stud_merit_TABLEsendMerit</servlet-name>
         <url-pattern>/stud_merit_TABLEsendMerit</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>staff_programAvailable</servlet-name>
+        <url-pattern>/staff_programAvailable</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>checkAvailable</servlet-name>
+        <url-pattern>/checkAvailable</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

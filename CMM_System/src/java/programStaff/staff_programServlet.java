@@ -1,6 +1,7 @@
 
 package programStaff;
 
+import bean.Availability;
 import bean.Program;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -8,8 +9,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.Date;
 import java.util.Vector;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -37,6 +36,19 @@ public class staff_programServlet extends HttpServlet {
         try {
             HttpSession session = request.getSession();
             
+            //Display available status
+            String sql2 = "select * from progavailable";
+            PreparedStatement ps2 = con.prepareStatement(sql2);
+            ResultSet rs2 = ps2.executeQuery();
+            Availability status = new Availability();
+            while(rs2.next()){
+                
+                status.setStatus(rs2.getString("status"));
+            }
+            
+            session.setAttribute("status", status);
+            
+            //display program table
             String sql = "select * from program";
             PreparedStatement ps = con.prepareStatement(sql);
             ResultSet rs = ps.executeQuery();

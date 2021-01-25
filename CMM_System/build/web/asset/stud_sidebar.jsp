@@ -49,7 +49,7 @@
 
                 <!-- Nav Item - Dashboard -->
                 <li class="nav-item">
-                    <a class="nav-link" href="stud_program.jsp">
+                    <a class="nav-link" href="checkAvailable">
                         <i class="far fa-file"></i>
                         <span>Program</span></a>
                 </li>

@@ -39,7 +39,6 @@
     <body>
         <% 
             Program programView = (Program)session.getAttribute("programView");
-            User user_progView = (User)session.getAttribute("user_progView");
         %>
         <!-- Page Wrapper -->
         <div id="wrapper">
@@ -73,9 +72,9 @@
                                  <div class="card-body">
                                     <table>
                                         <tr>
-                                            <td>Student Email</td>
+                                            <td>Student Name</td>
                                             <td>:</td>
-                                            <td><%= user_progView.getFirstemail() %></td>
+                                            <td><%= programView.getStudName() %></td>
                                         </tr>
                                         <tr>
                                             <td>Program Name</td>

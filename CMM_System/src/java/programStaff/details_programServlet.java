@@ -2,9 +2,11 @@
 package programStaff;
 
 import bean.Program;
+import bean.Staff;
 import bean.User;
 import java.io.IOException;
 import java.io.PrintWriter;
+import static java.lang.System.out;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -34,7 +36,6 @@ public class details_programServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         Program programView = new Program();
-        User user_progView = new User();
         try 
         {
             String progID = request.getParameter("progID");
@@ -43,8 +44,18 @@ public class details_programServlet extends HttpServlet {
             ps.setString(1, progID);
             ResultSet rs = ps.executeQuery();
             
-            while(rs.next()){
-                user_progView.setFirstemail(rs.getString("firstemail"));
+            while(rs.next())
+            {
+                String studFirstEmail = rs.getString("firstemail");
+                String sql2 = "select * from user where firstemail = ?"; 
+                PreparedStatement ps2 = con.prepareStatement(sql2);
+                ps2.setString(1, studFirstEmail);
+                ResultSet rs2 = ps2.executeQuery();                
+                while(rs2.next()){
+                    String studName = rs2.getString(1);                    
+                    programView.setStudName(studName);
+                }
+                
                 programView.setProgID(rs.getInt("progID"));
                 programView.setProgName(rs.getString("progName"));
                 programView.setProgLocation(rs.getString("progLocation"));
@@ -57,7 +68,6 @@ public class details_programServlet extends HttpServlet {
             }
             HttpSession session = request.getSession();
             session.setAttribute("programView", programView);
-            session.setAttribute("user_progView", user_progView);
             response.sendRedirect("staff_programView.jsp");
         }
         catch(SQLException e){

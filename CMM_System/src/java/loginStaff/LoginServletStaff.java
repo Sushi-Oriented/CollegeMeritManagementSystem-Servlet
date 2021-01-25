@@ -5,13 +5,21 @@
  */
 package loginStaff;
 
+import bean.Staff;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import jdbc.JDBCUtility;
 
 /**
  *
@@ -20,9 +28,14 @@ import javax.servlet.http.HttpSession;
 public class LoginServletStaff extends HttpServlet {
 
     private LoginDaoStaff loginDao;
+    private JDBCUtility jdbcUtility;
+    private Connection con;
     
     public void init(){
         loginDao = new LoginDaoStaff();
+        jdbcUtility = new JDBCUtility();
+        jdbcUtility.jdbcConnect();
+        con = jdbcUtility.jdbcGetConnection();
     }
     
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -40,7 +53,17 @@ public class LoginServletStaff extends HttpServlet {
            
         try {
             if (loginDao.validate(loginBean)) {
-                PrintWriter out = response.getWriter();
+                String selectQry = "select * from staff where firstemail = ?";
+                PreparedStatement ps = con.prepareStatement(selectQry);
+                ps.setString(1, firstemail);
+                ResultSet rs = ps.executeQuery();
+                Staff ust = new Staff();
+            
+                while(rs.next()){                
+                    ust.setFullname(rs.getString(1));
+                }
+
+                session.setAttribute("ust", ust);
                 response.sendRedirect("staff_index.jsp");
             } 
             
@@ -55,6 +78,8 @@ public class LoginServletStaff extends HttpServlet {
         
         catch (ClassNotFoundException e) {
             e.printStackTrace();
+        } catch (SQLException ex) {
+            Logger.getLogger(LoginServletStaff.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 

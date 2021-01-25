@@ -4,6 +4,7 @@
     Author     : User
 --%>
 
+<%@page import="bean.Staff"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -11,6 +12,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     </head>
     <body>
+        <% Staff ust = (Staff)session.getAttribute("ust"); %>
         <!-- Sidebar -->
             <ul class="navbar-nav bg-gradient-sidebar-custom sidebar sidebar-dark accordion" id="accordionSidebar">
 
@@ -18,7 +20,8 @@
                     <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <img class="img-profile rounded-circle" src="img/undraw_profile.svg">
-                        <span class="sidebar-brand align-items-center justify-content-center sidebar-brand-text mx-3">FULL NAME</span><br>
+                        <span class="sidebar-brand align-items-center justify-content-center sidebar-brand-text mx-3">
+                            <%= ust.getFullname() %></span><br>
                     </a>
                 </li>
 

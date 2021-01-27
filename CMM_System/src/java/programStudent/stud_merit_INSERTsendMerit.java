@@ -29,16 +29,6 @@ import jdbc.JDBCUtility;
  */
 public class stud_merit_INSERTsendMerit extends HttpServlet {
 
-    /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
-    
     private JDBCUtility jdbcUtility;
     private Connection con;
 
@@ -60,31 +50,27 @@ public class stud_merit_INSERTsendMerit extends HttpServlet {
         int progid = Integer.parseInt(request.getParameter("progid"));
         String role = request.getParameter("role");
         String matricNum = request.getParameter("matricNum");
-        int icNum = Integer.parseInt(request.getParameter("icNum"));
+        long icNum = Long.parseLong(request.getParameter("icNum"));
         int merit = Integer.parseInt(request.getParameter("merit"));
-//        String status = request.getParameter("status");
+        String status = "Pending";
         
-       try {
+        try {
             String sqlInsert = "INSERT INTO merit(name, progid, role, matricNum, icNum, merit, status) VALUES (?,?,?,?,?,?,?)";
             PreparedStatement ps = con.prepareStatement(sqlInsert);
             ps.setString (1, name);
             ps.setInt (2, progid);
             ps.setString (3, role);
             ps.setString (4, matricNum);
-            ps.setInt (5, icNum);
+            ps.setLong(5, icNum);
             ps.setInt(6, merit);
-            ps.setString (7, "Pending");
+            ps.setString (7, status);
             ps.executeUpdate();
-            
-//            out.println("<script type=\"text/javascript\">");
-//            out.println("alert('Your program is submitted successfully!');");
-//            out.println("location='stud_index.jsp';");
-//            out.println("</script>");
         }
-        catch(SQLException e){
+        catch(NumberFormatException | SQLException e){
             out.println(e);
         }
-       try{
+        
+        try{
            String selectQry = "select * from merit where progid = ?";
             PreparedStatement ps1 = con.prepareStatement(selectQry);
             ps1.setInt(1, progid);
@@ -98,7 +84,7 @@ public class stud_merit_INSERTsendMerit extends HttpServlet {
 //                dispmerit.setProgID(progid);
                 dispmerit.setRole(rs.getString("role"));
                 dispmerit.setMatricNum(rs.getString("matricNum"));
-                dispmerit.setIcNum(rs.getInt("icNum"));
+                dispmerit.setIcNum(rs.getLong("icNum"));
                 dispmerit.setMerit(rs.getInt("merit"));
                 
                 dm.addElement(dispmerit);
@@ -106,8 +92,8 @@ public class stud_merit_INSERTsendMerit extends HttpServlet {
             
             session.setAttribute("dm", dm);
             response.sendRedirect("stud_merit_sendMerit.jsp");
-       }
-       catch(SQLException e){
+        }
+        catch(SQLException e){
             out.println(e);
         }
     }

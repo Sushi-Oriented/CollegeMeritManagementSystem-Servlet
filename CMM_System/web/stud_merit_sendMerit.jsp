@@ -105,7 +105,7 @@
                                                 <div class="col-md-2 mb-3">
                                                   <label for="validationTooltipUsername">Position/Role</label>
                                                   <div class="dropdown mb-4" >
-                                                                <select class="form-control" id="1" onclick="cc()">
+                                                                <select class="form-control" id="1" onclick="cc()" name="role">
                                                                     <option id="Secretariat" value="Secretariat">Secretariat</option>
                                                                     <option  value="Head Of Department">Head Of Department</option>
                                                                     <option  value="Treasurer">Treasurer</option>

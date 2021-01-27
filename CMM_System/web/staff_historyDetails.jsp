@@ -108,6 +108,14 @@
                                                 </td>
                                                 <td>:</td>
                                                 <td> <%= pro.getProgName()%></td>
+                                                <td>
+                                                    <strong>
+                                                        <i class="fa fa-info-circle"></i>
+                                                        Status
+                                                    </strong>
+                                                </td>
+                                                <td>:</td>
+                                                <td style="font-style: italic;"> <%= pro.getProgStatus()%></td>
                                             </tr>
                                             <tr>
                                                 <td>

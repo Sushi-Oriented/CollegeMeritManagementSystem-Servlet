@@ -46,18 +46,28 @@
                         <div class="d-sm-flex align-items-center justify-content-between mb-4">
                             <h1 class="h3 mb-0 text-gray-800">Welcome to College Merit Management System, <%= session.getAttribute("firstemail")%>!</h1>
                         </div>
-                        <div class="card shadow mb-4">
-                                <div class="card-header py-3">
-                                    <h6 class="m-0 font-weight-bold text-maroon-primary">Basic Card Example</h6>
+                        
+                        <div class="row">
+                            
+                            <!-- Pending Program -->
+                            <div class="col-xl-3 col-md-6 mb-4">
+                                <div class="card border-left-primary shadow h-100 py-2">
+                                    <div class="card-body">
+                                        <div class="row no-gutters align-items-center">
+                                            <div class="col mr-2">
+                                                <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                                    Pending Program</div>
+                                                <div class="h5 mb-0 font-weight-bold text-gray-800">15</div>
+                                            </div>
+                                            <div class="col-auto">
+                                                <i class="fas fa-tasks fa-2x text-gray-300"></i>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="card-body">
-
-                                    The styling for this basic card example is created by using default Bootstrap
-                                    utility classes. By using utility classes, the style of the card component can be
-                                    easily modified with no need for any custom CSS!
-
-                                </div>
+                            </div>
                         </div>
+                        
                     </div>
                     <!-- /.container-fluid -->
 

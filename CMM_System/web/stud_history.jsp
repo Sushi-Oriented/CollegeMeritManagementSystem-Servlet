@@ -96,7 +96,8 @@
                                                     <th>Category</th>
                                                     <th>Organizer</th>
                                                     <th>Start Date</th>
-                                                    <th>End Date</th>                                                                                                        
+                                                    <th>End Date</th>
+                                                    <th>Status</th>
                                                     <th>Action</th>
                                                 </tr>
                                             </thead>
@@ -114,6 +115,7 @@
                                                     <td><%= pro.getProgOrganizer()%></td>
                                                     <td><%= pro.getProgStartDate()%></td>
                                                     <td><%= pro.getProgEndDate()%></td>
+                                                    <td style="font-weight:bold; font-style: italic;"><%= pro.getProgStatus()%></td>
                                                     <td>
                                                         <form action="stud_programDetail" method="post">
                                                             <input type="int" name="progID" value="<%= pro.getProgID()%>" hidden>

@@ -45,7 +45,7 @@ public class stud_programHistoryServlet extends HttpServlet {
             HttpSession session = request.getSession();
             String firstemail = (String)session.getAttribute("firstemail");
             
-            String sql = "select * from program where firstemail = ?";
+            String sql = "select * from program where progStatus='Approved' or progStatus='Declined' and firstemail = ?";
             PreparedStatement ps = con.prepareStatement(sql);
             ps.setString(1, firstemail);
             ResultSet rs = ps.executeQuery();

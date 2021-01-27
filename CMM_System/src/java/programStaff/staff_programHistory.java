@@ -38,7 +38,7 @@ public class staff_programHistory extends HttpServlet {
         try {
             HttpSession session = request.getSession();
             
-            String sql = "select * from program";
+            String sql = "select * from program where progStatus='Approved' or progStatus='Declined'";
             PreparedStatement ps = con.prepareStatement(sql);
             ResultSet rs = ps.executeQuery();
             

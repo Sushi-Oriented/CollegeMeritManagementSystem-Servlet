@@ -49,7 +49,7 @@ public class staff_programServlet extends HttpServlet {
             session.setAttribute("status", status);
             
             //display program table
-            String sql = "select * from program";
+            String sql = "select * from program where progStatus='Pending'";
             PreparedStatement ps = con.prepareStatement(sql);
             ResultSet rs = ps.executeQuery();
             

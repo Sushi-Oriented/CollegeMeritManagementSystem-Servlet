@@ -65,14 +65,14 @@
                         <!-- Page Heading -->
                         <div class="d-sm-flex align-items-center justify-content-between mb-4">
                             <h1 class="h3 mb-0 text-gray-800" id="textpg">
-                                Program History &nbsp;
+                                Requested Program &nbsp;
                                 <i class="fas fa-history"></i>
                             </h1>                         
                         </div>
                         
                         <div class="subtextpg">
                             <p style="font-style: italic; margin-bottom: -8px;">
-                                View the previous program that you have approved
+                                View the previous requested program
                             </p>
                             <hr>
                         </div>
@@ -96,7 +96,8 @@
                                                     <th>Category</th>
                                                     <th>Organizer</th>
                                                     <th>Start Date</th>
-                                                    <th>End Date</th>                                                                                                        
+                                                    <th>End Date</th>
+                                                    <th>Status</th>
                                                     <th>Action</th>
                                                 </tr>
                                             </thead>
@@ -115,6 +116,7 @@
                                                     <td><%= pro.getProgOrganizer()%></td>
                                                     <td><%= pro.getProgStartDate()%></td>
                                                     <td><%= pro.getProgEndDate()%></td>
+                                                    <td style="font-weight: bold; font-style: italic;"><%= pro.getProgStatus()%></td>
                                                     <td>
                                                         <form action="staff_historyDetails" method="get">
                                                             <input type="int" name="progID" value="<%= pro.getProgID()%>" hidden>

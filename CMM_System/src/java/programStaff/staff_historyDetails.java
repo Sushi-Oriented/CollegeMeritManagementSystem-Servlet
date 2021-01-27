@@ -62,17 +62,19 @@ public class staff_historyDetails extends HttpServlet {
             }
             
             /*To get merit on the program*/
-            Merit mer = new Merit();
             Vector merList = new Vector();
-            String merSql = "select * from merit";
+            String merSql = "select * from merit where progID = ?";
             PreparedStatement ps2 = con.prepareStatement(merSql);
+            ps2.setString(1, progID);
             ResultSet rs2 = ps2.executeQuery();
             
             while (rs2.next()) {
+                Merit mer = new Merit();
+                
                 mer.setName(rs2.getString("name"));
                 mer.setRole(rs2.getString("role"));
                 mer.setMatricNum(rs2.getString("matricNum"));
-                mer.setIcNum(rs2.getInt("IcNum"));
+                mer.setIcNum(rs2.getLong("IcNum"));
                 mer.setMerit(rs2.getInt("merit"));
                 mer.setStatus(rs2.getString("status"));
                 

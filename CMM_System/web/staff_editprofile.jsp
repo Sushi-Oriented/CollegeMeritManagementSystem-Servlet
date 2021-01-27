@@ -84,7 +84,7 @@
                                                         <tr>
                                                             <td>Nickname</td>
                                                             <td>:</td>
-                                                            <td><input class="form-control" type="text" name="nickname" value="<%= staff.getNickname() %>"></td>
+                                                            <td><input class="form-control" type="text" name="nickname" value="<%= staff.getNickname() %>" required></td>
                                                         </tr>
                                                         <tr><td colspan="3"><br></td></tr>
                                                         <tr>
@@ -94,21 +94,15 @@
                                                         </tr>
                                                         <tr><td colspan="3"><br></td></tr>
                                                         <tr>
-                                                            <td>Second email</td>
-                                                            <td>:</td>
-                                                            <td><input class="form-control" type="text" name="secondemail" value="<%= staff.getSecondemail() %>"></td>
-                                                        </tr>
-                                                        <tr><td colspan="3"><br></td></tr>
-                                                        <tr>
                                                             <td>Student ID</td>
                                                             <td>:</td>
                                                             <td><input class="form-control" type="text" value="<%= staff.getStaffID()%>" disabled></td>
                                                         </tr>
                                                         <tr><td colspan="3"><br></td></tr>
                                                         <tr>
-                                                            <td>Phone Number</td>
+                                                            <td>Phone Number<br><small><i>Format: xxx-xxxxxxx</i></small></td>
                                                             <td>:</td>
-                                                            <td><input class="form-control" type="text" name="staffphoneno" value="<%= staff.getStaffphoneno()%>"></td>
+                                                            <td><input class="form-control" type="tel" name="staffphoneno" value="<%= staff.getStaffphoneno()%>" pattern="[0-9]{3}-[0-9]{7}" required></td>
                                                         </tr>
                                                     </table><br><br>
                                                     <!-- End table -->
@@ -125,26 +119,6 @@
                                 <!-- End table for dividing profile and picture -->
                             </div>
                         </div>
-                        
-                        
-                        
-                        
-                        
-                        
-                        <!-- Page Heading -->
-                        <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                            <h1 class="h3 mb-0 text-gray-800">This is the profile page stud</h1>
-                        </div>
-                        <form method="post" action="EditProfileStaff">
-                            Full name: <input type="text" name="fullname" value="<%= staff.getFullname() %>" disabled><br>
-                            Nickname: <input type="text" name="nickname" value="<%= staff.getNickname() %>"><br>
-                            First email: <input type="text" name="firstemail" value="<%= staff.getFirstemail() %>" disabled><br>
-                            Second email: <input type="text" name="secondemail" value="<%= staff.getSecondemail() %>"><br>
-                            Student ID: <input type="text" name="staffID" value="<%= staff.getStaffID() %>" disabled><br>
-                            Student Phone No: <input type="text" name="staffphoneno" value="<%= staff.getStaffphoneno() %>"><br>
-                            <button type="submit">Save</button>
-                            <button type="reset">Reset</button>
-                        </form>
                     </div>
                     <!-- /.container-fluid -->
 

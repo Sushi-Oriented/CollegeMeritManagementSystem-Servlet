@@ -12,7 +12,7 @@ import java.io.Serializable;
  * @author Alifah Ilyana binti Soharto B19EC0003
  */
 public class User implements Serializable {
-    String fullname, nickname, firstemail, secondemail, studentID, studphoneno, password;
+    String fullname, nickname, firstemail, studentID, studphoneno, password;
 
     public User() {
     }
@@ -39,14 +39,6 @@ public class User implements Serializable {
 
     public void setFirstemail(String firstemail) {
         this.firstemail = firstemail;
-    }
-
-    public String getSecondemail() {
-        return secondemail;
-    }
-
-    public void setSecondemail(String secondemail) {
-        this.secondemail = secondemail;
     }
 
     public String getStudentID() {

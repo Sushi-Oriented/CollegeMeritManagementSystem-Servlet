@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 27, 2021 at 09:22 AM
+-- Generation Time: Jan 27, 2021 at 05:00 PM
 -- Server version: 10.4.14-MariaDB
--- PHP Version: 7.2.34
+-- PHP Version: 7.4.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -85,7 +85,6 @@ CREATE TABLE `staff` (
   `fullname` varchar(50) NOT NULL,
   `nickname` varchar(50) NOT NULL,
   `firstemail` varchar(50) NOT NULL,
-  `secondemail` varchar(50) NOT NULL,
   `staffID` varchar(50) NOT NULL,
   `staffphoneno` varchar(50) NOT NULL,
   `password` varchar(50) NOT NULL
@@ -95,8 +94,8 @@ CREATE TABLE `staff` (
 -- Dumping data for table `staff`
 --
 
-INSERT INTO `staff` (`fullname`, `nickname`, `firstemail`, `secondemail`, `staffID`, `staffphoneno`, `password`) VALUES
-('Faizul Azli', 'Faizul', 'faizul.kl@utm.my', 'faizul@gmail.com', 'F001', '0123456789', 'faizulazli');
+INSERT INTO `staff` (`fullname`, `nickname`, `firstemail`, `staffID`, `staffphoneno`, `password`) VALUES
+('Faizul Azli', 'Faizul AA', 'faizul.kl@utm.my', 'F001', '012-3456789', 'faizulazli');
 
 -- --------------------------------------------------------
 
@@ -108,7 +107,6 @@ CREATE TABLE `user` (
   `fullname` varchar(50) NOT NULL,
   `nickname` varchar(50) NOT NULL,
   `firstemail` varchar(50) NOT NULL,
-  `secondemail` varchar(50) NOT NULL,
   `studentID` varchar(50) NOT NULL,
   `studphoneno` varchar(50) NOT NULL,
   `password` varchar(50) NOT NULL
@@ -118,9 +116,10 @@ CREATE TABLE `user` (
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`fullname`, `nickname`, `firstemail`, `secondemail`, `studentID`, `studphoneno`, `password`) VALUES
-('Alifah Ilyana', 'Alifah', 'ailyana2@graduate.utm.my', 'alifah@gmail.com', 'B19EC0003', '0172722334', 'abc123abc'),
-('Puteri Ledang', 'Ledang', 'iklilkrozz@gmail.com', 'aiaiselalu@gmail.com', 'B19EC0042', '0123995729', 'ledang1234');
+INSERT INTO `user` (`fullname`, `nickname`, `firstemail`, `studentID`, `studphoneno`, `password`) VALUES
+('Alifah Ilyana', 'Alifah', 'ailyana2@graduate.utm.my', 'B19EC0003', '017-2722334', 'abc123abc'),
+('Harris Fadhillah', 'Harris F', 'harris@gmail.com', 'H001', '017-272233', 'abc123abc'),
+('Puteri Ledang', 'Ledang', 'iklilkrozz@gmail.com', 'B19EC0042', '0123995729', 'ledang1234');
 
 --
 -- Indexes for dumped tables

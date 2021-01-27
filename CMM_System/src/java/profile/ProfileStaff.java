@@ -52,9 +52,8 @@ public class ProfileStaff extends HttpServlet {
                 staff.setFullname(rs.getString(1));
                 staff.setNickname(rs.getString(2));
                 staff.setFirstemail(rs.getString(3));
-                staff.setSecondemail(rs.getString(4));
-                staff.setStaffID(rs.getString(5));
-                staff.setStaffphoneno(rs.getString(6));
+                staff.setStaffID(rs.getString(4));
+                staff.setStaffphoneno(rs.getString(5));
             }
             
             session.setAttribute("staff", staff);

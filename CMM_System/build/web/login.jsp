@@ -54,7 +54,8 @@
                                 </div>
                                 <div class="form-group">
                                 </div><br>
-                                <input type="submit" class="btn btn-primary btn-user btn-block" value="Login" />
+                                <input type="submit" class="btn btn-primary btn-user btn-block" value="Login" /><hr>
+                                <center><a href="stud_register.jsp" >Sign Up</a></center>
                             </form>
                         </div>
                         <!--Staff-->

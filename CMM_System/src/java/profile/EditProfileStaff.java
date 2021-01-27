@@ -35,17 +35,15 @@ public class EditProfileStaff extends HttpServlet {
             String firstemail = (String)session.getAttribute("firstemail");
             
             String nickname = request.getParameter("nickname");
-            String secondemail = request.getParameter("secondemail");
             String staffphoneno = request.getParameter("staffphoneno");
             
             Class.forName(driver);
             Connection con = DriverManager.getConnection(url, username, password);
-            String updateQry = "update staff set nickname = ? , secondemail = ?, staffphoneno = ? where firstemail = ?";
+            String updateQry = "update staff set nickname = ? , staffphoneno = ? where firstemail = ?";
             PreparedStatement ps = con.prepareStatement(updateQry);
             ps.setString(1, nickname);
-            ps.setString(2, secondemail);
-            ps.setString(3, staffphoneno);
-            ps.setString(4, firstemail);
+            ps.setString(2, staffphoneno);
+            ps.setString(3, firstemail);
             ps.executeUpdate();
             
             out.println("<script type=\"text/javascript\">");

@@ -62,6 +62,7 @@ public class LoginServletStudent extends HttpServlet {
             
                 while(rs.next()){                
                     ust.setFullname(rs.getString(1));
+                    ust.setNickname(rs.getString(2));
                 }
 
                 session.setAttribute("ust", ust);

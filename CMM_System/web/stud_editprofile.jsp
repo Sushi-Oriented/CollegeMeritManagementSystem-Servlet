@@ -94,21 +94,15 @@
                                                         </tr>
                                                         <tr><td colspan="3"><br></td></tr>
                                                         <tr>
-                                                            <td>Second email</td>
-                                                            <td>:</td>
-                                                            <td><input class="form-control" type="text" name="secondemail" value="<%= student.getSecondemail() %>"></td>
-                                                        </tr>
-                                                        <tr><td colspan="3"><br></td></tr>
-                                                        <tr>
                                                             <td>Student ID</td>
                                                             <td>:</td>
                                                             <td><input class="form-control" type="text" value="<%= student.getStudentID()%>" disabled></td>
                                                         </tr>
                                                         <tr><td colspan="3"><br></td></tr>
                                                         <tr>
-                                                            <td>Phone Number</td>
+                                                            <td>Phone Number<br><small><i>Format: xxx-xxxxxxx</i></small></td>
                                                             <td>:</td>
-                                                            <td><input class="form-control" type="text" name="studphoneno" value="<%= student.getStudphoneno() %>"></td>
+                                                            <td><input class="form-control" type="tel" name="studphoneno" value="<%= student.getStudphoneno() %>" pattern="[0-9]{3}-[0-9]{7}" required></td>
                                                         </tr>
                                                     </table><br><br>
                                                     <!-- End table -->

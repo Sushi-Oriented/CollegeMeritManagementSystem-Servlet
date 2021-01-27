@@ -12,7 +12,7 @@ import java.io.Serializable;
  * @author Alifah Ilyana binti Soharto B19EC0003
  */
 public class Staff implements Serializable{
-    String fullname, nickname, firstemail, secondemail, staffID, staffphoneno, password;
+    String fullname, nickname, firstemail, staffID, staffphoneno, password;
 
     public Staff() {
     }
@@ -39,14 +39,6 @@ public class Staff implements Serializable{
 
     public void setFirstemail(String firstemail) {
         this.firstemail = firstemail;
-    }
-
-    public String getSecondemail() {
-        return secondemail;
-    }
-
-    public void setSecondemail(String secondemail) {
-        this.secondemail = secondemail;
     }
 
     public String getStaffID() {

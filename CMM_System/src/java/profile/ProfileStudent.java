@@ -48,9 +48,8 @@ public class ProfileStudent extends HttpServlet {
                 student.setFullname(rs.getString(1));
                 student.setNickname(rs.getString(2));
                 student.setFirstemail(rs.getString(3));
-                student.setSecondemail(rs.getString(4));
-                student.setStudentID(rs.getString(5));
-                student.setStudphoneno(rs.getString(6));
+                student.setStudentID(rs.getString(4));
+                student.setStudphoneno(rs.getString(5));
             }
             
             session.setAttribute("student", student);

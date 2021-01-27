@@ -95,12 +95,6 @@
                                                         </tr>
                                                         <tr><td colspan="3"><br></td></tr>
                                                         <tr>
-                                                            <td>Second email</td>
-                                                            <td>:</td>
-                                                            <td><input class="form-control" type="text" value="<%= student.getSecondemail()%>" disabled></td>
-                                                        </tr>
-                                                        <tr><td colspan="3"><br></td></tr>
-                                                        <tr>
                                                             <td>Student ID</td>
                                                             <td>:</td>
                                                             <td><input class="form-control" type="text" value="<%= student.getStudentID()%>" disabled></td>

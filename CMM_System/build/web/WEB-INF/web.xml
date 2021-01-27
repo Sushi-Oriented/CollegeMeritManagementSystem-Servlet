@@ -88,6 +88,10 @@
         <servlet-name>checkAvailable</servlet-name>
         <servlet-class>programStudent.checkAvailable</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>RegServlet</servlet-name>
+        <servlet-class>main.RegServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginServletStudent</servlet-name>
         <url-pattern>/LoginServletStudent</url-pattern>
@@ -191,6 +195,10 @@
     <servlet-mapping>
         <servlet-name>checkAvailable</servlet-name>
         <url-pattern>/checkAvailable</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RegServlet</servlet-name>
+        <url-pattern>/RegServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

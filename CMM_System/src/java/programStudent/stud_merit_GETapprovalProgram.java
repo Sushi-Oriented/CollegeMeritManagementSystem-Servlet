@@ -55,11 +55,11 @@ public class stud_merit_GETapprovalProgram extends HttpServlet {
             String firstemail = (String)session.getAttribute("firstemail");
             int progid = Integer.parseInt(request.getParameter("progid"));
         
+            session.setAttribute("progid", progid);
        try {
             
 //            int progid = (int)session.getAttribute("progid");
             
-      
             String selectQry = "select * from program where progid = ?";
             PreparedStatement ps = con.prepareStatement(selectQry);
             ps.setInt(1, progid);
@@ -69,8 +69,6 @@ public class stud_merit_GETapprovalProgram extends HttpServlet {
             
             while(rs.next()){                
                 
-                
-                   
                 detailsprogram.setFirstEmail(rs.getString("firstemail"));
                 detailsprogram.setProgID(rs.getInt("progid"));
                 detailsprogram.setProgCategory(rs.getString("progCategory"));
@@ -81,10 +79,7 @@ public class stud_merit_GETapprovalProgram extends HttpServlet {
                 detailsprogram.setProgOrganizer(rs.getString("ProgOrganizer"));
                 detailsprogram.setProgStartDate(rs.getDate("progStartDate"));
                 detailsprogram.setProgStatus(rs.getString("progStatus"));
-                
-            
             }
-            
             String selectQry1 = "select * from merit where progid = ?";
             PreparedStatement ps1 = con.prepareStatement(selectQry1);
             ps1.setInt(1, progid);
@@ -113,33 +108,6 @@ public class stud_merit_GETapprovalProgram extends HttpServlet {
         catch(SQLException e){
             out.println(e);
         }
-       
-//        try{
-//           String selectQry = "select * from merit where progid = ?";
-//            PreparedStatement ps1 = con.prepareStatement(selectQry);
-//            ps1.setInt(1, progid);
-//            ResultSet rs = ps1.executeQuery();
-//            Vector dm = new Vector();
-//            
-//            while(rs.next()){
-//                Merit dispmerit = new Merit();
-//                
-//                dispmerit.setName(rs.getString("name"));
-////                dispmerit.setProgID(progid);
-//                dispmerit.setRole(rs.getString("role"));
-//                dispmerit.setMatricNum(rs.getString("matricNum"));
-//                dispmerit.setIcNum(rs.getInt("icNum"));
-//                dispmerit.setMerit(rs.getInt("merit"));
-//                
-//                dm.addElement(dispmerit);
-//            }    
-//            
-//            session.setAttribute("dm", dm);
-//            response.sendRedirect("stud_merit_sendMerit.jsp");
-//       }
-//       catch(SQLException e){
-//            out.println(e);
-//        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

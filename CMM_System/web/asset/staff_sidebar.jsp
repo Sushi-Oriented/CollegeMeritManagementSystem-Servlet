@@ -12,7 +12,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     </head>
     <body>
-        <% Staff ust = (Staff)session.getAttribute("ust"); %>
+        <% Staff ust1 = (Staff)session.getAttribute("ust1"); %>
         <!-- Sidebar -->
             <ul class="navbar-nav bg-gradient-sidebar-custom sidebar sidebar-dark accordion" id="accordionSidebar">
 
@@ -21,7 +21,7 @@
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <img class="img-profile rounded-circle" src="img/undraw_profile.svg">
                         <span class="sidebar-brand align-items-center justify-content-center sidebar-brand-text mx-3">
-                            <%= ust.getFullname() %></span><br>
+                            <%= ust1.getFullname() %></span><br>
                     </a>
                 </li>
 
@@ -59,7 +59,7 @@
 
                 <!-- Nav Item - Dashboard -->
                 <li class="nav-item">
-                    <a class="nav-link" href="staff_merit.jsp">
+                    <a class="nav-link" href="staff_merit_SELECTrequestApprovalMerit">
                         <i class="fas fa-certificate"></i>
                         <span>Merit</span></a>
                 </li>

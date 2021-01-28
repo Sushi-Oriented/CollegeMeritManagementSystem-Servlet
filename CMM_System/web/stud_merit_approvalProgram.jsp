@@ -90,8 +90,8 @@
                                         <h4 class="mb-2 text-gray-800"><b>Program Details</b></h4>
                                         <p class="mb-2 text-gray-800"><b>Program Name:</b> <%= p.getProgName()%></p>
                                         <p class="mb-2 text-gray-800"><b>Location:</b> <%= p.getProgLocation()%></p>
-                                        <p class="mb-2 text-gray-800"><b>Time:</b> ?</p>
                                         <p class="mb-2 text-gray-800"><b>Start Date:</b> <%= p.getProgStartDate()%></p>
+                                        <p class="mb-2 text-gray-800"><b>End Date:</b> <%= p.getProgEndDate()%></p>
                                         <p class="mb-2 text-gray-800"><b>Organizer:</b> <%= p.getProgOrganizer()%></p>
                                         <p class="mb-2 text-gray-800"><b>Category:</b> <%= p.getProgCategory()%></p>
                                         <p class="mb-2 text-gray-800"><b>Description:</b> <%= p.getProgDescription()%></p>
@@ -100,7 +100,15 @@
                                     </button>
                                 </div>
                             </form>  
-         <% } }%>                              
+         <% } }
+            else{%> 
+            <center>
+                <img src="images/empty.gif" alt=""/>
+                <br><br><p>No approval program in your list </p>
+            </center>
+            <%}
+         
+         %>                              
                             </div>
                             
                             

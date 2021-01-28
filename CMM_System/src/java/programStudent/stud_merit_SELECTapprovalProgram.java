@@ -56,9 +56,11 @@ public class stud_merit_SELECTapprovalProgram extends HttpServlet {
             
             Class.forName(driver);
             Connection con = DriverManager.getConnection(url, username, password);
-            String selectQry = "select * from program where firstemail = ? and progStatus = 'Approved'";
+            String selectQry = "select * from program where firstemail = ? and progStatus = ? and meritStatus is ?";
             PreparedStatement ps = con.prepareStatement(selectQry);
             ps.setString(1, firstemail);
+            ps.setString(2, "Approved");
+            ps.setString(3, null);
             
             ResultSet rs = ps.executeQuery();
             Vector dp = new Vector();

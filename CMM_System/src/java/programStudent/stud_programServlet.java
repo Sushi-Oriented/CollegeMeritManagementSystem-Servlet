@@ -37,7 +37,7 @@ public class stud_programServlet extends HttpServlet {
         
         HttpSession session = request.getSession();
         String firstemail = (String) session.getAttribute("firstemail");
-        
+        PrintWriter out = response.getWriter();
         String progName = request.getParameter("progName");
         String progLocation = request.getParameter("progLocation");
         String progStartDate = request.getParameter("progStartDate");
@@ -46,6 +46,7 @@ public class stud_programServlet extends HttpServlet {
         String progCategory = request.getParameter("progCategory");
         String progDescription = request.getParameter("progDescription");
         String progStatus = "Pending";
+        
         
         try {
             String sqlInsert = "INSERT INTO program(firstemail, progName, progLocation, progStartDate, progEndDate, progOrganizer, progCategory, progDescription, progStatus) VALUES (?,?,?,?,?,?,?,?,?)";
@@ -61,7 +62,7 @@ public class stud_programServlet extends HttpServlet {
             ps.setString (9, progStatus);
             ps.executeUpdate();
             
-            PrintWriter out = response.getWriter();
+           
             out.println("<script type=\"text/javascript\">");
             out.println("alert('Your program is submitted successfully!');");
             out.println("location='stud_index.jsp';");
@@ -69,6 +70,7 @@ public class stud_programServlet extends HttpServlet {
         }
         
         catch(SQLException ex){
+            out.print(ex);
         }
         
     }

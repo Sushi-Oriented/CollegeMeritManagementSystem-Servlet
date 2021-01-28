@@ -57,14 +57,14 @@ public class LoginServletStaff extends HttpServlet {
                 PreparedStatement ps = con.prepareStatement(selectQry);
                 ps.setString(1, firstemail);
                 ResultSet rs = ps.executeQuery();
-                Staff ust = new Staff();
+                Staff ust1 = new Staff();
             
                 while(rs.next()){                
-                    ust.setFullname(rs.getString(1));
-                    ust.setNickname(rs.getString(2));
+                    ust1.setFullname(rs.getString(1));
+                    ust1.setNickname(rs.getString(2));
                 }
 
-                session.setAttribute("ust", ust);
+                session.setAttribute("ust1", ust1);
                 response.sendRedirect("staff_index.jsp");
             } 
             

@@ -92,6 +92,30 @@
         <servlet-name>RegServlet</servlet-name>
         <servlet-class>main.RegServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>stud_merit_APPLYapprovalMerit</servlet-name>
+        <servlet-class>programStudent.stud_merit_APPLYapprovalMerit</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>staff_merit_SELECTrequestApprovalMerit</servlet-name>
+        <servlet-class>programStaff.staff_merit_SELECTrequestApprovalMerit</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>staff_merit_GETrequestApprovalMerit</servlet-name>
+        <servlet-class>programStaff.staff_merit_GETrequestApprovalMerit</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>staff_merit_COMPLETEapprovalMerit</servlet-name>
+        <servlet-class>programStaff.staff_merit_COMPLETEapprovalMerit</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>stud_merit_DELETEstud</servlet-name>
+        <servlet-class>programStudent.stud_merit_DELETEstud</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>testing</servlet-name>
+        <servlet-class>programStudent.testing</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginServletStudent</servlet-name>
         <url-pattern>/LoginServletStudent</url-pattern>
@@ -199,6 +223,30 @@
     <servlet-mapping>
         <servlet-name>RegServlet</servlet-name>
         <url-pattern>/RegServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>stud_merit_APPLYapprovalMerit</servlet-name>
+        <url-pattern>/stud_merit_APPLYapprovalMerit</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>staff_merit_SELECTrequestApprovalMerit</servlet-name>
+        <url-pattern>/staff_merit_SELECTrequestApprovalMerit</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>staff_merit_GETrequestApprovalMerit</servlet-name>
+        <url-pattern>/staff_merit_GETrequestApprovalMerit</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>staff_merit_COMPLETEapprovalMerit</servlet-name>
+        <url-pattern>/staff_merit_COMPLETEapprovalMerit</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>stud_merit_DELETEstud</servlet-name>
+        <url-pattern>/stud_merit_DELETEstud</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>testing</servlet-name>
+        <url-pattern>/testing</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

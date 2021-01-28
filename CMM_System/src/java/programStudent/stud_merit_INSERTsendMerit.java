@@ -44,18 +44,17 @@ public class stud_merit_INSERTsendMerit extends HttpServlet {
         PrintWriter out = response.getWriter();
         HttpSession session = request.getSession();
         String firstemail = (String) session.getAttribute("firstemail");
-   
+        int progid = (int) session.getAttribute("progid");
         
         String name = request.getParameter("name");
-        int progid = Integer.parseInt(request.getParameter("progid"));
         String role = request.getParameter("role");
         String matricNum = request.getParameter("matricNum");
         long icNum = Long.parseLong(request.getParameter("icNum"));
         int merit = Integer.parseInt(request.getParameter("merit"));
-        String status = "Pending";
+       
         
         try {
-            String sqlInsert = "INSERT INTO merit(name, progid, role, matricNum, icNum, merit, status) VALUES (?,?,?,?,?,?,?)";
+            String sqlInsert = "INSERT INTO merit(name, progid, role, matricNum, icNum, merit) VALUES (?,?,?,?,?,?)";
             PreparedStatement ps = con.prepareStatement(sqlInsert);
             ps.setString (1, name);
             ps.setInt (2, progid);
@@ -63,7 +62,6 @@ public class stud_merit_INSERTsendMerit extends HttpServlet {
             ps.setString (4, matricNum);
             ps.setLong(5, icNum);
             ps.setInt(6, merit);
-            ps.setString (7, status);
             ps.executeUpdate();
         }
         catch(NumberFormatException | SQLException e){
@@ -81,7 +79,7 @@ public class stud_merit_INSERTsendMerit extends HttpServlet {
                 Merit dispmerit = new Merit();
                 
                 dispmerit.setName(rs.getString("name"));
-//                dispmerit.setProgID(progid);
+                dispmerit.setPk(rs.getInt("pk"));
                 dispmerit.setRole(rs.getString("role"));
                 dispmerit.setMatricNum(rs.getString("matricNum"));
                 dispmerit.setIcNum(rs.getLong("icNum"));

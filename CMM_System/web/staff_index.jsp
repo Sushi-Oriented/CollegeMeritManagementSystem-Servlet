@@ -159,7 +159,10 @@
                                     </div>
                                 </div>
                             </div>
-                            
+                                                                                    
+                        </div>
+                                            
+                        <div class="row content">
                             <!-- Empty Card -->
                             <div class="col-xl-12 col-lg-12">                                
                                 <div class="card shadow mb-4">
@@ -175,7 +178,6 @@
                                     </div>
                                 </div>
                             </div>
-                            
                         </div>
                         
                     </div>

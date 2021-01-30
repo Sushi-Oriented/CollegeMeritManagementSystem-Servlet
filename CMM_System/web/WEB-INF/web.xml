@@ -120,6 +120,10 @@
         <servlet-name>staff_programIndex</servlet-name>
         <servlet-class>programStaff.staff_programIndex</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>stud_programIndex</servlet-name>
+        <servlet-class>programStudent.stud_programIndex</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginServletStudent</servlet-name>
         <url-pattern>/LoginServletStudent</url-pattern>
@@ -255,6 +259,10 @@
     <servlet-mapping>
         <servlet-name>staff_programIndex</servlet-name>
         <url-pattern>/staff_programIndex</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>stud_programIndex</servlet-name>
+        <url-pattern>/stud_programIndex</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

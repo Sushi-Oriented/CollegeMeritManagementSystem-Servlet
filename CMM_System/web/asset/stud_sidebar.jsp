@@ -45,7 +45,7 @@
 
                 <!-- Nav Item - Dashboard -->
                 <li class="nav-item">
-                    <a class="nav-link" href="stud_index.jsp">
+                    <a class="nav-link" href="stud_programIndex">
                         <i class="fa fa-home"></i>
                         <span>Dashboard</span></a>
                 </li>

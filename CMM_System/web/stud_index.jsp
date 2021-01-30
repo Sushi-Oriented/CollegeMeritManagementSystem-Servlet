@@ -4,6 +4,9 @@
     Author     : Alifah Ilyana
 --%>
 
+<%@page import="bean.Program"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="java.util.Vector"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -26,6 +29,8 @@
         <link href="css/sb-admin-2.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
+        <% ArrayList  s1  = (ArrayList)session.getAttribute("progCount"); %>
+        <% Program studProIndex = (Program)session.getAttribute("studProIndex"); %>
         <!-- Page Wrapper -->
         <div id="wrapper">
             
@@ -45,23 +50,102 @@
                         <!-- Page Heading -->
                         <div class="d-sm-flex align-items-center justify-content-between mb-4">
                             <h1 class="h3 mb-0 text-gray-800">Welcome to College Merit Management System, <%= ust.getNickname() %>!</h1>
+                            <p>
+                                Data updated on <a id="date"></a>
+                            </p>
                         </div>
-                        <div class="card shadow mb-4">
-                                <div class="card-header py-3">
-                                    <h6 class="m-0 font-weight-bold text-maroon-primary">Basic Card Example</h6>
+                            
+                        <div class="row content">
+                            
+                            <!-- Pending Program -->
+                            <div class="col-xl-3 col-md-6 mb-4">
+                                <div class="card border-left-warning shadow h-100 py-2">
+                                    <div class="card-body">
+                                        <div class="row no-gutters align-items-center">
+                                            <div class="col mr-2">
+                                                <div class="text-xs font-weight-bold text-gray-800 text-uppercase mb-1">
+                                                    Pending Program</div>
+                                                <div class="h5 mb-0 font-weight-bold text-gray-800"><%= studProIndex.getPendingCount()%></div>
+                                            </div>
+                                            <div class="col-auto">
+                                                <i class="fas fa-tasks fa-2x text-gray-300"></i>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="card-body">
-
-                                    The styling for this basic card example is created by using default Bootstrap
-                                    utility classes. By using utility classes, the style of the card component can be
-                                    easily modified with no need for any custom CSS!
-                       
-                                    AMIRUL FAIZ HANDSOME JEEEE
-                                    
-                                    WASAP BROOO, WELCOME 2021
-
+                            </div>
+                            <!-- Approved Program -->
+                            <div class="col-xl-3 col-md-6 mb-4">
+                                <div class="card border-left-success  shadow h-100 py-2">
+                                    <div class="card-body">
+                                        <div class="row no-gutters align-items-center">
+                                            <div class="col mr-2">
+                                                <div class="text-xs font-weight-bold text-gray-800 text-uppercase mb-1">
+                                                    Approved Program</div>
+                                                <div class="h5 mb-0 font-weight-bold text-gray-800"><%= studProIndex.getApproveCount()%></div>
+                                            </div>
+                                            <div class="col-auto">
+                                                <i class="far fa-check-circle fa-2x text-gray-300"></i>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
+                            </div>
+                            <!-- Declined Program -->
+                            <div class="col-xl-3 col-md-6 mb-4">
+                                <div class="card border-left-danger shadow h-100 py-2">
+                                    <div class="card-body">
+                                        <div class="row no-gutters align-items-center">
+                                            <div class="col mr-2">
+                                                <div class="text-xs font-weight-bold text-gray-800 text-uppercase mb-1">
+                                                    Declined Program</div>
+                                                <div class="h5 mb-0 font-weight-bold text-gray-800"><%= studProIndex.getDeclineCount()%></div>
+                                            </div>
+                                            <div class="col-auto">
+                                                <i class="far fa-times-circle fa-2x text-gray-300"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Total Program -->
+                            <div class="col-xl-3 col-md-6 mb-4">
+                                <div class="card border-left-primary shadow h-100 py-2">
+                                    <div class="card-body">
+                                        <div class="row no-gutters align-items-center">
+                                            <div class="col mr-2">
+                                                <div class="text-xs font-weight-bold text-gray-800 text-uppercase mb-1">
+                                                    Total Program
+                                                </div>
+                                                <div class="h5 mb-0 font-weight-bold text-gray-800"><%= studProIndex.getProgramCount() %></div>
+                                            </div>
+                                            <div class="col-auto">
+                                                <i class="fas fa-list fa-2x text-gray-300"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>                         
                         </div>
+                            
+                        <div class="row content">
+                            <!-- Empty Card -->
+                            <div class="col-xl-12 col-lg-12">                                
+                                <div class="card shadow mb-4">
+                                    <div class="card-header py-3">
+                                        <h6 class="m-0 font-weight-bold text-gray-800">Someting</h6>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="chart-bar">
+                                            
+                                        </div>
+                                        <hr>
+                                        Tah.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                            
                     </div>
                     <!-- /.container-fluid -->
 

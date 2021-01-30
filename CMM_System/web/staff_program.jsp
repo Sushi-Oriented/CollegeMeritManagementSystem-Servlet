@@ -58,7 +58,6 @@
                         <!-- Page Heading -->
                         <div class="d-sm-flex align-items-center justify-content-between mb-4">
                             <h1 class="h3 mb-0 text-gray-800">Program Approval</h1>
-                            <a class="btn btn-maroon" href="staff_index.jsp" role="button"><i class='fas fa-arrow-left'></i>  Back</a>
                         </div>
                         
                         <p style="font-style: italic; margin-bottom: -8px;">Program > Program Verification</p><hr>

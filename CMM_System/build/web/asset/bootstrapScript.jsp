@@ -34,5 +34,7 @@
         <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
         <script src="js/demo/datatables-demo.js"></script>
         
+        <!-- Custom js -->
+        <script src="js/date.js"></script>
     </body>
 </html>

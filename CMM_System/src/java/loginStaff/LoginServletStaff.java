@@ -14,6 +14,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -64,8 +65,9 @@ public class LoginServletStaff extends HttpServlet {
                     ust1.setNickname(rs.getString(2));
                 }
 
-                session.setAttribute("ust1", ust1);
-                response.sendRedirect("staff_index.jsp");
+                session.setAttribute("ust1", ust1);            
+                RequestDispatcher rd=request.getRequestDispatcher("staff_programIndex"); 
+                rd.forward(request, response);
             } 
             
             else {

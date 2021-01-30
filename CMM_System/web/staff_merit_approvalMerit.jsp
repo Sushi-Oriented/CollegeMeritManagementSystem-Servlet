@@ -48,7 +48,6 @@
                         <!-- Page Heading -->
                         <div class="d-sm-flex align-items-center justify-content-between mb-4">
                             <h1 class="h3 mb-0 text-gray-800">Merit Approval</h1>
-                            <a class="btn btn-maroon" href="stud_index.jsp" role="button"><i class='fas fa-arrow-left'></i>  Back</a>
                         </div>
                         
                         <p style="font-style: italic; margin-bottom: -8px;">

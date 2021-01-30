@@ -10,6 +10,9 @@ public class Program implements Serializable {
     String progName, progLocation, progOrganizer, progCategory, progDescription, progStatus, firstEmail, studName;
     Date progStartDate, progEndDate;
     
+    // Table Data
+    String pendingCount, approveCount, DeclineCount, programCount, festCount, workCount, confCount;   
+    
     public Program() {
     }
     
@@ -28,7 +31,6 @@ public class Program implements Serializable {
     public void setFirstEmail2(String firstEmail) {
         this.firstEmail = firstEmail;
     }
-    
         
     public String getStudName(){
         return studName;
@@ -108,5 +110,61 @@ public class Program implements Serializable {
 
     public void setProgEndDate(Date progEndDate) {
         this.progEndDate = progEndDate;
+    }
+
+    public String getPendingCount() {
+        return pendingCount;
+    }
+
+    public void setPendingCount(String pendingCount) {
+        this.pendingCount = pendingCount;
+    }
+
+    public String getApproveCount() {
+        return approveCount;
+    }
+
+    public void setApproveCount(String approveCount) {
+        this.approveCount = approveCount;
+    }
+
+    public String getDeclineCount() {
+        return DeclineCount;
+    }
+
+    public void setDeclineCount(String DeclineCount) {
+        this.DeclineCount = DeclineCount;
+    }
+
+    public String getProgramCount() {
+        return programCount;
+    }
+
+    public void setProgramCount(String programCount) {
+        this.programCount = programCount;
+    }
+
+    public String getFestCount() {
+        return festCount;
+    }
+
+    public void setFestCount(String festCount) {
+        this.festCount = festCount;
+    }
+
+    public String getWorkCount() {
+        return workCount;
+    }
+
+    public void setWorkCount(String workCount) {
+        this.workCount = workCount;
+    }
+
+    public String getConfCount() {
+        return confCount;
+    }
+
+    public void setConfCount(String confCount) {
+        this.confCount = confCount;
     }
 }

@@ -116,6 +116,10 @@
         <servlet-name>testing</servlet-name>
         <servlet-class>programStudent.testing</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>staff_programIndex</servlet-name>
+        <servlet-class>programStaff.staff_programIndex</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginServletStudent</servlet-name>
         <url-pattern>/LoginServletStudent</url-pattern>
@@ -247,6 +251,10 @@
     <servlet-mapping>
         <servlet-name>testing</servlet-name>
         <url-pattern>/testing</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>staff_programIndex</servlet-name>
+        <url-pattern>/staff_programIndex</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

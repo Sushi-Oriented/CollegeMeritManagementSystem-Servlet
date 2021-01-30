@@ -4,6 +4,7 @@
     Author     : User
 --%>
 
+<%@page import="bean.Program"%>
 <%@page import="bean.Staff"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -13,6 +14,7 @@
     </head>
     <body>
         <% Staff ust1 = (Staff)session.getAttribute("ust1"); %>
+        <% Program proIndex = (Program)session.getAttribute("proIndex"); %>
         <!-- Sidebar -->
             <ul class="navbar-nav bg-gradient-sidebar-custom sidebar sidebar-dark accordion" id="accordionSidebar">
 
@@ -45,7 +47,7 @@
 
                 <!-- Nav Item - Dashboard -->
                 <li class="nav-item">
-                    <a class="nav-link" href="staff_index.jsp">
+                    <a class="nav-link" href="staff_programIndex">
                         <i class="fa fa-home"></i>
                         <span>Dashboard</span></a>
                 </li>

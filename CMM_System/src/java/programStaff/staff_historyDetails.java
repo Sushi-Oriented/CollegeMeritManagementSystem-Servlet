@@ -76,7 +76,7 @@ public class staff_historyDetails extends HttpServlet {
                 mer.setMatricNum(rs2.getString("matricNum"));
                 mer.setIcNum(rs2.getLong("IcNum"));
                 mer.setMerit(rs2.getInt("merit"));
-                mer.setStatus(rs2.getString("status"));
+                //mer.setStatus(rs2.getString("status"));
                 
                 merList.addElement(mer);
             }

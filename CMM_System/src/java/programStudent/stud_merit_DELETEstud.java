@@ -79,7 +79,7 @@ public class stud_merit_DELETEstud extends HttpServlet {
                 dispmerit.setPk(rs.getInt("pk"));
                 dispmerit.setRole(rs.getString("role"));
                 dispmerit.setMatricNum(rs.getString("matricNum"));
-                dispmerit.setIcNum(rs.getLong("icNum"));
+                dispmerit.setIcNum(rs.getString("icNum"));
                 dispmerit.setMerit(rs.getInt("merit"));
                 
                 dm.addElement(dispmerit);

@@ -96,9 +96,8 @@
                                                     <th>Program Name</th>                                                    
                                                     <th>Category</th>
                                                     <th>Organizer</th>
-                                                    <th>Start Date</th>
-                                                    <th>End Date</th>
-                                                    <th>Status</th>
+                                                    <th>Program Status</th>
+                                                    <th>Merit Status</th>
                                                     <th>Action</th>
                                                 </tr>
                                             </thead>
@@ -115,9 +114,8 @@
                                                     <td><%= pro.getProgName()%></td>                                                   
                                                     <td><%= pro.getProgCategory()%></td>
                                                     <td><%= pro.getProgOrganizer()%></td>
-                                                    <td><%= pro.getProgStartDate()%></td>
-                                                    <td><%= pro.getProgEndDate()%></td>
                                                     <td style="font-weight: bold; font-style: italic;"><%= pro.getProgStatus()%></td>
+                                                    <td style="font-weight: bold; font-style: italic;"><%= pro.getMeritStatus()%></td>
                                                     <td>
                                                         <form action="staff_historyDetails" method="get">
                                                             <input type="int" name="progID" value="<%= pro.getProgID()%>" hidden>

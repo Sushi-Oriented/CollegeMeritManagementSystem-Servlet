@@ -8,11 +8,10 @@ import java.io.Serializable;
 
 public class Merit implements Serializable{
     
-    private String name, role, matricNum, status;
+    private String name, role, matricNum, status,icNum;
 
     
     private int progID, merit, pk;
-    private long icNum;
 
     public Merit() {
     }
@@ -65,11 +64,11 @@ public class Merit implements Serializable{
         this.status = status;
     }
 
-    public long getIcNum() {
+    public String getIcNum() {
         return icNum;
     }
 
-    public void setIcNum(long icNum) {
+    public void setIcNum(String icNum) {
         this.icNum = icNum;
     }
 

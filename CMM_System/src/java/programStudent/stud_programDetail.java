@@ -78,7 +78,7 @@ public class stud_programDetail extends HttpServlet {
                 mer.setName(rs2.getString("name"));
                 mer.setRole(rs2.getString("role"));
                 mer.setMatricNum(rs2.getString("matricNum"));
-                mer.setIcNum(rs2.getLong("IcNum"));
+                mer.setIcNum(rs2.getString("IcNum"));
                 mer.setMerit(rs2.getInt("merit"));
                 
                 merList.addElement(mer);

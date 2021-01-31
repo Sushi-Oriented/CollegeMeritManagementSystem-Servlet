@@ -49,7 +49,7 @@ public class stud_merit_INSERTsendMerit extends HttpServlet {
         String name = request.getParameter("name");
         String role = request.getParameter("role");
         String matricNum = request.getParameter("matricNum");
-        long icNum = Long.parseLong(request.getParameter("icNum"));
+        String icNum = request.getParameter("icNum");
         int merit = Integer.parseInt(request.getParameter("merit"));
        
         
@@ -60,7 +60,7 @@ public class stud_merit_INSERTsendMerit extends HttpServlet {
             ps.setInt (2, progid);
             ps.setString (3, role);
             ps.setString (4, matricNum);
-            ps.setLong(5, icNum);
+            ps.setString(5, icNum);
             ps.setInt(6, merit);
             ps.executeUpdate();
         }
@@ -82,7 +82,7 @@ public class stud_merit_INSERTsendMerit extends HttpServlet {
                 dispmerit.setPk(rs.getInt("pk"));
                 dispmerit.setRole(rs.getString("role"));
                 dispmerit.setMatricNum(rs.getString("matricNum"));
-                dispmerit.setIcNum(rs.getLong("icNum"));
+                dispmerit.setIcNum(rs.getString("icNum"));
                 dispmerit.setMerit(rs.getInt("merit"));
                 
                 dm.addElement(dispmerit);

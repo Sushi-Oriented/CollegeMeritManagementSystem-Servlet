@@ -89,7 +89,7 @@ public class staff_programIndex extends HttpServlet {
             }
             
             /* Get count Workshop program*/
-            String workQry = countQry + " where progCategory='Workshop'";
+            String workQry = countQry + " where progCategory='Workshops'";
             PreparedStatement ps7 = con.prepareStatement(workQry);
             ResultSet rs7 = ps7.executeQuery();               
 

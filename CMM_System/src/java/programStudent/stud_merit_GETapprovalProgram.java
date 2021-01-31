@@ -93,7 +93,7 @@ public class stud_merit_GETapprovalProgram extends HttpServlet {
 //                dispmerit.setProgID(progid);
                 dispmerit.setRole(rs1.getString("role"));
                 dispmerit.setMatricNum(rs1.getString("matricNum"));
-                dispmerit.setIcNum(rs1.getLong("icNum"));
+                dispmerit.setIcNum(rs1.getString("icNum"));
                 dispmerit.setMerit(rs1.getInt("merit"));
                 
                 dm.addElement(dispmerit);

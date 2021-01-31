@@ -46,7 +46,7 @@ public class testing extends HttpServlet {
         String name = request.getParameter("name");
         String role = request.getParameter("role");
         String matricNum = request.getParameter("matricNum");
-        long icNum = Long.parseLong(request.getParameter("icNum"));
+        String icNum = request.getParameter("icNum");
         int merit = Integer.parseInt(request.getParameter("merit"));
        
         
@@ -57,7 +57,7 @@ public class testing extends HttpServlet {
             ps.setInt (2, progid);
             ps.setString (3, role);
             ps.setString (4, matricNum);
-            ps.setLong(5, icNum);
+            ps.setString(5, icNum);
             ps.setInt(6, merit);
             ps.executeUpdate();
         }

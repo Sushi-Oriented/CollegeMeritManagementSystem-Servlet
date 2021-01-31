@@ -113,13 +113,13 @@
                                                   <label for="validationTooltipUsername">Position/Role</label>
                                                   <div class="dropdown mb-4" >
                                                       
-                                                                <select class="form-control" onclick="myFunction(event)" name="role">
-                                                                    <option value="5" selected="">Secretariat</option>
-                                                                    <option value="8">Head Of Department</option>
-                                                                    <option value="10">Treasurer</option>
-                                                                    <option value="10">Secretary</option>
-                                                                    <option value="15">Deputy Director</option>
-                                                                    <option value="15">Director</option>
+                                                                <select class="form-control" onclick="myFunction(event)" id="role" name="role">
+                                                                    <option value="Secretariat" selected="">Secretariat</option>
+                                                                    <option value="Head Of Department">Head Of Department</option>
+                                                                    <option value="Treasurer">Treasurer</option>
+                                                                    <option value="Secretary">Secretary</option>
+                                                                    <option value="Deputy Director">Deputy Director</option>
+                                                                    <option value="Director">Director</option>
                                                                   </select>
                                                             </div>
                                                 </div>
@@ -169,8 +169,42 @@
                                              <p id="demo"></p>
                                                             <script>
                                                                 function myFunction(e) {
-                                                                    document.getElementById("merit").value = e.target.value
+                                                                    var x = document.getElementById("role").value;
+//                                                                  document.getElementById("merit").value = x;
+                                                                    
+                                                                    if (x == 'Secretariat') {
+                                                                        document.getElementById("merit").value = 5;
+                                                                    }
+                                                                    else if (x == 'Head Of Department') {
+                                                                        document.getElementById("merit").value = 8;
+                                                                    }
+                                                                    else if (x == 'Treasurer' || x == 'Secretary' ) {
+                                                                        document.getElementById("merit").value = 10;
+                                                                    }
+                                                                    else if (x == 'Deputy Director' || x == 'Director') {
+                                                                        document.getElementById("merit").value = 15;
+                                                                    }
+                                                                    
                                                                 }
+                                                                
+//                                                                function myFunction(e) {
+//                                                                    var roleSelect = document.getElementById("role");
+//                                                                    var roleText = roleSelect.options[roleSelect.selectedIndex].text;
+//                                                                    //alert(roleText);
+//                                                                    if (roleText == 'Secretariat'){
+//                                                                        document.getElementById("merit").value = 5;
+//                                                                    } else if(roleText == 'Head Of Department'){
+//                                                                        document.getElementById("merit").value = 8;
+//                                                                    } else if(roleText == 'Treasurer'){
+//                                                                        document.getElementById("merit").value = 10;
+//                                                                    } else if(roleText == 'Secretary'){
+//                                                                        document.getElementById("merit").value = 12;
+//                                                                    } else if(roleText == 'Deputy Director'){
+//                                                                        document.getElementById("merit").value = 14;
+//                                                                    } else if(roleText == 'Director'){
+//                                                                        document.getElementById("merit").value = 18;
+//                                                                    }
+//                                                                }
                                                            
                                                             </script>
                                               
@@ -226,7 +260,7 @@
                                             <td><%= p.getRole()%></td>
                                             <td><%= p.getMatricNum()%></td>
                                             <td><%= p.getIcNum()%></td>
-                                            <td><%= p.getPk()%></td>
+                                            <td><%= p.getMerit()%></td>
                                             <td>
                                                 <form action="stud_merit_DELETEstud" method="get">
                                                     <input type="text" name="pk" value="<%= p.getPk()%>" hidden>

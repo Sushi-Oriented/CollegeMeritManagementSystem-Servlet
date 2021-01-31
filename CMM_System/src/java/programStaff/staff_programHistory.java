@@ -61,7 +61,7 @@ public class staff_programHistory extends HttpServlet {
                 }
                 
                 program.setFirstEmail2(rs.getString("firstemail"));
-                program.setProgID(rs.getInt("progID"));                
+                program.setProgID(rs.getInt("progID"));
                 program.setProgName(rs.getString("progName"));
                 program.setProgLocation(rs.getString("progLocation"));
                 program.setProgStartDate(rs.getDate("progStartDate"));
@@ -69,7 +69,8 @@ public class staff_programHistory extends HttpServlet {
                 program.setProgOrganizer(rs.getString("progOrganizer"));
                 program.setProgCategory(rs.getString("progCategory"));
                 program.setProgDescription(rs.getString("progDescription"));
-                program.setProgStatus(rs.getString("progStatus"));                                
+                program.setProgStatus(rs.getString("progStatus"));        
+                program.setMeritStatus(rs.getString("meritStatus")); 
                 
                 progList.addElement(program);
             }   

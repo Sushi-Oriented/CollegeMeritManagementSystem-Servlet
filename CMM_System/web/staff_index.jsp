@@ -45,7 +45,7 @@
 
                         <!-- Page Heading -->
                         <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                            <h1 class="h3 mb-0 text-gray-800">Welcome to College Merit Management System, <%= ust1.getNickname() %>!</h1>
+                            <h1 class="h3 mb-0 text-gray-800">Welcome to College Merit Management System,<br><b><%= ust1.getNickname() %>!</b> </h1>
                             <p>
                                 Data updated on <a id="date"></a>
                             </p>
@@ -161,26 +161,77 @@
                             </div>
                                                                                     
                         </div>
-                                            
+                        
+                        <br><h1 class="h3 mb-0 text-gray-800 text-center">System Guidance and Information</h1><br>
+                                                
+                                                
                         <div class="row content">
-                            <!-- Empty Card -->
-                            <div class="col-xl-12 col-lg-12">                                
+                            
+                            <!--tutorial-->
+                            <div class="col-xl-9 col-lg-8">                                
                                 <div class="card shadow mb-4">
                                     <div class="card-header py-3">
-                                        <h6 class="m-0 font-weight-bold text-gray-800">Someting</h6>
+                                        <h6 class="m-0 font-weight-bold text-gray-800">Staff System Guidance </a></h6>
                                     </div>
                                     <div class="card-body">
                                         <div class="chart-bar">
-                                            
+                                            <!--<canvas id="sa"></canvas>-->
                                         </div>
                                         <hr>
-                                        Tah.
+                                        <!--View detail on <a href="staff_programHistory">History</a> page.-->
                                     </div>
                                 </div>
                             </div>
+                            
+                            <!-- Pie Chart -->
+                            <div class="col-xl-3 col-lg-4">
+                                <div class="card shadow mb-4">
+                                    <!-- Card Header - Dropdown -->
+                                    <div
+                                        class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                        <h6 class="m-0 font-weight-bold text-gray-800">Merit Calculation</h6>
+                                    </div>
+                                    <!-- Card Body -->
+                                    <div class="card-body">
+                                       
+                                            <table class="table table-hover">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Positioin</th>
+                                                        <th>Merit</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>Secretariat</td>
+                                                        <td>5</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Head Of Department</td>
+                                                        <td>8</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Treasurer</td>
+                                                        <td>10</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Secretary</td>
+                                                        <td>10</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Deputy Director</td>
+                                                        <td>15</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Director</td>
+                                                        <td>15</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                            </div>
                         </div>
-                        
-                    </div>
                     <!-- /.container-fluid -->
 
                 </div>

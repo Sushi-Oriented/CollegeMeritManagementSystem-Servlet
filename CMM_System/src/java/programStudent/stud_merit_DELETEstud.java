@@ -53,16 +53,7 @@ public class stud_merit_DELETEstud extends HttpServlet {
         HttpSession session = request.getSession();
         int progid = (int) session.getAttribute("progid");
         int pk = Integer.parseInt(request.getParameter("pk"));
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet stud_merit_DELETEstud</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet stud_merit_DELETEstud at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
+        String name = request.getParameter("name");
     
         try {
             String sqlInsert = "delete from merit where pk= ?";
@@ -95,7 +86,10 @@ public class stud_merit_DELETEstud extends HttpServlet {
             }    
             
             session.setAttribute("dm", dm);
-            response.sendRedirect("stud_merit_sendMerit.jsp");
+             out.println("<script type=\"text/javascript\">");
+                out.println("alert('"+name+" already removed from merit list');");
+                out.println("location='stud_merit_sendMerit.jsp';");
+                out.println("</script>");
         }
         catch(SQLException e){
             out.println(e);

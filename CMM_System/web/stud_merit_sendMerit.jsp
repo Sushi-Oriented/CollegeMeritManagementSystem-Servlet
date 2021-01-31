@@ -229,54 +229,11 @@
                                             <td><%= p.getPk()%></td>
                                             <td>
                                                 <form action="stud_merit_DELETEstud" method="get">
-                                                    <input type="int" name="pk" value="<%= p.getPk()%>" hidden>
+                                                    <input type="text" name="pk" value="<%= p.getPk()%>" hidden>
+                                                    <input type="text" name="name" value="<%= p.getName()%>" hidden>
                                                     
-                                                    
-                                                    <button type="button" class="btn btn-danger btn-block"  data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                                                      <i class="fas fa-eraser"></i>
-                                                        Delete
-                                                    </button>
+                                                    <input class="btn btn-danger btn-block" type="submit" value="Delete"></input>
 
-                                                    <!-- Modal -->
-                                                    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                                                      <div class="modal-dialog modal-lg">
-                                                        <div class="modal-content">
-                                                          <div class="modal-header">
-                                                            <h5 class="modal-title" id="exampleModalLabel">Delete Data</h5>
-                                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                                          </div>
-                                                          <div class="modal-body">
-                                                              
-                                                              <p class="mb-2 text-gray-800 text-center"><b>Are you sure want to delete this student?</b></p><br>
-                                                              <div class="row">
-                                                                <div class="col-4">
-                                                                    <p class="mb-2 text-gray-800"><b>Student Name:</b>
-                                                                </div>
-                                                                <div class="col-8"><%= p.getName()%></div>
-                                                              </div>
-                                                              <div class="row">
-                                                                <div class="col-4">
-                                                                    <p class="mb-2 text-gray-800"><b>Student Matric Number:</b>
-                                                                </div>
-                                                                <div class="col-8"><%= p.getPk()%></div>
-                                                              </div>
-                                                              <div class="row">
-                                                                <div class="col-4">
-                                                                    <p class="mb-2 text-gray-800"><b>Student IC Number:    </b>
-                                                                </div>
-                                                                <div class="col-8"><%= p.getIcNum()%></div>
-                                                              </div>
-                                                              
-
-                                                          </div>
-                                                          <div class="modal-footer">
-                                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-
-                                                            <a class="btn btn-danger" href="stud_merit_DELETEstud" role="button">Delete</a>
-                                                          </div>
-                                                        </div>
-                                                      </div>
-                                                    </div>
                                                 </form>
                                             </td>
                                         </tr>

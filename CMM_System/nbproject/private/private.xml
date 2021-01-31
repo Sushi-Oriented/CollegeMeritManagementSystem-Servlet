@@ -2,16 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/C:/xampp/htdocs/College-Merit-Management-System/CMM_System/src/java/programStudent/stud_merit_GETapprovalProgram.java</file>
-            <file>file:/C:/xampp/htdocs/College-Merit-Management-System/CMM_System/web/stud_merit_sendMerit.jsp</file>
-            <file>file:/C:/xampp/htdocs/College-Merit-Management-System/CMM_System/web/stud_merit_approvalProgram.jsp</file>
-            <file>file:/C:/xampp/htdocs/College-Merit-Management-System/CMM_System/src/java/programStaff/staff_programServlet.java</file>
-            <file>file:/C:/xampp/htdocs/College-Merit-Management-System/CMM_System/src/java/programStudent/stud_merit_SELECTapprovalProgram.java</file>
-            <file>file:/C:/xampp/htdocs/College-Merit-Management-System/CMM_System/nbproject/build-impl.xml</file>
-            <file>file:/C:/xampp/htdocs/College-Merit-Management-System/CMM_System/src/java/programStudent/stud_merit_INSERTsendMerit.java</file>
-            <file>file:/C:/xampp/htdocs/College-Merit-Management-System/CMM_System/src/java/bean/Merit.java</file>
-            <file>file:/C:/xampp/htdocs/College-Merit-Management-System/CMM_System/src/java/bean/Program.java</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>

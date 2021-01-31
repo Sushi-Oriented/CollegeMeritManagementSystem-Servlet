@@ -68,7 +68,8 @@
                             <h1 class="h3 mb-0 text-gray-800" id="textpg">
                                 Program History &nbsp;
                                 <i class="fas fa-history"></i>
-                            </h1>                         
+                            </h1>
+                            <a class="btn btn-maroon" href="stud_index.jsp" role="button"><i class='fas fa-arrow-left'></i>Back</a>
                         </div>
                         
                         <div class="subtextpg">
@@ -95,9 +96,8 @@
                                                     <th>Program Name</th>
                                                     <th>Category</th>
                                                     <th>Organizer</th>
-                                                    <th>Start Date</th>
-                                                    <th>End Date</th>
-                                                    <th>Status</th>
+                                                    <th>Program Status</th>
+                                                    <th>Merit Status</th>
                                                     <th>Action</th>
                                                 </tr>
                                             </thead>
@@ -113,9 +113,8 @@
                                                     <td><%= pro.getProgName()%></td>
                                                     <td><%= pro.getProgCategory()%></td>
                                                     <td><%= pro.getProgOrganizer()%></td>
-                                                    <td><%= pro.getProgStartDate()%></td>
-                                                    <td><%= pro.getProgEndDate()%></td>
                                                     <td style="font-weight:bold; font-style: italic;"><%= pro.getProgStatus()%></td>
+                                                    <td style="font-weight:bold; font-style: italic;"><%= pro.getMeritStatus() %></td>
                                                     <td>
                                                         <form action="stud_programDetail" method="post">
                                                             <input type="int" name="progID" value="<%= pro.getProgID()%>" hidden>

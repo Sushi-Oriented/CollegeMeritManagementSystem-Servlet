@@ -67,7 +67,8 @@
                             <h1 class="h3 mb-0 text-gray-800" id="textpg">
                                 Requested Program &nbsp;
                                 <i class="fas fa-history"></i>
-                            </h1>                         
+                            </h1>
+                            <a class="btn btn-maroon" href="staff_index.jsp" role="button"><i class='fas fa-arrow-left'></i>Back</a>
                         </div>
                         
                         <div class="subtextpg">

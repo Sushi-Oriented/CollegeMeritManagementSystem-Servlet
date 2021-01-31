@@ -59,8 +59,13 @@
                             
                             <div class="container-fluid">
                                 <h1 class="h3 mb-0 text-gray-800"><%= detailsprogram.getProgName()%></h1><br>
+                                <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                                    
                                 <p class="mb-2 text-gray-800">Merit > Approval Program > <b> <%= detailsprogram.getProgName()%></b></p>
-                                <hr class="sidebar-divider my-0"><br>
+                                    <a class="btn btn-maroon" href="stud_merit_SELECTapprovalProgram" role="button"><i class='fas fa-arrow-left'></i>Back</a>
+
+                                 </div>
+                                    <hr class="sidebar-divider my-0"><br>
                                 <div class="card shadow mb-4">
 <!--                                    <div class="card-header py-3 center">
                                         <h2 class="m-0 font-weight-bold text-primary text-center">Program details</h2>
@@ -92,7 +97,7 @@
                                         <form class="needs-validation" action="stud_merit_INSERTsendMerit" method="post">
                                               <div class="form-row">
                                                 <div class="col-md-4 mb-3">
-                                                  <label for="validationTooltipUsername">Username</label>
+                                                  <label for="validationTooltipUsername">Name</label>
                                                   <div class="input-group">
                                                     <div class="input-group-prepend">
                                                       <span class="input-group-text" id="validationTooltipUsernamePrepend">Name</span>
@@ -157,7 +162,7 @@
                                                 <input type="int" name="progid" value="<%= detailsprogram.getProgID()%>" hidden>
                                                
                                                 
-                                                <center><input class="btn btn-circle2 " style="background-color: #8A2BE2; color: white; font-size: 15px;float: center;"  type="submit" value="ADD MEMBER"></input></center>
+                                                <center><input class="btn btn-circle2 btn-maroon" style="font-size: 15px;float: center;"  type="submit" value="ADD MEMBER"></input></center>
                                                 
                                                     
                                         </form>
@@ -221,7 +226,7 @@
                                             <td><%= p.getRole()%></td>
                                             <td><%= p.getMatricNum()%></td>
                                             <td><%= p.getIcNum()%></td>
-                                            <td><%= p.getMerit()%></td>
+                                            <td><%= p.getPk()%></td>
                                             <td>
                                                 <form action="stud_merit_DELETEstud" method="get">
                                                     <input type="int" name="pk" value="<%= p.getPk()%>" hidden>
@@ -242,22 +247,22 @@
                                                           </div>
                                                           <div class="modal-body">
                                                               
-                                                              <p class="mb-2 text-gray-800 text-center"><b>Are you sure want to delete this student ?</b></p><br>
+                                                              <p class="mb-2 text-gray-800 text-center"><b>Are you sure want to delete this student?</b></p><br>
                                                               <div class="row">
                                                                 <div class="col-4">
-                                                                    <p class="mb-2 text-gray-800"><b>Student Name :</b>
+                                                                    <p class="mb-2 text-gray-800"><b>Student Name:</b>
                                                                 </div>
                                                                 <div class="col-8"><%= p.getName()%></div>
                                                               </div>
                                                               <div class="row">
                                                                 <div class="col-4">
-                                                                    <p class="mb-2 text-gray-800"><b>Student Matric Number :</b>
+                                                                    <p class="mb-2 text-gray-800"><b>Student Matric Number:</b>
                                                                 </div>
-                                                                <div class="col-8"><%= p.getMatricNum()%></div>
+                                                                <div class="col-8"><%= p.getPk()%></div>
                                                               </div>
                                                               <div class="row">
                                                                 <div class="col-4">
-                                                                    <p class="mb-2 text-gray-800"><b>Student IC Number :    </b>
+                                                                    <p class="mb-2 text-gray-800"><b>Student IC Number:    </b>
                                                                 </div>
                                                                 <div class="col-8"><%= p.getIcNum()%></div>
                                                               </div>
@@ -267,7 +272,7 @@
                                                           <div class="modal-footer">
                                                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
 
-                                                            <a class="btn btn-danger" href="stud_merit_APPLYapprovalMerit" role="button">Delete</a>
+                                                            <a class="btn btn-danger" href="stud_merit_DELETEstud" role="button">Delete</a>
                                                           </div>
                                                         </div>
                                                       </div>

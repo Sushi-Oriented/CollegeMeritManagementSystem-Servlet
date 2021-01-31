@@ -38,8 +38,8 @@
                         <!-- 404 Error Text -->
                         <div class="text-center"><br><br>
                             <p style="padding-right: 500px;" class="error mx-auto" data-text="DISABLED">DISABLED</p>
-                            <p class="lead text-gray-800 mb-5">Program Application is disabled. Try again later.</p>
-                            <a href="stud_index.jsp">&larr; Back to Dashboard</a>
+                            <p class="lead text-gray-800 mb-5">Program Application is disabled. Try again later.<br>
+                            <a href="stud_index.jsp">&larr; Back to Dashboard</a></p>
                         </div>
                     </div>
                     <!-- /.container-fluid -->

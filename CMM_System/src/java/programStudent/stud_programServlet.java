@@ -46,10 +46,11 @@ public class stud_programServlet extends HttpServlet {
         String progCategory = request.getParameter("progCategory");
         String progDescription = request.getParameter("progDescription");
         String progStatus = "Pending";
+        String meritStatus = "No action";
         
         
         try {
-            String sqlInsert = "INSERT INTO program(firstemail, progName, progLocation, progStartDate, progEndDate, progOrganizer, progCategory, progDescription, progStatus) VALUES (?,?,?,?,?,?,?,?,?)";
+            String sqlInsert = "INSERT INTO program(firstemail, progName, progLocation, progStartDate, progEndDate, progOrganizer, progCategory, progDescription, progStatus, meritStatus) VALUES (?,?,?,?,?,?,?,?,?,?)";
             PreparedStatement ps = con.prepareStatement(sqlInsert);
             ps.setString (1, firstemail);
             ps.setString (2, progName);
@@ -60,6 +61,7 @@ public class stud_programServlet extends HttpServlet {
             ps.setString (7, progCategory);
             ps.setString (8, progDescription);
             ps.setString (9, progStatus);
+            ps.setString (10, meritStatus);
             ps.executeUpdate();
             
            

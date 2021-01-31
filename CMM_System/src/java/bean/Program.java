@@ -7,13 +7,21 @@ import java.util.Date;
 public class Program implements Serializable {
 
     int progID;
-    String progName, progLocation, progOrganizer, progCategory, progDescription, progStatus, firstEmail, studName;
+    String progName, progLocation, progOrganizer, progCategory, progDescription, progStatus, firstEmail, studName, meritStatus;
     Date progStartDate, progEndDate;
     
     // Table Data
     String pendingCount, approveCount, DeclineCount, programCount, festCount, workCount, confCount;   
     
     public Program() {
+    }
+
+    public String getMeritStatus() {
+        return meritStatus;
+    }
+
+    public void setMeritStatus(String meritStatus) {
+        this.meritStatus = meritStatus;
     }
     
     public int getFirstEmail() {

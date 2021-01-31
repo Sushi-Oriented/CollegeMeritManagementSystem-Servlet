@@ -66,6 +66,7 @@ public class stud_programHistoryServlet extends HttpServlet {
                 pro.setProgCategory(rs.getString("progCategory"));
                 pro.setProgDescription(rs.getString("progDescription"));
                 pro.setProgStatus(rs.getString("progStatus"));
+                pro.setMeritStatus(rs.getString("meritStatus"));
                 
                 progList.addElement(pro);
             }

@@ -75,7 +75,7 @@
                                 <%= pro.getProgName()%>
                             </h1>
                             <a class="btn btn-maroon" href="staff_history.jsp" role="button">
-                                <i class="fas fa-chevron-left"></i>
+                                <i class="fas fa-arrow-left"></i>
                                 Back
                             </a>                            
                         </div>

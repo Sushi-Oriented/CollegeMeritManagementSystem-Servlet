@@ -59,7 +59,13 @@
                             </div>
                             
                             <div class="container-fluid">
-                                <h1 class="h3 mb-0 text-gray-800"><%= detailsprogram.getProgName()%></h1><br>
+                                <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                                    <h1 class="h3 mb-0 text-gray-800"><%= detailsprogram.getProgName()%></h1><br>
+                                    <a class="btn btn-maroon" href="staff_merit_SELECTrequestApprovalMerit" role="button"><i class='fas fa-arrow-left'></i>Back</a>
+
+                                </div>
+                                
+                                
                                 <p class="mb-2 text-gray-800">Merit > Merit Approval > <b> <%= detailsprogram.getProgName()%></b></p>
                                 <hr class="sidebar-divider my-0"><br>
                                 <div class="card shadow mb-4">

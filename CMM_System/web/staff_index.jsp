@@ -175,10 +175,11 @@
                                     </div>
                                     <div class="card-body">
                                         <div class="chart-bar">
-                                            <!--<canvas id="sa"></canvas>-->
+                                            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/qcQe5FceQXY" frameborder="1" 
+                                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                         </div>
                                         <hr>
-                                        <!--View detail on <a href="staff_programHistory">History</a> page.-->
+                                        <p><i>This video is brought to you by <a href="https://www.youtube.com/channel/UC43UQirlX-HPDr82WIn5KHA">CMMS 2020</a></i></p>
                                     </div>
                                 </div>
                             </div>

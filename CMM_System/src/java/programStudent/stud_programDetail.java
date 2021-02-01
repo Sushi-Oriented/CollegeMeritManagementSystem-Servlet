@@ -16,6 +16,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import jdbc.JDBCUtility;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 /**
  *
@@ -66,30 +69,54 @@ public class stud_programDetail extends HttpServlet {
             
             /*To get merit on the program*/
             
-            Vector merList = new Vector();
+//            Vector merList = new Vector();
             String merSql = "select * from merit where progID = ?";
             PreparedStatement ps2 = con.prepareStatement(merSql);
             ps2.setString(1, progID);
             ResultSet rs2 = ps2.executeQuery();
             
+            int i=0;
+            JSONArray jArray = new JSONArray();
+            
             while (rs2.next()) {
-                Merit mer = new Merit();
+//                Merit mer = new Merit();
+//                
+//                mer.setName(rs2.getString("name"));
+//                mer.setRole(rs2.getString("role"));
+//                mer.setMatricNum(rs2.getString("matricNum"));
+//                mer.setIcNum(rs2.getString("IcNum"));
+//                mer.setMerit(rs2.getInt("merit"));
+//                
+//                merList.addElement(mer);
                 
-                mer.setName(rs2.getString("name"));
-                mer.setRole(rs2.getString("role"));
-                mer.setMatricNum(rs2.getString("matricNum"));
-                mer.setIcNum(rs2.getString("IcNum"));
-                mer.setMerit(rs2.getInt("merit"));
+                String name = rs2.getString("name");
+                String role = rs2.getString("role");
+                String matricNum = rs2.getString("matricNum");
+                String IcNum = rs2.getString("IcNum");
+                String merit = rs2.getString("merit");
+
+                JSONObject arrayObj = new JSONObject();
                 
-                merList.addElement(mer);
+                int x = i+1;
+                arrayObj.put("Bil",x);
+                arrayObj.put("name", name);
+                arrayObj.put("role",role);
+                arrayObj.put("matricNum",matricNum);
+                arrayObj.put("IcNum",IcNum);
+                arrayObj.put("merit",merit);
+                x++;
+                
+                jArray.put(i,arrayObj);
+                i++;
             }
             
             /* Pass both attribute; merit & program */            
-            session.setAttribute("merList", merList);  
+//            session.setAttribute("merList", merList);  
+            session.setAttribute("jArray", jArray);
             session.setAttribute("pro", pro);
             response.sendRedirect("stud_history_details.jsp");
         }
-        catch (SQLException | IOException e){
+        catch (JSONException | SQLException | IOException e){
             out.println(e);
         }
     }

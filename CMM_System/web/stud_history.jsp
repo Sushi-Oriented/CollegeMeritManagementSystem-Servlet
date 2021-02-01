@@ -4,6 +4,7 @@
     Author     : User
 --%>
 
+<%@page import="org.json.JSONArray"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="java.util.Vector"%>
 <%@page import="bean.Program"%>
@@ -89,7 +90,7 @@
                                 <div class="card">
                                     <div class="card-body">
                                         <h3 style="text-decoration: underline;"><b>Program Details</b></h3>
-                                        <table class="table table-bordered table-hover" id="dataTable" style="width: 100%" cellspacing="0">
+                                        <table class="table table-bordered table-hover" id="historyDataTable" style="width: 100%" cellspacing="0">
                                             <thead style="background-color: #7a133c; color: white;">
                                                 <tr>
                                                     <th>No.</th>
@@ -101,35 +102,6 @@
                                                     <th>Action</th>
                                                 </tr>
                                             </thead>
-                                            <%                                                
-                                                Vector progList = (Vector) session.getAttribute("progList");
-                                                if (progList != null && (progList.size() > 0)){
-                                                for (int index=0; index < progList.size();index++){
-                                                    Program pro = (Program) progList.elementAt(index);
-                                            %>
-                                            <tbody>
-                                                <tr>
-                                                    <td><%= index + 1 %></td>
-                                                    <td><%= pro.getProgName()%></td>
-                                                    <td><%= pro.getProgCategory()%></td>
-                                                    <td><%= pro.getProgOrganizer()%></td>
-                                                    <td style="font-weight:bold; font-style: italic;"><%= pro.getProgStatus()%></td>
-                                                    <td style="font-weight:bold; font-style: italic;"><%= pro.getMeritStatus() %></td>
-                                                    <td>
-                                                        <form action="stud_programDetail" method="post">
-                                                            <input type="int" name="progID" value="<%= pro.getProgID()%>" hidden>
-                                                            <button class="btn btn-maroon" type="submit">
-                                                                <i class="fas fa-eye"></i>
-                                                                View Details
-                                                            </button>
-                                                        </form>
-                                                    </td>
-                                                </tr>                                            
-                                            </tbody>
-                                            <% 
-                                                    }
-                                                } 
-                                            %>
                                         </table>                                       
                                     </div>
                                 </div>    
@@ -150,5 +122,35 @@
         
         <%@include file="asset/scrollTop.jsp"%>
         <%@include file="asset/bootstrapScript.jsp"%>
+        
+        <script>
+            <% 
+               JSONArray jArray = (JSONArray) session.getAttribute("jArray"); 
+               int idex;
+               for(idex=0; idex<jArray.length(); idex++){                   
+               }
+            %>
+            console.log(<%= idex %>);
+            console.log(<%= jArray %>);            
+            $(document).ready(function() {
+                    $('#historyDataTable').DataTable( {
+                        data: <%= jArray %>,
+                        "columns": [
+                            { "data": "Bil" },
+                            { "data": "ProgramName" },        
+                            { "data": "Category" },
+                            { "data": "Organizer" },
+                            { "data": "ProgramStatus" },
+                            { "data": "MeritStatus" },
+                            { "data": null, title: 'Action', wrap: true, "render": function (item) 
+                                { 
+                                    return '<form action="stud_programDetail" method="post"><input type="int" name="progID" value="'+item.progID+'" hidden><button class="btn btn-maroon" type="submit"><i class="fas fa-eye"></i>View Details</button></form>' 
+                                } 
+                            }
+                        ]
+                } );
+            } );
+        </script>
+        
     </body>
 </html>

@@ -20,6 +20,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import jdbc.JDBCUtility;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 /**
  *
@@ -45,36 +48,61 @@ public class stud_programHistoryServlet extends HttpServlet {
             HttpSession session = request.getSession();
             String firstemail = (String)session.getAttribute("firstemail");
             
-            String sql = "select * from program where progStatus='Approved' or progStatus='Declined' and firstemail = ?";
+            String sql = "select * from program where (progStatus='Approved' or progStatus='Declined') and firstemail = ?";
             PreparedStatement ps = con.prepareStatement(sql);
             ps.setString(1, firstemail);
             ResultSet rs = ps.executeQuery();
             
-            Vector progList = new Vector();
+            //Vector progList = new Vector();
+            int i=0;
+            JSONArray jArray = new JSONArray();
             
             while (rs.next()) 
             {   
-                Program pro = new Program();
-
-                pro.setProgID(rs.getInt("progID"));
-                pro.setFirstEmail(rs.getString("firstemail"));
-                pro.setProgName(rs.getString("progName"));
-                pro.setProgLocation(rs.getString("progLocation"));
-                pro.setProgStartDate(rs.getDate("progStartDate"));
-                pro.setProgEndDate(rs.getDate("progEndDate"));
-                pro.setProgOrganizer(rs.getString("progOrganizer"));
-                pro.setProgCategory(rs.getString("progCategory"));
-                pro.setProgDescription(rs.getString("progDescription"));
-                pro.setProgStatus(rs.getString("progStatus"));
-                pro.setMeritStatus(rs.getString("meritStatus"));
+//                Program pro = new Program();
+//
+//                pro.setProgID(rs.getInt("progID"));
+//                pro.setFirstEmail(rs.getString("firstemail"));
+//                pro.setProgName(rs.getString("progName"));
+//                pro.setProgLocation(rs.getString("progLocation"));
+//                pro.setProgStartDate(rs.getDate("progStartDate"));
+//                pro.setProgEndDate(rs.getDate("progEndDate"));
+//                pro.setProgOrganizer(rs.getString("progOrganizer"));
+//                pro.setProgCategory(rs.getString("progCategory"));
+//                pro.setProgDescription(rs.getString("progDescription"));
+//                pro.setProgStatus(rs.getString("progStatus"));
+//                pro.setMeritStatus(rs.getString("meritStatus"));
+//                
+//                progList.addElement(pro);
                 
-                progList.addElement(pro);
+                String progID = rs.getString("progID");
+                String progName = rs.getString("progName");
+                String progCategory = rs.getString("progCategory");
+                String progOrganizer = rs.getString("progOrganizer");
+                String progStatus = rs.getString("progStatus");
+                String meritStatus = rs.getString("meritStatus");
+
+                JSONObject arrayObj = new JSONObject();
+                
+                int x = i+1;
+                arrayObj.put("Bil",x);
+                arrayObj.put("progID", progID);
+                arrayObj.put("ProgramName",progName);
+                arrayObj.put("Category",progCategory);
+                arrayObj.put("Organizer",progOrganizer);
+                arrayObj.put("ProgramStatus",progStatus);
+                arrayObj.put("MeritStatus",meritStatus);
+                x++;
+                
+                jArray.put(i,arrayObj);
+                i++;
             }
             
-            session.setAttribute("progList", progList);
+            session.setAttribute("jArray", jArray);
+            //session.setAttribute("progList", progList);
             response.sendRedirect("stud_history.jsp");
         }
-        catch (SQLException | IOException e){
+        catch (JSONException | SQLException | IOException e){
             out.println(e);
         }
     }

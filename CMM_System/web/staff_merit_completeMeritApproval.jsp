@@ -48,7 +48,7 @@
                 <!-- Main Content -->
                 <div id="content">
 
-                    <%@include file="asset/topbar.jsp"%>
+                    <%@include file="asset/staff_topbar.jsp"%>
 
                     <!-- Begin Page Content -->
                     <div class="container-fluid">
@@ -61,7 +61,7 @@
                             <div class="container-fluid">
                                 <div class="d-sm-flex align-items-center justify-content-between mb-4">
                                     <h1 class="h3 mb-0 text-gray-800"><%= detailsprogram.getProgName()%></h1><br>
-                                    <a class="btn btn-maroon" href="staff_merit_SELECTrequestApprovalMerit" role="button"><i class='fas fa-arrow-left'></i>Back</a>
+                                    <a class="btn btn-blue" href="staff_merit_SELECTrequestApprovalMerit" role="button"><i class='fas fa-arrow-left'></i>Back</a>
 
                                 </div>
                                 
@@ -93,21 +93,6 @@
 
 
                                     <div class="card-body">
-                                      
-
-                                             
-                                                
-                               
-
-                
-
-                    <!-- Page Heading -->
-                  
-              
-                       
-                     
-                         
-                    
                         
                         <div class="card-body">
                             
@@ -116,7 +101,7 @@
                             <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                               
                               <button type="button" class="btn btn-danger me-md-2 " data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                      <i class='fas fa-thumbs-down'></i> Decline
+                                      Decline
                               </button>
                               
                               <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -161,7 +146,7 @@
                                     </div>
                                                               
                               <button type="button" class="btn" style="background-color: #4CAF50;color: white;" data-bs-toggle="modal" data-bs-target="#exampleModal1">
-                                      <i class='far fa-thumbs-up'></i> Approve
+                                       Approve
                               </button>
   
                                     <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -197,7 +182,7 @@
                                           </div>
                                           <div class="modal-footer">
                                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                            <a class="btn" style="background-color: #4CAF50;color: white;" href="staff_merit_COMPLETEapprovalMerit" role="button">Submit</a>
+                                            <a class="btn" style="background-color: #336EC4;color: white;" href="staff_merit_COMPLETEapprovalMerit" role="button">Submit</a>
                                           </div>
                                         </div>
                                       </div>
@@ -212,25 +197,16 @@
                                 
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     
-                                    <thead style="background-color: #7a133c; color: white;">
+                                    <thead style="background-color: #336EC4;; color: white;">
                                         <tr>
                                             <th>Name</th>
                                             <th>Position</th>
                                             <th>Matric No</th>
-                                            <th>Ic Number</th>
+                                            <th>IC Number</th>
                                             <th>Merit</th>
                                          
                                         </tr>
                                     </thead>
-<!--                                    <tfoot>
-                                        <tr>
-                                            <th>Name</th>
-                                            <th>Position</th>
-                                            <th>Matric No</th>
-                                            <th>Ic Number</th>
-                                            <th>Merit</th>
-                                        </tr>
-                                    </tfoot>-->
                                     <tbody>
                                         
         <%

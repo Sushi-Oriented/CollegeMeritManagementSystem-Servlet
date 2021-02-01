@@ -39,7 +39,20 @@
             .subtextpg{
                 margin-top: -10px;
             }
-            table{
+            
+            table, td, th {
+                padding: 10px;
+            }
+
+            th{
+                background-color: #336EC4;
+                color: white;
+            }
+
+            table {
+                border-collapse: collapse;
+                width: 100%;
+                font-size: medium;
                 text-align: center;
             }
         </style>
@@ -57,7 +70,7 @@
                 <!-- Main Content -->
                 <div id="content">
 
-                    <%@include file="asset/topbar.jsp"%>
+                    <%@include file="asset/staff_topbar.jsp"%>
 
                     <!-- Begin Page Content -->
                     <div class="container-fluid">
@@ -68,7 +81,7 @@
                                 Requested Program &nbsp;
                                 <i class="fas fa-history"></i>
                             </h1>
-                            <a class="btn btn-maroon" href="staff_index.jsp" role="button"><i class='fas fa-arrow-left'></i>Back</a>
+                            <a class="btn btn-blue" href="staff_index.jsp" role="button"><i class='fas fa-arrow-left'></i>Back</a>
                         </div>
                         
                         <div class="subtextpg">
@@ -89,7 +102,7 @@
                                     <div class="card-body">
                                         <h3 style="text-decoration: underline;"><b>Program Details</b></h3>
                                         <table class="table table-bordered table-hover" id="tableProgram" style="width: 100%" cellspacing="0">
-                                            <thead style="background-color: #7a133c; color: white;">
+                                            <thead>
                                                 <tr>
                                                     <th>No.</th>
                                                     <th>Student</th>
@@ -119,7 +132,7 @@
                                                     <td>
                                                         <form action="staff_historyDetails" method="get">
                                                             <input type="int" name="progID" value="<%= pro.getProgID()%>" hidden>
-                                                            <button class="btn btn-maroon" type="submit">
+                                                            <button class="btn btn-blue" type="submit">
                                                                 <i class="fas fa-eye"></i>
                                                                 View Details
                                                             </button>

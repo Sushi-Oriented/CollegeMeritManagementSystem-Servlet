@@ -2415,7 +2415,18 @@ fieldset:disabled a.btn {
 .btn-maroon:hover {
   color: maroon;
   border-color: maroon;
-  background-color: lightcoral;
+  background-color: whitesmoke;
+}
+
+.btn-blue {
+  color: #000080;
+  background-color: #d9eaf5;
+}
+
+.btn-blue:hover {
+  color: #000080;
+  border-color: #000080;
+  background-color: whitesmoke;
 }
 
 .btn-primary {
@@ -9977,6 +9988,10 @@ a:focus {
 
 .bg-gradient-sidebar-custom {
   background-color: #7A133C;
+}
+
+.bg-gradient-sidebar-staff {
+  background-color: #061180;
 }
 
 .bg-gradient-warning {

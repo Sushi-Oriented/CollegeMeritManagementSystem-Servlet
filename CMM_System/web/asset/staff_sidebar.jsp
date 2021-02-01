@@ -16,7 +16,7 @@
         <% Staff ust1 = (Staff)session.getAttribute("ust1"); %>
         <% Program proIndex = (Program)session.getAttribute("proIndex"); %>
         <!-- Sidebar -->
-            <ul class="navbar-nav bg-gradient-sidebar-custom sidebar sidebar-dark accordion" id="accordionSidebar">
+            <ul class="navbar-nav bg-gradient-sidebar-staff sidebar sidebar-dark accordion" id="accordionSidebar">
 
                 <li class="nav-item dropdown no-arrow">
                     <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"

@@ -27,12 +27,14 @@
         }
         
         th{
-            background-color: #AF3550;
+            background-color: #336EC4;
             color: white;
         }
 
         table {
           border-collapse: collapse;
+          width: 100%;
+          font-size: medium;
         }
         </style>
     </head>
@@ -51,7 +53,7 @@
                 <!-- Main Content -->
                 <div id="content">
 
-                    <%@include file="asset/topbar.jsp"%>
+                    <%@include file="asset/staff_topbar.jsp"%>
 
                     <!-- Begin Page Content -->
                     <div class="container-fluid">
@@ -59,7 +61,7 @@
                         <!-- Page Heading -->
                         <div class="d-sm-flex align-items-center justify-content-between mb-4">
                             <h1 class="h3 mb-0 text-gray-800">Program Approval</h1>
-                            <a class="btn btn-maroon" href="staff_program.jsp" role="button"><i class='fas fa-arrow-left'></i>  Back</a>
+                            <a class="btn btn-blue" href="staff_program.jsp" role="button"><i class='fas fa-arrow-left'></i>  Back</a>
                         </div>
                         
                         <p style="font-style: italic; margin-bottom: -8px;">

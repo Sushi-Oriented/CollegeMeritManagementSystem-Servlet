@@ -40,7 +40,7 @@
                 <!-- Main Content -->
                 <div id="content">
 
-                    <%@include file="asset/topbar.jsp"%>
+                    <%@include file="asset/staff_topbar.jsp"%>
 
                     <!-- Begin Page Content -->
                     <div class="container-fluid">
@@ -48,7 +48,7 @@
                         <!-- Page Heading -->
                         <div class="d-sm-flex align-items-center justify-content-between mb-4">
                             <h1 class="h3 mb-0 text-gray-800">Merit Approval</h1>
-                            <a class="btn btn-maroon" href="stud_index.jsp" role="button"><i class='fas fa-arrow-left'></i>Back</a>
+                            <a class="btn btn-blue" href="stud_index.jsp" role="button"><i class='fas fa-arrow-left'></i>Back</a>
 
                         </div>
                         
@@ -63,9 +63,6 @@
                             </div>
                             
                             <div class="container-fluid">
-<!--                                <h1 class="h3 mb-0 text-gray-800">Approval Program</h1><br>
-                                <p class="mb-2 text-gray-800">Merit > Approval Program > <b>Program Name ></b></p>
-                                <hr class="sidebar-divider my-0"><br>-->
 
         <%
             Vector dp = (Vector) session.getAttribute("dp");
@@ -76,9 +73,6 @@
         %>  
                             <form action="staff_merit_GETrequestApprovalMerit" method="get">                        
                                 <div class="card shadow mb-4 btn btn-light btn-circle1">
-<!--                                    <div class="card-header py-3 center">
-                                        <h2 class="m-0 font-weight-bold text-primary text-center">Program details</h2>
-                                    </div>-->
  
                                     <button class="btn  btn-circle1 text-left" >
                                       

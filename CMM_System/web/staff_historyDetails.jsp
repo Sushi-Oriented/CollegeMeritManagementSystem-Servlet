@@ -35,15 +35,27 @@
         <script src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
         
         <style>
-/*            #textpg{
-                font-family: 'Noto Sans JP', sans-serif;
-                text-transform: uppercase;
-            }*/
             .subtextpg{
                 margin-top: -10px;
             }
+            
             #dataTable{
                 text-align: center;
+            }
+            
+            table, td, th {
+                padding: 10px;
+            }
+
+            th{
+                background-color: #336EC4;
+                color: white;
+            }
+
+            table {
+                border-collapse: collapse;
+                width: 100%;
+                font-size: medium;
             }
         </style>
         
@@ -64,7 +76,7 @@
                 <!-- Main Content -->
                 <div id="content">
 
-                    <%@include file="asset/topbar.jsp"%>
+                    <%@include file="asset/staff_topbar.jsp"%>
 
                     <!-- Begin Page Content -->
                     <div class="container-fluid">
@@ -74,7 +86,7 @@
                             <h1 class="h3 mb-0 text-gray-800" id="textpg">
                                 <%= pro.getProgName()%>
                             </h1>
-                            <a class="btn btn-maroon" href="staff_history.jsp" role="button">
+                            <a class="btn btn-blue" href="staff_history.jsp" role="button">
                                 <i class="fas fa-arrow-left"></i>
                                 Back
                             </a>                            
@@ -183,7 +195,7 @@
                                     <div class="card-body">
                                         <h3 style="text-decoration: underline;"><b>Participant Details</b></h3>
                                         <table class="table table-bordered table-hover" id="tableProgram" style="width: 100%" cellspacing="0">
-                                            <thead style="background-color: #7a133c; color: white;">
+                                            <thead>
                                                 <tr>
                                                     <th>No.</th>
                                                     <th>Name</th>

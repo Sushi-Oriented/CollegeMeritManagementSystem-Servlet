@@ -39,7 +39,7 @@
                 <!-- Main Content -->
                 <div id="content">
 
-                    <%@include file="asset/topbar.jsp"%>
+                    <%@include file="asset/staff_topbar.jsp"%>
                     <!-- Begin Page Content -->
                     <div class="container-fluid">
 
@@ -197,7 +197,7 @@
                                             <table class="table table-hover">
                                                 <thead>
                                                     <tr>
-                                                        <th>Positioin</th>
+                                                        <th>Position</th>
                                                         <th>Merit</th>
                                                     </tr>
                                                 </thead>

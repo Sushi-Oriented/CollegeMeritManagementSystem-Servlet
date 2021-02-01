@@ -27,7 +27,7 @@
         }
         
         th{
-            background-color: #AF3550;
+            background-color: #336EC4;;
             color: white;
         }
 
@@ -50,7 +50,7 @@
                 <!-- Main Content -->
                 <div id="content">
 
-                    <%@include file="asset/topbar.jsp"%>
+                    <%@include file="asset/staff_topbar.jsp"%>
 
                     <!-- Begin Page Content -->
                     <div class="container-fluid">
@@ -58,7 +58,7 @@
                         <!-- Page Heading -->
                         <div class="d-sm-flex align-items-center justify-content-between mb-4">
                             <h1 class="h3 mb-0 text-gray-800">Program Approval</h1>
-                            <a class="btn btn-maroon" href="staff_index.jsp" role="button"><i class='fas fa-arrow-left'></i>Back</a>
+                            <a class="btn btn-blue" href="staff_index.jsp" role="button"><i class='fas fa-arrow-left'></i>Back</a>
                         </div>
                         
                         <p style="font-style: italic; margin-bottom: -8px;">Program > Program Verification</p><hr>
@@ -129,7 +129,7 @@
                                             <td>
                                                 <form action="details_programServlet">
                                                     <input type="text" name ="progID" value="<%= stude_prog.getProgID() %>" hidden>
-                                                    <center><button class="btn btn-maroon" type="submit">
+                                                    <center><button class="btn btn-blue" type="submit">
                                                         <i class="fas fa-eye"></i>
                                                         View Details
                                                         </button></center>

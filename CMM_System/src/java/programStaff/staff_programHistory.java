@@ -14,6 +14,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import jdbc.JDBCUtility;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 /**
  *
@@ -42,11 +45,14 @@ public class staff_programHistory extends HttpServlet {
             PreparedStatement ps = con.prepareStatement(sql);
             ResultSet rs = ps.executeQuery();
             
-            Vector progList = new Vector();                        
+            //Vector progList = new Vector();
+            int i=0;
+            JSONArray jArray = new JSONArray();
             
             while (rs.next()) 
             {   
-                Program program = new Program();
+                //Program program = new Program();
+                JSONObject arrayObj = new JSONObject();
                 
                 /*To get name of student*/
                 String studFirstEmail = rs.getString("firstemail");
@@ -55,32 +61,54 @@ public class staff_programHistory extends HttpServlet {
                 PreparedStatement ps2 = con.prepareStatement(sql2);
                 ps2.setString(1, studFirstEmail);
                 ResultSet rs2 = ps2.executeQuery();                
+                
                 while(rs2.next()){
                     String studName = rs2.getString(1);                    
-                    program.setStudName(studName);
+                    //program.setStudName(studName);
+                    arrayObj.put("studName",studName);
                 }
                 
-                program.setFirstEmail2(rs.getString("firstemail"));
-                program.setProgID(rs.getInt("progID"));
-                program.setProgName(rs.getString("progName"));
-                program.setProgLocation(rs.getString("progLocation"));
-                program.setProgStartDate(rs.getDate("progStartDate"));
-                program.setProgEndDate(rs.getDate("progEndDate"));
-                program.setProgOrganizer(rs.getString("progOrganizer"));
-                program.setProgCategory(rs.getString("progCategory"));
-                program.setProgDescription(rs.getString("progDescription"));
-                program.setProgStatus(rs.getString("progStatus"));        
-                program.setMeritStatus(rs.getString("meritStatus")); 
+//                program.setFirstEmail2(rs.getString("firstemail"));
+//                program.setProgID(rs.getInt("progID"));
+//                program.setProgName(rs.getString("progName"));
+//                program.setProgLocation(rs.getString("progLocation"));
+//                program.setProgStartDate(rs.getDate("progStartDate"));
+//                program.setProgEndDate(rs.getDate("progEndDate"));
+//                program.setProgOrganizer(rs.getString("progOrganizer"));
+//                program.setProgCategory(rs.getString("progCategory"));
+//                program.setProgDescription(rs.getString("progDescription"));
+//                program.setProgStatus(rs.getString("progStatus"));        
+//                program.setMeritStatus(rs.getString("meritStatus")); 
+//                
+//                progList.addElement(program);
                 
-                progList.addElement(program);
+                String progID = rs.getString("progID");
+                String progName = rs.getString("progName");
+                String progCategory = rs.getString("progCategory");
+                String progOrganizer = rs.getString("progOrganizer");
+                String progStatus = rs.getString("progStatus");
+                String meritStatus = rs.getString("meritStatus");
+
+                int x = i+1;
+                arrayObj.put("Bil",x);
+                arrayObj.put("progID", progID);
+                arrayObj.put("ProgramName",progName);
+                arrayObj.put("Category",progCategory);
+                arrayObj.put("Organizer",progOrganizer);
+                arrayObj.put("ProgramStatus",progStatus);
+                arrayObj.put("MeritStatus",meritStatus);
+                x++;
+                
+                jArray.put(i,arrayObj);
+                i++;
             }   
             
-           
-            session.setAttribute("progList", progList);
+            session.setAttribute("jArray", jArray);
+            //session.setAttribute("progList", progList);
             response.sendRedirect("staff_history.jsp");
             
         }
-        catch (SQLException | IOException e){
+        catch (JSONException | SQLException | IOException e){
             out.println(e);
         }
     }

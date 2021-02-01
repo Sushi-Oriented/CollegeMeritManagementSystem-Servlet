@@ -3,6 +3,7 @@
     Author     : mhafizkn
 --%>
 
+<%@page import="org.json.JSONArray"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="java.util.Vector"%>
 <%@page import="bean.Program"%>
@@ -86,7 +87,7 @@
                             <h1 class="h3 mb-0 text-gray-800" id="textpg">
                                 <%= pro.getProgName()%>
                             </h1>
-                            <a class="btn btn-blue" href="staff_history.jsp" role="button">
+                            <a class="btn btn-blue" href="staff_programHistory" role="button">
                                 <i class="fas fa-arrow-left"></i>
                                 Back
                             </a>                            
@@ -194,7 +195,7 @@
                                 <div class="card shadow mb-4">
                                     <div class="card-body">
                                         <h3 style="text-decoration: underline;"><b>Participant Details</b></h3>
-                                        <table class="table table-bordered table-hover" id="tableProgram" style="width: 100%" cellspacing="0">
+                                        <table class="table table-bordered table-hover" id="staffHistoryDetailsDataTable" style="width: 100%" cellspacing="0">
                                             <thead>
                                                 <tr>
                                                     <th>No.</th>
@@ -205,26 +206,6 @@
                                                     <th>Merit</th>
                                                 </tr>
                                             </thead>
-                                            <%                                                
-                                                Vector merList = (Vector) session.getAttribute("merList");
-                                                if (merList != null && (merList.size() > 0)){
-                                                for (int index=0; index < merList.size();index++){
-                                                    Merit mer = (Merit) merList.elementAt(index);
-                                            %>
-                                            <tbody>
-                                                <tr>
-                                                    <td><%= index + 1 %></td>
-                                                    <td><%= mer.getName()%></td>
-                                                    <td><%= mer.getRole()%></td>
-                                                    <td><%= mer.getMatricNum()%></td>
-                                                    <td><%= mer.getIcNum()%></td>
-                                                    <td><%= mer.getMerit()%></td>
-                                                </tr>                                            
-                                            </tbody>
-                                            <% 
-                                                    }
-                                                } 
-                                            %>
                                         </table>
                                     </div>
                                 </div>
@@ -246,5 +227,28 @@
         
         <%@include file="asset/scrollTop.jsp"%>
         <%@include file="asset/bootstrapScript.jsp"%>
+        <script>
+            <% 
+               JSONArray jArray = (JSONArray) session.getAttribute("jArray"); 
+               int idex;
+               for(idex=0; idex<jArray.length(); idex++){                   
+               }
+            %>
+            console.log(<%= idex %>);
+            console.log(<%= jArray %>);            
+            $(document).ready(function() {
+                    $('#staffHistoryDetailsDataTable').DataTable( {
+                        data: <%= jArray %>,
+                        "columns": [
+                            { "data": "Bil" },
+                            { "data": "name" },        
+                            { "data": "role" },
+                            { "data": "matricNum" },
+                            { "data": "IcNum" },
+                            { "data": "merit" }
+                        ]
+                } );
+            } );
+        </script>
     </body>
 </html>

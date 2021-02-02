@@ -59,7 +59,7 @@ public class RegServlet extends HttpServlet {
             }
             
             else{
-                String insSql = "insert into user(fullname, nickname, firstemail, studentID, studphoneno, password) values (?,?,?,?,?,?)";
+                String insSql = "insert into user(fullname, nickname, firstemail, studentID, studphoneno, password) values (?,?,?,upper(?),?,?)";
                 PreparedStatement ps2 = con.prepareStatement(insSql);
                 ps2.setString(1, fullname);
                 ps2.setString(2, nickname);

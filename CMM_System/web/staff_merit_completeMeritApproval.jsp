@@ -139,7 +139,7 @@
                                           </div>
                                           <div class="modal-footer">
                                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                            <a class="btn btn-danger"  href="staff_merit_COMPLETEapprovalMerit" role="button">Yes</a>
+                                            <a class="btn btn-danger"  href="staff_merit_DECLINEapprovalMerit" role="button">Yes</a>
                                           </div>
                                         </div>
                                       </div>

@@ -59,7 +59,7 @@
                                 <label>Student ID</label>
                                 <small><i>(Format: B21EC0001)</i></small>
                                 <div class="form-group">
-                                    <input type="text" name="studentID" class="form-control form-control-user" placeholder="Student ID" pattern="[A-Za-z]{1}[0-9]{2}[A-Za-z]{2}[0-9]{4}" required>
+                                    <input type="text" name="studentID" style='text-transform:uppercase' class="form-control form-control-user" placeholder="Student ID" pattern="[A-Za-z]{1}[0-9]{2}[A-Za-z]{2}[0-9]{4}" required>
                                 </div>
                                 <label>Phone number</label>
                                 <small><i>(Format: 012-3456789)</i></small>

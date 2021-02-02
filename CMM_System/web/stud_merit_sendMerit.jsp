@@ -225,7 +225,7 @@
                         
                         <div class="card-body">
                             <div class="table-responsive">
-                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                <table class="table table-bordered" id="dataMeritTable" width="100%" cellspacing="0">
                                     <thead style="background-color: #7a133c; color: white;">
                                         <tr>
                                             <th>Name</th>
@@ -361,16 +361,15 @@
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js"></script>
 
-    <!-- Page level plugins -->
-    <script src="vendor/datatables/jquery.dataTables.min.js"></script>
-    <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
-
-    <!-- Page level custom scripts -->
-    <script src="js/demo/datatables-demo.js"></script>
+    <!-- Custom DataTable JS -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/jq-3.3.1/dt-1.10.23/fh-3.1.7/r-2.2.7/sb-1.0.1/sp-1.2.2/sl-1.3.1/datatables.min.css"/>
+    <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/jq-3.3.1/dt-1.10.23/fh-3.1.7/r-2.2.7/sb-1.0.1/sp-1.2.2/sl-1.3.1/datatables.min.js"></script>
     
-<!--    <script src="vendor/datatables/jquery.dataTables.min.jsp"></script>
-    <script src="vendor/datatables/dataTables.bootstrap4.min.jsp"></script>
-    <script src="js/demo/datatables-demo.js"></script>-->
+    <script>
+        $(document).ready(function() {
+            $('#dataMeritTable').DataTable();
+        });
+    </script>
     
     </body>
 </html>

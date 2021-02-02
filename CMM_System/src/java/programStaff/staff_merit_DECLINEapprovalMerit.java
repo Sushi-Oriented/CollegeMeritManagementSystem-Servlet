@@ -3,19 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package programStudent;
+package programStaff;
 
-import bean.Merit;
-import bean.User;
-import bean.Program;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.Vector;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -25,9 +18,9 @@ import jdbc.JDBCUtility;
 
 /**
  *
- * @author 60111
+ * @author hafiz
  */
-public class stud_merit_INSERTsendMerit extends HttpServlet {
+public class staff_merit_DECLINEapprovalMerit extends HttpServlet {
 
     private JDBCUtility jdbcUtility;
     private Connection con;
@@ -43,55 +36,20 @@ public class stud_merit_INSERTsendMerit extends HttpServlet {
             throws ServletException, IOException {
         PrintWriter out = response.getWriter();
         HttpSession session = request.getSession();
-        String firstemail = (String) session.getAttribute("firstemail");
-        int progid = (int) session.getAttribute("progid");
-        
-        String name = request.getParameter("name");
-        String role = request.getParameter("role");
-        String matricNum = request.getParameter("matricNum");
-        String icNum = request.getParameter("icNum");
-        int merit = Integer.parseInt(request.getParameter("merit"));
-       
         
         try {
-            String sqlInsert = "INSERT INTO merit(name, progid, role, matricNum, icNum, merit) VALUES (upper(?),?,?,upper(?),?,?)";
-            PreparedStatement ps = con.prepareStatement(sqlInsert);
-            ps.setString (1, name);
-            ps.setInt (2, progid);
-            ps.setString (3, role);
-            ps.setString (4, matricNum);
-            ps.setString(5, icNum);
-            ps.setInt(6, merit);
+            int progid = (int) session.getAttribute("progid");
+            String status = "Declined";
+            
+            String updateQry = "update program set meritStatus = ? where progid = ?";
+            PreparedStatement ps = con.prepareStatement(updateQry);
+            ps.setString(1, status);
+            ps.setInt(2, progid);
             ps.executeUpdate();
+
+            response.sendRedirect("staff_merit_SELECTrequestApprovalMerit");
         }
-        catch(NumberFormatException | SQLException e){
-            out.println(e);
-        }
-        
-        try{
-           String selectQry = "select * from merit where progid = ?";
-            PreparedStatement ps1 = con.prepareStatement(selectQry);
-            ps1.setInt(1, progid);
-            ResultSet rs = ps1.executeQuery();
-            Vector dm = new Vector();
-            
-            while(rs.next()){
-                Merit dispmerit = new Merit();
-                
-                dispmerit.setName(rs.getString("name"));
-                dispmerit.setPk(rs.getInt("pk"));
-                dispmerit.setRole(rs.getString("role"));
-                dispmerit.setMatricNum(rs.getString("matricNum"));
-                dispmerit.setIcNum(rs.getString("icNum"));
-                dispmerit.setMerit(rs.getInt("merit"));
-                
-                dm.addElement(dispmerit);
-            }    
-            
-            session.setAttribute("dm", dm);
-            response.sendRedirect("stud_merit_sendMerit.jsp");
-        }
-        catch(SQLException e){
+        catch(Exception e){
             out.println(e);
         }
     }

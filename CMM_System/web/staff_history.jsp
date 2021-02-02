@@ -172,7 +172,7 @@
                         { "data": "MeritStatus" },
                         { "data": null, title: '', wrap: true, "render": function (item) 
                             { 
-                                return '<form action="staff_historyDetails" method="post"><input type="int" name="progID" value="'+item.progID+'" hidden><button class="btn btn-maroon" type="submit"><i class="fas fa-eye"></i>View Details</button></form>' 
+                                return '<form action="staff_historyDetails" method="post"><input type="int" name="progID" value="'+item.progID+'" hidden><button class="btn btn-blue" type="submit"><i class="fas fa-eye"></i>View Details</button></form>' 
                             } 
                         }
                     ],

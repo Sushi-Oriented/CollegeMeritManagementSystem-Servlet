@@ -48,11 +48,52 @@ public class staff_merit_GETrequestApprovalMerit extends HttpServlet {
             
 //            int progid = (int)session.getAttribute("progid");
             
-
+            String selectQry = "select * from program where progid = ?";
+            PreparedStatement ps = con.prepareStatement(selectQry);
+            ps.setInt(1, progid);
+            
+            ResultSet rs = ps.executeQuery();
+           Program detailsprogram = new Program();
+            
+            while(rs.next()){                
+                
+                detailsprogram.setFirstEmail(rs.getString("firstemail"));
+                detailsprogram.setProgID(rs.getInt("progid"));
+                detailsprogram.setProgCategory(rs.getString("progCategory"));
+                detailsprogram.setProgDescription(rs.getString("progDescription"));
+                detailsprogram.setProgEndDate(rs.getDate("progEndDate"));
+                detailsprogram.setProgLocation(rs.getString("progLocation"));
+                detailsprogram.setProgName(rs.getString("progName"));
+                detailsprogram.setProgOrganizer(rs.getString("ProgOrganizer"));
+                detailsprogram.setProgStartDate(rs.getDate("progStartDate"));
+                detailsprogram.setProgStatus(rs.getString("progStatus"));
+            }
+            String selectQry1 = "select * from merit where progid = ?";
+            PreparedStatement ps1 = con.prepareStatement(selectQry1);
+            ps1.setInt(1, progid);
+            ResultSet rs1 = ps1.executeQuery();
+            Vector dm = new Vector();
+            
+            while(rs1.next()){
+                Merit dispmerit = new Merit();
+                
+                dispmerit.setName(rs1.getString("name"));
+//                dispmerit.setProgID(progid);
+                dispmerit.setRole(rs1.getString("role"));
+                dispmerit.setMatricNum(rs1.getString("matricNum"));
+                dispmerit.setIcNum(rs1.getString("icNum"));
+                dispmerit.setMerit(rs1.getInt("merit"));
+                
+                dm.addElement(dispmerit);
+            }    
+            
+            session.setAttribute("dm", dm);
+     
+            session.setAttribute("detailsprogram", detailsprogram);
             
             response.sendRedirect("staff_merit_completeMeritApproval.jsp");
         }
-        catch(Exception e){
+        catch(SQLException e){
             out.println(e);
         }
     }

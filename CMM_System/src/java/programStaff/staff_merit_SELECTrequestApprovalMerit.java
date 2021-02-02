@@ -57,7 +57,7 @@ public class staff_merit_SELECTrequestApprovalMerit extends HttpServlet {
             PreparedStatement ps = con.prepareStatement(selectQry);
          
             ps.setString(1, "Approved");
-            ps.setString(2, "No action");
+            ps.setString(2, "Pending");
             
             ResultSet rs = ps.executeQuery();
             Vector dp = new Vector();

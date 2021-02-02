@@ -67,7 +67,7 @@ public class stud_programServlet extends HttpServlet {
            
             out.println("<script type=\"text/javascript\">");
             out.println("alert('Your program is submitted successfully!');");
-            out.println("location='stud_index.jsp';");
+            out.println("location='stud_programIndex';");
             out.println("</script>");
         }
         

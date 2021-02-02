@@ -62,6 +62,7 @@ public class staff_historyDetails extends HttpServlet {
                 pro.setProgCategory(rs.getString(8));
                 pro.setProgDescription(rs.getString(9));
                 pro.setProgStatus(rs.getString(10));
+                pro.setMeritStatus(rs.getString(11));
             }
             
             /*To get merit on the program*/
@@ -82,7 +83,7 @@ public class staff_historyDetails extends HttpServlet {
 //                mer.setMatricNum(rs2.getString("matricNum"));
 //                mer.setIcNum(rs2.getString("IcNum"));
 //                mer.setMerit(rs2.getInt("merit"));
-//                //mer.setStatus(rs2.getString("status"));
+//                mer.setStatus(rs2.getString("status"));
 //                
 //                merList.addElement(mer);
                 String name = rs2.getString("name");

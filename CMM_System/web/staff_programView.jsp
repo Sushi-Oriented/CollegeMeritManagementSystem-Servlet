@@ -33,7 +33,6 @@
 
         table {
           border-collapse: collapse;
-          width: 100%;
           font-size: medium;
         }
         </style>

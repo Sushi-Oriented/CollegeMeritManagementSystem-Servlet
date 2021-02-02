@@ -126,7 +126,7 @@
                                                 <td>
                                                     <strong>
                                                         <i class="fa fa-info-circle"></i>
-                                                        Status
+                                                        Program Status
                                                     </strong>
                                                 </td>
                                                 <td>:</td>
@@ -141,6 +141,14 @@
                                                 </td>
                                                 <td>:</td>
                                                 <td> <%= pro.getProgCategory()%></td>
+                                                <td>
+                                                    <strong>
+                                                        <i class="fa fa-info-circle"></i>
+                                                        Merit Status
+                                                    </strong>
+                                                </td>
+                                                <td>:</td>
+                                                <td style="font-style: italic;"> <%= pro.getMeritStatus()%></td>
                                             </tr>
                                             <tr>
                                                 <td>

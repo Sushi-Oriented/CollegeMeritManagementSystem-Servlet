@@ -26,14 +26,9 @@
         <!-- Custom styles for this template-->
         <link href="css/sb-admin-2.css" rel="stylesheet" type="text/css"/>
         
-        <!-- Google Font -->
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700&display=swap" rel="stylesheet">
-        
-        <!-- Datatable -->
-        <link rel="stylesheet" href="https://cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-        <script src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
+        <!-- Datatable Bootstrap -->
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/jq-3.3.1/dt-1.10.23/b-1.6.5/b-flash-1.6.5/fc-3.3.2/fh-3.1.7/datatables.min.css"/>        
+        <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/jq-3.3.1/dt-1.10.23/b-1.6.5/b-flash-1.6.5/fc-3.3.2/fh-3.1.7/datatables.min.js"></script>
         
         <style>
             .subtextpg{
@@ -57,6 +52,13 @@
                 border-collapse: collapse;
                 width: 100%;
                 font-size: medium;
+            }
+            .page-item.active .page-link {
+                background-color: #414141;
+                border: 1px solid #615E5D;
+            }
+            .page-link {
+                color: black;
             }
         </style>
         
@@ -195,7 +197,7 @@
                                 <div class="card shadow mb-4">
                                     <div class="card-body">
                                         <h3 style="text-decoration: underline;"><b>Participant Details</b></h3>
-                                        <table class="table table-bordered table-hover" id="staffHistoryDetailsDataTable" style="width: 100%" cellspacing="0">
+                                        <table class="table table-bordered table-hover" id="staffHistoryDetailsDataTable" style="width: 100%; text-align: center;" cellspacing="0">
                                             <thead>
                                                 <tr>
                                                     <th>No.</th>

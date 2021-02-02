@@ -26,11 +26,8 @@
         <link href="css/sb-admin-2.css" rel="stylesheet" type="text/css"/>
         
         <!-- Datatable Bootstrap -->
-        <script src="js/demo/datables-demo.js"></script>
-        
-        <!-- Google Font -->
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/jq-3.3.1/dt-1.10.23/fh-3.1.7/r-2.2.7/sb-1.0.1/sp-1.2.2/sl-1.3.1/datatables.min.css"/>
+        <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/jq-3.3.1/dt-1.10.23/fh-3.1.7/r-2.2.7/sb-1.0.1/sp-1.2.2/sl-1.3.1/datatables.min.js"></script>
         
         <style>
 /*            #textpg{
@@ -55,6 +52,13 @@
                 width: 100%;
                 font-size: medium;
                 text-align: center;
+            }
+            .page-item.active .page-link {
+                background-color: #414141;
+                border: 1px solid #615E5D;
+            }
+            .page-link {
+                color: black;
             }
         </style>
         
@@ -102,7 +106,8 @@
                                 <div class="card">
                                     <div class="card-body">
                                         <h3 style="text-decoration: underline;"><b>Program Details</b></h3>
-                                        <table class="table table-bordered table-hover" id="historyStaffDataTable" style="width: 100%" cellspacing="0">
+                                        <table class="table table-bordered table-hover" id="historyStaffDataTable" style="width: 100%; text-align: center;" cellspacing="0">
+                                            <caption>Program History that has been approved or declined</caption>
                                             <thead>
                                                 <tr>
                                                     <th>No.</th>
@@ -113,6 +118,16 @@
                                                     <th>Program Status</th>
                                                     <th>Merit Status</th>
                                                     <th>Action</th>
+                                                </tr>
+                                                <tr style="color: #ee538b;">
+                                                    <td></td>
+                                                    <td>Student</td>
+                                                    <td></td>
+                                                    <td>Category</td>
+                                                    <td>Organizer</td>
+                                                    <td>Program Status</td>
+                                                    <td>Merit Status</td>
+                                                    <td></td>
                                                 </tr>
                                             </thead>
                                         </table>                                       
@@ -145,22 +160,45 @@
             console.log(<%= idex %>);
             console.log(<%= jArray %>);            
             $(document).ready(function() {
-                    $('#historyStaffDataTable').DataTable( {
-                        data: <%= jArray %>,
-                        "columns": [
-                            { "data": "Bil" },
-                            { "data": "studName" },
-                            { "data": "ProgramName" },        
-                            { "data": "Category" },
-                            { "data": "Organizer" },
-                            { "data": "ProgramStatus" },
-                            { "data": "MeritStatus" },
-                            { "data": null, title: 'Action', wrap: true, "render": function (item) 
-                                { 
-                                    return '<form action="staff_historyDetails" method="post"><input type="int" name="progID" value="'+item.progID+'" hidden><button class="btn btn-maroon" type="submit"><i class="fas fa-eye"></i>View Details</button></form>' 
-                                } 
+                $('#historyStaffDataTable').DataTable( {
+                    data: <%= jArray %>,
+                    "columns": [
+                        { "data": "Bil" },
+                        { "data": "studName" },
+                        { "data": "ProgramName" },        
+                        { "data": "Category" },
+                        { "data": "Organizer" },
+                        { "data": "ProgramStatus" },
+                        { "data": "MeritStatus" },
+                        { "data": null, title: '', wrap: true, "render": function (item) 
+                            { 
+                                return '<form action="staff_historyDetails" method="post"><input type="int" name="progID" value="'+item.progID+'" hidden><button class="btn btn-maroon" type="submit"><i class="fas fa-eye"></i>View Details</button></form>' 
+                            } 
+                        }
+                    ],
+                    select: true,
+                    initComplete: function () { //Append filter to historyDataTable
+                        this.api().columns().every( function () {
+                            var column = this;
+                            if (column.index() !== 0 && column.index() !== 2 && column.index() !== 7) {  //skip if column 0
+                                $(column.header()).append("<br>")
+                                var select = $('<select><option selected default readonly value="">Any</option></select>')
+                                .appendTo( $(column.header()).empty() )
+                                .on( 'change', function () {
+                                    var val = $.fn.dataTable.util.escapeRegex(
+                                        $(this).val()
+                                    );
+                                    column
+                                    .search( val ? '^'+val+'$' : '', true, false )
+                                    .draw();
+                                } );
+                                    
+                                column.data().unique().sort().each( function ( d, j ) {
+                                    select.append( '<option value="'+d+'">'+d+'</option>' )
+                                } );
                             }
-                        ]
+                        } );
+                    } 
                 } );
             } );
         </script>

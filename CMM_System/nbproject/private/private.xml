@@ -2,6 +2,11 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/D:/Dev/Web/College-Merit-Management-System/CMM_System/web/stud_history.jsp</file>
+            <file>file:/D:/Dev/Web/College-Merit-Management-System/CMM_System/web/staff_historyDetails.jsp</file>
+            <file>file:/D:/Dev/Web/College-Merit-Management-System/CMM_System/web/staff_history.jsp</file>
+            <file>file:/D:/Dev/Web/College-Merit-Management-System/CMM_System/web/stud_history_details.jsp</file>
+        </group>
     </open-files>
 </project-private>

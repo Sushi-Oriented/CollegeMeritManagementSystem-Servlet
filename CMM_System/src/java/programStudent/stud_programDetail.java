@@ -79,6 +79,15 @@ public class stud_programDetail extends HttpServlet {
             JSONArray jArray = new JSONArray();
             
             while (rs2.next()) {
+//                Merit mer = new Merit();
+//                
+//                mer.setName(rs2.getString("name"));
+//                mer.setRole(rs2.getString("role"));
+//                mer.setMatricNum(rs2.getString("matricNum"));
+//                mer.setIcNum(rs2.getString("IcNum"));
+//                mer.setMerit(rs2.getInt("merit"));
+//                
+//                merList.addElement(mer);
                 
                 String name = rs2.getString("name");
                 String role = rs2.getString("role");
@@ -101,6 +110,8 @@ public class stud_programDetail extends HttpServlet {
                 i++;
             }
             
+            /* Pass both attribute; merit & program */            
+//            session.setAttribute("merList", merList);  
             session.setAttribute("jArray", jArray);
             session.setAttribute("pro", pro);
             response.sendRedirect("stud_history_details.jsp");

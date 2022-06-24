@@ -21,22 +21,7 @@
 
         <!-- Custom styles for this template-->
         <link href="css/sb-admin-2.css" rel="stylesheet" type="text/css"/>
-        <style>
-        table, td, th {
-          padding: 10px;
-        }
-        
-        th{
-            background-color: #336EC4;;
-            color: white;
-        }
-
-        table {
-          border-collapse: collapse;
-          width: 100%;
-          font-size: medium;
-        }
-        </style>
+        <link href="css/staff-program.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
         <!-- Page Wrapper -->

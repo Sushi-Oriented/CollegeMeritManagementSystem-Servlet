@@ -24,43 +24,12 @@
 
         <!-- Custom styles for this template-->
         <link href="css/sb-admin-2.css" rel="stylesheet" type="text/css"/>
+        <link href="css/staff-history.css" rel="stylesheet" type="text/css"/>
         
         <!-- Datatable Bootstrap -->
         <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/jq-3.3.1/dt-1.10.23/fh-3.1.7/r-2.2.7/sb-1.0.1/sp-1.2.2/sl-1.3.1/datatables.min.css"/>
         <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/jq-3.3.1/dt-1.10.23/fh-3.1.7/r-2.2.7/sb-1.0.1/sp-1.2.2/sl-1.3.1/datatables.min.js"></script>
         
-        <style>
-/*            #textpg{
-                font-family: 'Noto Sans JP', sans-serif;
-                text-transform: uppercase;
-            }*/
-            .subtextpg{
-                margin-top: -10px;
-            }
-            
-            table, td, th {
-                padding: 10px;
-            }
-
-            th{
-                background-color: #336EC4;
-                color: white;
-            }
-
-            table {
-                border-collapse: collapse;
-                width: 100%;
-                font-size: medium;
-                text-align: center;
-            }
-            .page-item.active .page-link {
-                background-color: #414141;
-                border: 1px solid #615E5D;
-            }
-            .page-link {
-                color: black;
-            }
-        </style>
         
     </head>
     <body>

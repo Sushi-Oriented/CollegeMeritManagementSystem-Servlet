@@ -25,12 +25,7 @@
 
         <!-- Custom styles for this template-->
         <link href="css/sb-admin-2.css" rel="stylesheet" type="text/css"/>
-        <style>
-            td{
-                padding-left: 20px;
-                padding-right: 40px;
-            }
-        </style>
+        <link href="css/user-profile.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
         <% Staff staff = (Staff)session.getAttribute("staff"); %>

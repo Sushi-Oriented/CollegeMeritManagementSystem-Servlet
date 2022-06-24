@@ -24,16 +24,7 @@
 
         <!-- Custom styles for this template-->
         <link href="css/sb-admin-2.css" rel="stylesheet" type="text/css"/>
-        <style>
-            table, th, td {padding: 10px;}
-            input[type=text]{width:100%;}
-            .btn-success {
-                padding: 12px 35px;
-            } /* Green */
-            .btn-danger {
-                padding: 12px 35px;
-            } /* Red */ 
-        </style>
+        <link href="css/program.css" rel="stylesheet" type="text/css"/>
     </head>
     
     <body>

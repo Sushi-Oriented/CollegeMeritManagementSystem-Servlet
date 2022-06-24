@@ -26,30 +26,11 @@
 
         <!-- Custom styles for this template-->
         <link href="css/sb-admin-2.css" rel="stylesheet" type="text/css"/>
-        
+        <link href="css/stud-history.css" rel="stylesheet" type="text/css"/>
         <!-- Datatable Bootstrap -->
         <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/jq-3.3.1/dt-1.10.23/b-1.6.5/b-flash-1.6.5/fc-3.3.2/fh-3.1.7/datatables.min.css"/>        
         <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/jq-3.3.1/dt-1.10.23/b-1.6.5/b-flash-1.6.5/fc-3.3.2/fh-3.1.7/datatables.min.js"></script>
         
-        <style>
-/*            #textpg{
-                font-family: 'Noto Sans JP', sans-serif;
-                text-transform: uppercase;
-            }*/
-            .subtextpg{
-                margin-top: -10px;
-            }
-            #dataTable{
-                text-align: center;
-            }
-            .page-item.active .page-link {
-                background-color: #414141;
-                border: 1px solid #615E5D;
-            }
-            .page-link {
-                color: black;
-            }
-        </style>
         
     </head>
     <body>

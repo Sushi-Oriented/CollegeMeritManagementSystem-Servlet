@@ -67,20 +67,7 @@ public class staff_programHistory extends HttpServlet {
                     //program.setStudName(studName);
                     arrayObj.put("studName",studName);
                 }
-                
-//                program.setFirstEmail2(rs.getString("firstemail"));
-//                program.setProgID(rs.getInt("progID"));
-//                program.setProgName(rs.getString("progName"));
-//                program.setProgLocation(rs.getString("progLocation"));
-//                program.setProgStartDate(rs.getDate("progStartDate"));
-//                program.setProgEndDate(rs.getDate("progEndDate"));
-//                program.setProgOrganizer(rs.getString("progOrganizer"));
-//                program.setProgCategory(rs.getString("progCategory"));
-//                program.setProgDescription(rs.getString("progDescription"));
-//                program.setProgStatus(rs.getString("progStatus"));        
-//                program.setMeritStatus(rs.getString("meritStatus")); 
-//                
-//                progList.addElement(program);
+               
                 
                 String progID = rs.getString("progID");
                 String progName = rs.getString("progName");

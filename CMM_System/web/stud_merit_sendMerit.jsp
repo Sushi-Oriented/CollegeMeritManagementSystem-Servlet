@@ -187,25 +187,7 @@
                                                                     
                                                                 }
                                                                 
-//                                                                function myFunction(e) {
-//                                                                    var roleSelect = document.getElementById("role");
-//                                                                    var roleText = roleSelect.options[roleSelect.selectedIndex].text;
-//                                                                    //alert(roleText);
-//                                                                    if (roleText == 'Secretariat'){
-//                                                                        document.getElementById("merit").value = 5;
-//                                                                    } else if(roleText == 'Head Of Department'){
-//                                                                        document.getElementById("merit").value = 8;
-//                                                                    } else if(roleText == 'Treasurer'){
-//                                                                        document.getElementById("merit").value = 10;
-//                                                                    } else if(roleText == 'Secretary'){
-//                                                                        document.getElementById("merit").value = 12;
-//                                                                    } else if(roleText == 'Deputy Director'){
-//                                                                        document.getElementById("merit").value = 14;
-//                                                                    } else if(roleText == 'Director'){
-//                                                                        document.getElementById("merit").value = 18;
-//                                                                    }
-//                                                                }
-                                                           
+
                                                             </script>
                                               
                               

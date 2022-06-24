@@ -59,21 +59,6 @@ public class stud_programHistoryServlet extends HttpServlet {
             
             while (rs.next()) 
             {   
-//                Program pro = new Program();
-//
-//                pro.setProgID(rs.getInt("progID"));
-//                pro.setFirstEmail(rs.getString("firstemail"));
-//                pro.setProgName(rs.getString("progName"));
-//                pro.setProgLocation(rs.getString("progLocation"));
-//                pro.setProgStartDate(rs.getDate("progStartDate"));
-//                pro.setProgEndDate(rs.getDate("progEndDate"));
-//                pro.setProgOrganizer(rs.getString("progOrganizer"));
-//                pro.setProgCategory(rs.getString("progCategory"));
-//                pro.setProgDescription(rs.getString("progDescription"));
-//                pro.setProgStatus(rs.getString("progStatus"));
-//                pro.setMeritStatus(rs.getString("meritStatus"));
-//                
-//                progList.addElement(pro);
                 
                 String progID = rs.getString("progID");
                 String progName = rs.getString("progName");

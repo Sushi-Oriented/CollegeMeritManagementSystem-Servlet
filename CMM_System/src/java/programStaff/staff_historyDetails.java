@@ -76,16 +76,6 @@ public class staff_historyDetails extends HttpServlet {
             JSONArray jArray = new JSONArray();
             
             while (rs2.next()) {
-//                Merit mer = new Merit();
-//                
-//                mer.setName(rs2.getString("name"));
-//                mer.setRole(rs2.getString("role"));
-//                mer.setMatricNum(rs2.getString("matricNum"));
-//                mer.setIcNum(rs2.getString("IcNum"));
-//                mer.setMerit(rs2.getInt("merit"));
-//                mer.setStatus(rs2.getString("status"));
-//                
-//                merList.addElement(mer);
                 String name = rs2.getString("name");
                 String role = rs2.getString("role");
                 String matricNum = rs2.getString("matricNum");

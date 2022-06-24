@@ -50,10 +50,6 @@ public class checkAvailable extends HttpServlet {
 
                 else{
                     response.sendRedirect("stud_programDisable.jsp");
-//                    out.println("<script type=\"text/javascript\">");
-//                    out.println("alert('Program application is disabled. Try again later');");
-//                    out.println("location='stud_index.jsp';");
-//                    out.println("</script>");
                 }
             }
             
